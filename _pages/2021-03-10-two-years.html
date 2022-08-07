@@ -1,0 +1,58 @@
+---
+layout: page
+title: TWO YEARS
+date: 2021-03-10 07:01:41.000000000 -08:00
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _wpcom_is_markdown: '1'
+  _last_editor_used_jetpack: block-editor
+  _publicize_pending: '1'
+  _coblocks_attr: ''
+  _coblocks_dimensions: ''
+  _coblocks_responsive_height: ''
+  _coblocks_accordion_ie_support: ''
+  amp_status: ''
+  spay_email: ''
+  _starter_page_template: blank
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/two-years/"
+---
+<p><!-- wp:paragraph {"fontSize":"medium"} --></p>
+<p class="has-medium-font-size"><em>AKA The log4j Incident</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"fontSize":"medium"} --></p>
+<p class="has-medium-font-size"><em>AKA Karen Was Right</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I worked a company that used Java with <a href="https://logging.apache.org/log4j/">Log4j</a> for logging. Log4j was configured to submit log entries to a logging SaaS by sending them to an agent running on the same server. However, the multi-line Java stack traces would get appear as single-line entries on the logging SaaS, making them very hard to correlate and follow.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>People would come to me periodically to deal with the issue by blaming the SaaS. I would tell them that it wasn't the SaaS, which supported multi-line entries, as could be seen with our non-Java apps, and that the logging library shared by the Java apps was likely at fault. Eventually I ran a test with <code>tcpdump</code> on a server, showing that the messages had already been broken up into one line per message to the logging agent. But still, regular visits blaming the log service. Eventually, I even wrote an FAQ about the issue, which included the <code>tcpdump</code> output, so when people pinged me about it, I could point them to it. It was on the app side, clear as day.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This went on for two years. TWO YEARS. Finally, I had had it. I sat down, combed through the <code>log4j</code> docs and examples, altered the logger class and made a test app that showed that, by using a different <code>log4j</code> method (or maybe it was a method option? I can't remember), the multi-line stack traces would appear in Sumo as single, discrete log entries.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I don't generally have the inclination to say, "I told you so," (especially when it should really go without saying), but TWO YEARS. I told my boss I wanted t-shirts distributed to everyone in engineering saying, "Karen was right."</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":1584,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{ site.baseurl }}/assets/images/2021/03/sketch1615358278475-01.png?w=415" alt="Stick figure drawing of a person wearing a t-shirt that reads &quot;Karen was right&quot;" class="wp-image-1584" /><br />
+<figcaption><em>A shirt for any and all contexts</em></figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The t-shirts were not forthcoming. I left the company soon thereafter.</p>
+<p><!-- /wp:paragraph --></p>

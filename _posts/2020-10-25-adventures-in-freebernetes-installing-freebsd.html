@@ -1,0 +1,364 @@
+---
+layout: post
+title: 'Adventures in Freebernetes: Installing FreeBSD'
+date: 2020-10-25 07:59:17.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- FreeBSD Virtualization
+tags:
+- freebsd
+- zfs
+meta:
+  _oembed_f18f40c8503dc816a864648024b7f4a9: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">As
+    far as I can tell, it is not possible with existing Chrome OS tools, let alone
+    the Linux shell, to create a bootable FreeBSD image on a USB drive.<br><br>1.
+    Chrome OS does not support making the USB drive visible to Linux via raw device
+    file, needed to run dd from the shell. 2/</p>&mdash; Karen Bruner (@fuzzyKB) <a
+    href="https://twitter.com/fuzzyKB/status/1319535378022371328?ref_src=twsrc%5Etfw">October
+    23, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_f18f40c8503dc816a864648024b7f4a9: '1603597208'
+  _oembed_0bbe439d7cac888cd7fbad90ab58ed24: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Ok,
+    I got the FreeBSD 13.0-CURRENT memstick image, used my ancient Linux laptop to
+    dd it onto the USB drive.<br><br>My only HDMI display is my TV, sooooo I&#39;m
+    currently sitting on the floor in front of it (don&#39;t have an HDMI cable +
+    USB elongator for the keyboard to reach the couch).</p>&mdash; Karen Bruner (@fuzzyKB)
+    <a href="https://twitter.com/fuzzyKB/status/1319742463527940097?ref_src=twsrc%5Etfw">October
+    23, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_0bbe439d7cac888cd7fbad90ab58ed24: '1604383849'
+  _oembed_d3289ed5e046ed3b707526a8dab1191c: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Day
+    2 of Operation Free BSD<br><br>I updated the BIOS last night. Now trying to see
+    I can manually boot from the ZFS-on-root partition, except Ziggy and George are
+    having their 11AM zoomies so I keep getting distracted and miss the menu to exit
+    into the boot loader.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320067211864621058?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_d3289ed5e046ed3b707526a8dab1191c: '1604383849'
+  _oembed_034250da4bba9fa879965f46a9372618: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">That&#39;s
+    not good. <a href="https://t.co/HmX92ta1SI">pic.twitter.com/HmX92ta1SI</a></p>&mdash;
+    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320096641840394241?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_034250da4bba9fa879965f46a9372618: '1604383850'
+  _oembed_fbc3a59809404095422b0d8e241f919f: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Woohoo!
+    Success! Booting from the ZFS root with no human intervention! <a href="https://t.co/Glj4WaJiHn">pic.twitter.com/Glj4WaJiHn</a></p>&mdash;
+    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320104084183994368?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_fbc3a59809404095422b0d8e241f919f: '1604383850'
+  _oembed_faee52ed4ce2f3222dd7f6878eff5533: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Ok,
+    I got the FreeBSD 13.0-CURRENT memstick image, used my ancient Linux laptop to
+    dd it onto the USB drive.<br><br>My only HDMI display is my TV, sooooo I&#39;m
+    currently sitting on the floor in front of it (don&#39;t have an HDMI cable +
+    USB elongator for the keyboard to reach the couch).</p>&mdash; Karen Bruner (@fuzzyKB)
+    <a href="https://twitter.com/fuzzyKB/status/1319742463527940097?ref_src=twsrc%5Etfw">October
+    23, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  timeline_notification: '1603612760'
+  _oembed_d962c23d4f1e458543e121b57e97f49d: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Ok,
+    I got the FreeBSD 13.0-CURRENT memstick image, used my ancient Linux laptop to
+    dd it onto the USB drive.<br><br>My only HDMI display is my TV, sooooo I&#39;m
+    currently sitting on the floor in front of it (don&#39;t have an HDMI cable +
+    USB elongator for the keyboard to reach the couch).</p>&mdash; Karen Bruner (@fuzzyKB)
+    <a href="https://twitter.com/fuzzyKB/status/1319742463527940097?ref_src=twsrc%5Etfw">October
+    23, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_d962c23d4f1e458543e121b57e97f49d: '1603612761'
+  _oembed_56e990030f23f846be732f5b2e544842: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Day
+    2 of Operation Free BSD<br><br>I updated the BIOS last night. Now trying to see
+    I can manually boot from the ZFS-on-root partition, except Ziggy and George are
+    having their 11AM zoomies so I keep getting distracted and miss the menu to exit
+    into the boot loader.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320067211864621058?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_56e990030f23f846be732f5b2e544842: '1603612761'
+  _oembed_e155cb469f447c3541a6a5188ce6f4e7: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">That&#39;s
+    not good. <a href="https://t.co/HmX92ta1SI">pic.twitter.com/HmX92ta1SI</a></p>&mdash;
+    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320096641840394241?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_e155cb469f447c3541a6a5188ce6f4e7: '1603612761'
+  _oembed_495d5424e71fa2ad322b9a4c17bbe435: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Woohoo!
+    Success! Booting from the ZFS root with no human intervention! <a href="https://t.co/Glj4WaJiHn">pic.twitter.com/Glj4WaJiHn</a></p>&mdash;
+    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320104084183994368?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_495d5424e71fa2ad322b9a4c17bbe435: '1603612761'
+  _publicize_job_id: '50312090914'
+  _oembed_time_faee52ed4ce2f3222dd7f6878eff5533: '1603612762'
+  _oembed_bf5aae3542e89ac0453b0a0e874e790d: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Day
+    2 of Operation Free BSD<br><br>I updated the BIOS last night. Now trying to see
+    I can manually boot from the ZFS-on-root partition, except Ziggy and George are
+    having their 11AM zoomies so I keep getting distracted and miss the menu to exit
+    into the boot loader.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320067211864621058?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_bf5aae3542e89ac0453b0a0e874e790d: '1603612762'
+  _oembed_2f7ebdb9eda6a33ebf0a5706d9c03e6d: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">That&#39;s
+    not good. <a href="https://t.co/HmX92ta1SI">pic.twitter.com/HmX92ta1SI</a></p>&mdash;
+    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320096641840394241?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_2f7ebdb9eda6a33ebf0a5706d9c03e6d: '1603612762'
+  _oembed_fd70c189658913f9bcf809af8d2b70fb: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Woohoo!
+    Success! Booting from the ZFS root with no human intervention! <a href="https://t.co/Glj4WaJiHn">pic.twitter.com/Glj4WaJiHn</a></p>&mdash;
+    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320104084183994368?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_fd70c189658913f9bcf809af8d2b70fb: '1603612762'
+  _oembed_25c053be4999554489f1d4236c688c0b: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">Ok,
+    I got the FreeBSD 13.0-CURRENT memstick image, used my ancient Linux laptop to
+    dd it onto the USB drive.<br><br>My only HDMI display is my TV, sooooo I&#39;m
+    currently sitting on the floor in front of it (don&#39;t have an HDMI cable +
+    USB elongator for the keyboard to reach the couch).</p>&mdash; Karen Bruner (@fuzzyKB)
+    <a href="https://twitter.com/fuzzyKB/status/1319742463527940097?ref_src=twsrc%5Etfw">October
+    23, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_25c053be4999554489f1d4236c688c0b: '1603612916'
+  _oembed_2b142712f70f30d3e1fd066a7e16abd9: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">Day
+    2 of Operation Free BSD<br><br>I updated the BIOS last night. Now trying to see
+    I can manually boot from the ZFS-on-root partition, except Ziggy and George are
+    having their 11AM zoomies so I keep getting distracted and miss the menu to exit
+    into the boot loader.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320067211864621058?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_2b142712f70f30d3e1fd066a7e16abd9: '1603612916'
+  _oembed_99d285230217198fe6e2dbb189e6d684: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">That&#39;s
+    not good. <a href="https://t.co/HmX92ta1SI">pic.twitter.com/HmX92ta1SI</a></p>&mdash;
+    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320096641840394241?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_99d285230217198fe6e2dbb189e6d684: '1603612916'
+  _oembed_efe4c01f982cce35c60d9791a8f8882b: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">Woohoo!
+    Success! Booting from the ZFS root with no human intervention! <a href="https://t.co/Glj4WaJiHn">pic.twitter.com/Glj4WaJiHn</a></p>&mdash;
+    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320104084183994368?ref_src=twsrc%5Etfw">October
+    24, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_efe4c01f982cce35c60d9791a8f8882b: '1603612916'
+  _oembed_54a7608075f91a9d0e8570f9bf4161e4: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">TIL
+    MacOS&#39;s HyperKit is built on xhyve, a port of FreeBSD bhyve. Which doesn&#39;t
+    surprise me, but cool.<br><br>You can run Docker on your Mac thanks to FreeBSD.
+    Of course, you can run your Mac thanks to FreeBSD, too.</p>&mdash; Karen Bruner
+    (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1320831517497511936?ref_src=twsrc%5Etfw">October
+    26, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_54a7608075f91a9d0e8570f9bf4161e4: '1603746104'
+  _oembed_5d23ab16c9ecf96fe457b1235f8fcd8e: <div class="embed-twitter"><blockquote
+    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">Oh,
+    since when did root&#39;s shell default to csh on FreeBSD?<br><br>(For all I know,
+    it&#39;s been &quot;forever,&quot; but I forgot. But wondering why my patently-Bourne
+    shell multi-file handle redirection wasn&#39;t working was making me nuts, until
+    I finally thought to check...)</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1321867141587570695?ref_src=twsrc%5Etfw">October
+    29, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script></div>
+  _oembed_time_5d23ab16c9ecf96fe457b1235f8fcd8e: '1604001557'
+  _last_editor_used_jetpack: block-editor
+  _oembed_52d23216f90a2df3098f496da1bf1211: "{{unknown}}"
+  _oembed_963cc772dd776cef805e568243455c8a: "{{unknown}}"
+  _oembed_094fb73006a7b2b37536ef4e3bd7011f: "{{unknown}}"
+  _edit_last: '108235749'
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/2020/10/25/adventures-in-freebernetes-installing-freebsd/"
+excerpt: Part 1 of experiments in FreeBSD and Kubernetes
+---
+<p><!-- wp:paragraph {"fontSize":"medium"} --></p>
+<p class="has-medium-font-size"><em>Part 1 of experiments in FreeBSD and Kubernetes</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://productionwithscissors.run/freebsd-virtualization-series/"><em>See all posts in this series</em></a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="http://productionwithscissors.run/2020/10/24/adventures-in-freebernetes-introduction/">Read the introduction to this series</a> for background. This post documents getting a working, bootable installation of FreeBSD 13.0-CURRENT on an older NUC PC.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This post is roughly divided into two parts: the rather-chatty story version and then the actual step-by-step instructions for how I finally got a successful installation.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"fontSize":"medium"} --></p>
+<p class="has-medium-font-size"><a href="https://productionwithscissors.run/2020/10/25/adventures-in-freebernetes-installing-freebsd/#step-by-step">Skip straight to the step-by-step instructions for a custom, manual FreeBSD 13.0-CURRENT ZFS-on-root + EFI boot install</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="day-1">Day 1: The Adventure Begins</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:embed {"url":"https:\/\/twitter.com\/fuzzyKB\/status\/1319742463527940097","type":"rich","providerNameSlug":"twitter","responsive":true,"className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
+<div class="wp-block-embed__wrapper">
+https://twitter.com/fuzzyKB/status/1319742463527940097
+</div>
+<figcaption><em>The adventure begins on Twitter. And on my floor.</em></figcaption>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>CBSD strongly recommends using a <a href="https://www.freebsd.org/doc/handbook/zfs.html">ZFS</a> filesystem. My experience with FreeBSD also mostly predates widespread production use of ZFS. And of course, modern UEFI booting is always super-fun when you're not Windows. Brad had made the NUC dual-boot Linux along with the original Windows 10 installation. Even though I avoid Windows whenever possible, for some weird, OS-pack-rat reason, I decided I would try to preserve the Windows installation if possible.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":875,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/10/pxl_20201023_202719424.jpg?w=736" alt="Picture of the FreeBSD installer's text-based UI with blue background, asking if you want to install, run a shell, or launch the Live CD" class="wp-image-875" /><br />
+<figcaption><em>The FreeBSD installer: The happiest blue screen</em></figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The only option in the FreeBSD installer for a custom ZFS installation is via shell and use gpart. (The stalwart FreeBSD fdisk is available, but none of the guides I saw recommended using it. I'm not sure if it has to do with UEFI support or what, but I didn't dig.)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":872,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/10/pxl_20201023_210133887-01.jpeg?w=736" alt="Image of screen with an interactive shell running gpart commands to create and view disk partitions" class="wp-image-872" /><br />
+<figcaption><em>Fun with gpart, said no one ever</em></figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>I went through one guide and the installation seemingly completed successfully but... it wouldn't boot. I messed with the efi stuff a bit; nothing. Trying to bypass UEFI and use the boot loader from the USB stick; even though the boot loader could read the ZFS pool that I had installed just fine, I couldn't get it to boot. It failed with "unknown file system." Not sure if I missed some settings to enable ZFS-on-root that would normally be passed in <code>/boot/loader.conf</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>At this point, based on bits of what I'd seen in search results and the age of the NUC's BIOS (4+ years), it seemed like a good idea to upgrade that, so I did. Still, no dice. I decided to sleep on it and if I still couldn't boot, try a fresh install in the morning.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Even though I didn't have a successful boot, I had gotten reacquainted with gpart and I had messed around with ZFS enough to get familiar with some of the basic commands.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="day-1-the-sequel">Day 1, The Sequel: The Adventure Begins Again</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:embed {"url":"https:\/\/twitter.com\/fuzzyKB\/status\/1320067211864621058","type":"rich","providerNameSlug":"twitter","responsive":true,"className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
+<div class="wp-block-embed__wrapper">
+https://twitter.com/fuzzyKB/status/1320067211864621058
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>The BIOS upgrade didn't cure the problem, so I decided to start from scratch with a different guide. I ended up working from <a href="https://wiki.freebsd.org/MasonLoringBliss/ZFSandGELIbyHAND">this how-to</a>, even though it uses a ZFS pool on mirrored disks with <a href="https://www.freebsd.org/cgi/man.cgi?geli(8)">geli</a> encryption.. I only have one disk (which is partitioned), and I'm not interested in geli for the time being, so I just stripped out the mirroring- and encryption-specific steps.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I restarted the installer, used the shell option for disk partition, deleted the partitions I had previously created, and ended up with this partition table:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/b5705fab6c1dc77374f2604a2284e3eb","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/b5705fab6c1dc77374f2604a2284e3eb
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>One important change: I did have to increase the source example's sizes for the <code>efi</code> and <code>freebsd-boot</code> partitions, presumably because they were too small for the files I had to copy in.  No big deal. The <code>freebsd-boot</code> partition went in there in case I kept having issues with UEFI and tried to make legacy boot work instead.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Fortunately, the how-to also warned about this little potential issue with <code>/dev/null</code>:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/twitter.com\/fuzzyKB\/status\/1320096641840394241","type":"rich","providerNameSlug":"twitter","responsive":true,"className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
+<div class="wp-block-embed__wrapper">
+https://twitter.com/fuzzyKB/status/1320096641840394241
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>But this time around, success!</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/twitter.com\/fuzzyKB\/status\/1320104084183994368","type":"rich","providerNameSlug":"twitter","responsive":true,"className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
+<div class="wp-block-embed__wrapper">
+https://twitter.com/fuzzyKB/status/1320104084183994368
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>I still didn't figure out how to boot from ZFS-on-root from the boot loader (I tried that before letting UEFI go) so I'm sure I'm missing something. It's been years since I've had to spend any time with the FreeBSD loader, and the ZFS and UEFI stuff in it is all new to me. I may go back to figure it out later, or not.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Anyway, my FreeBSD 13.0-CURRENT PC is all humming. Next I'll work on getting bhyve (probably via CBSD) up and running. I've never touched bhyve before, so I'm curious to see what that looks like.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="step-by-step">Step-by-Step Manual ZFS-on-root FreeBSD Install</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>USE AT YOUR OWN RISK</em>. Seriously, I have no idea what I'm doing.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Derived from <a href="https://wiki.freebsd.org/MasonLoringBliss/ZFSandGELIbyHAND">this how-to</a>, which also includes geli disk encryption and mirrored disks.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>My system and use case (if yours differs you may have to make alterations or use a different tutorial completely):</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>a single drive with existing partitions I didn't want to delete (no second disk so no mirroring)</li>
+<li>no geli encryption</li>
+<li>disk already uses GPT partitioning. If it uses Master Boot Record and you want to keep the existing partitions, you'll need to find another tutorial!</li>
+<li>x64 CPU</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>For reference, my PC's disk device is <code>nvd0</code> and I named my ZFS pool <code>zroot</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>Boot the FreeBSD installer as usual</li>
+<li>When you get to the disk partition menu, choose the <code>Shell</code> option</li>
+<li>Using gpart, <em>carefully</em> delete any partitions you no longer want</li>
+<li>Create the new FreeBSD partitions and ZFS file system</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/852949efb55b34c26b895132f4781b6b","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/852949efb55b34c26b895132f4781b6b
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:list {"ordered":true,"start":5} --></p>
+<ol start="5">
+<li>Proceed as normal. At the end of the installation, when the installer asks if you want to reboot or exit to a shell, choose <code>Shell</code> to finish the efi configuration.</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/312dfdabfd57c171a62c1add88a511b6","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/312dfdabfd57c171a62c1add88a511b6
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let the system reboot. Remove the installer media or manually select the disk for the boot device. With luck, it will boot on its own, through to your login prompt!</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator" />
+<!-- /wp:separator --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://productionwithscissors.run/2020/10/29/adventures-in-freebernetes-bhyve-my-guest/">Part 2</a> covers creating my first FreeBSD bhyve guest.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="sources-references">Sources / References</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><a href="https://wiki.freebsd.org/MasonLoringBliss/ZFSandGELIbyHAND">https://wiki.freebsd.org/MasonLoringBliss/ZFSandGELIbyHAND</a></li>
+<li><a href="https://www.freebsd.org/doc/handbook/zfs.html">https://www.freebsd.org/doc/handbook/zfs.html</a></li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>

@@ -1,0 +1,103 @@
+---
+layout: post
+title: 1001 + 1 Insomniac Nights
+date: 2020-08-29 17:31:24.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Running With Scissors
+tags:
+- security
+- stories
+meta:
+  _publicize_job_id: '48256190530'
+  timeline_notification: '1598722287'
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/2020/08/29/1001-1-insomniac-nights/"
+excerpt: More stories from the trenches
+---
+<p><!-- wp:paragraph {"fontSize":"medium"} --></p>
+<p class="has-medium-font-size"><em>More stories from the trenches</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://productionwithscissors.run/2020/08/17/1001-insomniac-nights/">Previously</a>, I recounted the story of <a href="https://en.wikipedia.org/wiki/Scheherazade">Scheherazade</a> and the Arabian Nights.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>These are my stories.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"align":"center"} --></p>
+<h2 class="has-text-align-center" id="down-a-rabbit-hole-cont"><a href="https://productionwithscissors.run/2020/08/17/1001-insomniac-nights/#down-a-rabbit-hole">Down a Rabbit Hole</a> (cont.)</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Eventually, though, not only was Wacko operating efficiently enough to meet its regular throughput demands, it was exceeding them. When my co-worker returned after a month, I gave him his wedding present: an empty pending backup queue. Not only did Wacko no longer cause, directly or indirectly, multiple alerts per week, it had no problems for at least a year, except when the downstream tape backup system, owned by another team, malfunctioned.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>For several years, I would tell an abbreviated version of this story in job interviews when asked to describe a difficult problem I had solved. I'm pretty sure I never came close to capturing the sheer, all-consuming absurdity of the situation in that format, though, both because of the time involved and because I would have sounded like a crazy person, which I personally think was actually a completely legitimate and sane response to a situation which was just Wacko.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator" />
+<!-- /wp:separator --></p>
+<p><!-- wp:heading {"align":"center"} --></p>
+<h2 class="has-text-align-center">This Case Is Intentionally Empty </h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>For a period of time around a dozen years ago, HP (<a href="https://en.wikipedia.org/wiki/Hewlett-Packard">Hewlett Packard</a>) enterprise-grade servers "featured" a remote administrative interface, called "Integrated Lights-Out" (<a href="https://en.wikipedia.org/wiki/HP_Integrated_Lights-Out">HP ILO</a>). Basically, managing any number greater than 0 of HP servers if you did not have direct physical access to them was.... not ideal.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>However, to use HP-ILO, you needed a license, generally paid in addition to the hardware costs. Even if you bought the license keys at the same time as the hardware, HP would send you the license key. Printed on a sticker. Affixed to a <a href="https://en.wikipedia.org/wiki/Keep_case">DVD case.</a> Which did not contain a DVD. In place of the DVD, the  prongs which normally held the DVD in place from the inner circle held a piece of paper, which said something to the effect that this DVD case did not actually come with an actual DVD.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So if you bought hundreds or thousands or more HP servers with HP ILO licenses, you would end up with hundreds or thousands or more DVD plastic DVD cases.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>At one point about a dozen years ago, I claimed one of these cases, including its paper insert, with a license key I had applied to an actual server. I may still have it... somewhere.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator" />
+<!-- /wp:separator --></p>
+<p><!-- wp:heading {"align":"center"} --></p>
+<h2 class="has-text-align-center" id="java-for-wtf">Java For WTF?</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>At some point at Yahoo!, I sat near some advertising partner team. I was deep infrastructure, but there were so few of us in the Burbank office, we sat in an oddball spot surrounded by unrelated teams.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>At some point, Yahoo! launched a new ad platform. (I think it was <a href="https://developer.yahoo.com/cocktails/mojito/docs/intro/mojito_quicktour.html">Mojito</a>.) Someone who sat two cubicle rows over seemed to do a lot of conference calls with ad partners who, apparently, often did not have much of a technical background. So he would tell them that, for customer ad customization, the platform used JavaScript, "which is basically Java, but it runs in the browser."</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>After multiple calls where he described it this way, apparently someone finally corrected him and he stopped.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator" />
+<!-- /wp:separator --></p>
+<p><!-- wp:heading {"align":"center"} --></p>
+<h2 class="has-text-align-center" id="bleeding-heart">Bleeding Heart</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>After the openssl <a href="https://heartbleed.com/">Heartbleed</a> vulnerability, my employer at the time became much more focused on patching vulnerable Linux package on our myriad servers. We used Chef for configuration management, and I was tasked with writing a Chef recipe to search for and update vulnerable packages.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Chef uses (used?) a <a href="https://www.ruby-lang.org/en/">Ruby</a> <a href="https://dev.to/theterminalguy/creating-a-dsl-with-ruby-28hi">DSL</a> for its recipes. Meanwhile, most Linux packages use <a href="https://semver.org/">semantic versioning</a>, with an x.y.z notation.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So, I did the obvious thing.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>if to_f(installed.version) &lt; to_f(current.version)
+  installed.upgrade()
+end</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>Except I kept getting a <code>NoMethodError</code>. But...floating point?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"align":"right"} --></p>
+<p class="has-text-align-right"><em>to be continued...</em></p>
+<p><!-- /wp:paragraph --></p>

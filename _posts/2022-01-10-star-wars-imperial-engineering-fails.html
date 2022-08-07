@@ -1,0 +1,194 @@
+---
+layout: post
+title: 'Star Wars: Imperial Engineering Fails'
+date: 2022-01-10 13:17:28.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Running With Scissors
+- Star Wars
+tags:
+- architecture
+- engineering culture
+- engineering fails
+meta:
+  _wpcom_is_markdown: '1'
+  _last_editor_used_jetpack: block-editor
+  _thumbnail_id: '1673'
+  _publicize_job_id: '67519813272'
+  timeline_notification: '1641833714'
+  _edit_last: '108235749'
+  _wp_old_date: '2022-01-11'
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/2022/01/10/star-wars-imperial-engineering-fails/"
+excerpt: While this series of engineering failures may have happened a long, long
+  ago in a galaxy far, far away, it also happened last week in tech company not too
+  far from here.
+---
+<p><!-- wp:paragraph --></p>
+<p><em>Disclaimer: This post is chock full of spoilers for several Star Wars movies.</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Anyone who has watched <em>Star Wars: A New Hope</em> will, of course, remember that the Rebel Alliance was able to destroy the humongous Death Star. Blueprints of the space station, smuggled out of the Empire, revealed that the Death Star could be destroyed by just one well-aimed torpedo.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>However, the failure of the Death Star was just one Imperial engineering disaster of many, albeit a very critical failure. Like many projects that don't live up to their original ideal, a lack of focus on reliability and resiliency in the design phase, poor or missing design review, useless or nonexistent operational procedures, all tracing back to abysmal product management and arrogant leadership, doomed the Death Star and, ultimately, the Empire itself.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So, let's break down Imperial engineering project failures in the films Episodes IV-VI. We'll skip Episodes I-III, which predated the Empire, and VII-IX, because I don't even want to try to pretend that I can explain what's going on there. As a bonus, we will also throw in <em>Rogue One</em>, the direct prequel to Episode IV.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="episode-iv-a-new-hope">Episode IV: <em>A New Hope</em></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let's start with the obvious issue in the original installment: the Death Star comprised many systems with their own single points of failure (SPoFs; we're going to use this acronym a lot). Of course, the most serious SPoF allowed a proton torpedo fired into an exterior exhaust vent to destroy the entire moon-sized space station. (We'll get deeper into that design flaw when we break down <em>Rogue One</em> below.)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="design-issues">Design issues</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>The Death Star tractor beam used to pull the <em>Millennium Falcon</em> onto the battle station had not one but multiple single points of failure (SPoFs; we're going to use this acronym even more): the entire tractor beam system could be disabled at any one of seven power couplings.<br /><em>Lesson: Redundancy of critical components over redundancy of engineering failure points.</em></li>
+<li>That whole "you just need to shoot one proton torpedo into this exhaust vent and the whole Death Star will go boom!" issue has been well-covered.<br /><em>Lesson: You need better threat modeling.</em></li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="operational-issues">Operational issues</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>While design and engineering issues built major vulnerabilities into the Death Star, the poor quality of the Empire's operational practices and the limited ability of their personnel to carry out those procedures also created serious problems.  </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>The gunners on the star destroyer in orbit above Tatooine were picking off escape pods leaving the captured Rebel ship. However, when they found no life signs in one of the pods, they let it go. Were laser blasts in such short supply?<br /><em>Lesson: Apply your security enforcement practices consistently</em>.</li>
+<li>Luke Skywalker, Han Solo, and Obi-Wan Kenobi leverage social engineering on multiple occasions to infiltrate and then escape from the Death Star. Luring Imperial stormtroopers onto the <em>Millennium Falcon</em> and stealing their armor; feigning com issues to trick the deck commander into opening their blast door; using Chewbacca as a "prisoner" to gain access to the detention block. While no single measure or procedure could have prevented all of these breaches, social engineering exploits start here and will continue to pose an ongoing problem for the Empire.<br /><em>Lesson: Don't ignore non-technical security vulnerabilities.</em></li>
+<li>At one point, we see two stormtroopers asking each other if they knew what was going on. "Maybe it's another drill." While it's important to practice for incident readiness, the Death Star command and crew have apparently been missing critical attack vectors in their drill plans.<br /><em>Lesson: Practice only makes perfect if you're practicing the right things the right way.</em></li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>One last question: when the Death Star jumped into orbit around the planet Yavin IV, why didn't they jump closer to the moon where the Rebellion was headquartered?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="episode-v-empire-strikes-back">Episode V: <em>Empire Strikes Back</em></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This installment doesn't really expose major Imperial engineering failures, although the bit about the <em>Millennium Falcon</em> hiding by clamping onto the back of a star destroyer's command tower also seems a little inexplicable, even taking into account the Empire's questionable engineering prowess.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The most relevant takeaway from this film: The expressions of people frozen in carbonite bear an uncanny resemblance to DMV photos in our universe.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="episode-vi-return-of-the-jedi">Episode VI: <em>Return of the Jedi</em></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The Empire's brilliant new plan: build a new Death Star! Could they pull out a win this time? Let's find out!</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><em>Win: </em>While the main reactor in the original design could be destroyed by a torpedo fired into an external exhaust port, the main reactor in this new design could only be destroyed by direct blaster fire. <br /><strong>Score: +1</strong></li>
+<li><em>Loss:</em> Conveniently for the Rebellion, the design also included navigable shafts that ran from the surface to the reactor core.<br /><strong>Score: -2</strong></li>
+<li><em>Win: </em>The Death Star construction project did include a force field to prevent unauthorized access to these access shafts.<br /><strong>Score: +5</strong></li>
+<li><em>Loss</em>: During construction, the Death Star's shield had only a single generator, situated on the forest moon of Endor. Unfortunately for the Empire, any firewall, when built or operated with SPoFs at critical load-bearing points, can provide only severely limited and unreliable protection (yup, still seeing those single points of failure in action).<br /><strong>Score: -10</strong></li>
+<li><em>Win:</em> The force field generator was well-guarded and housed in a unit with multiple blast doors, in an area heavily patrolled by Imperial scout transports.<br /><strong>Score: +1</strong> (limited points because it's still unnecessarily a SPoF)</li>
+<li><em>Loss</em>: Those safeguards were doomed to failure with the Empire's typical lack of attention to social engineering exploits and non-standard combat styles.<br /><strong>Score: -5</strong></li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hubris coming from the top down ultimately doomed the second Death Star and the entire Empire. Large projects can be more prone to failure if no one believes they can fail. This arrogance fuels the neglect to exploring or adopting measures that could increase the chance of success and mitigate clear risk. The Emperor had tied his success to this new Death Star. When that project failed, it cost him his job, among other losses.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="rogue-one"><em>Rogue One</em></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>While this film, "the prequel we never knew we needed," takes place immediately before <em>A New Hope</em>, we're covering it last on this list, and not just because of the chronological release order. This whole movie functions as the consummate how-to guide to ruining your most critical engineering projects.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>With our step-by-step instructions, you will learn how to</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><em>Motivate by threats</em>!</li>
+<li><em>Alienate your workforce and key talent</em>!</li>
+<li><em>Skip design reviews!</em></li>
+<li><em>Promote the people least capable of doing the job!</em></li>
+<li><em>Miss all your deadlines!</em></li>
+<li><em>Do whatever it takes to get your promotion and vanity title!</em></li>
+<li><em>Deliver a flawed but shiny product!</em></li>
+<li><em>Destroy the Empire!</em></li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>All with pictures! </em>(There are no pictures.)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="get-your-vanity-title-while-trying-to-cover-your-ass"><em>Get your vanity title while trying to cover your ass!</em></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Orson Krennic, who apparently holds the vanity title of "Director of Advanced Weapons Research," is clearly an asshole, but he's also reporting to even more tyrannical executives. Risk of being "managed out" or even missing out on regular job title inflation motivates many product managers. Krennic's superiors constantly remind him that failure of the Death Star project would be met with a very tall enforcer who can force-choke Krennic just by making some squeezy hand gestures.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>Lesson: Promote bad managers and motivate them with threats to get the worst out of them!</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="steal-credit-when-a-project-looks-successful"><em>Steal credit when a project looks successful!</em></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Krennic seems to expend as much energy trying to secure a promotion as he does overseeing the actual Death Star project. While politics generally do win out over actual job competence in too many organizations, failing to deliver a critical project still doesn't generally work in one's favor. When Krennic proceeds with a successful, but unsanctioned, test of the Death Star's weapon, he not only fails to gain favor with his superiors, he also gets kicked off the project because someone else wants to take credit. Ouch.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>Lesson: Be sure to leverage an apparently successful project for a promotion, but watch out for someone else who wants to steal credit</em>!</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="adopt-involuntary-recruitment-and-other-methods-to-alienate-your-design-engineers"><em>Adopt involuntary recruitment and other methods to alienate your design engineers!</em></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Krennic forces the brilliant researcher Galen Erso to create the Death Star only after murdering the scientist's wife. That sort of antisocial behavior generally leads to disgruntled employees who might want to sabotage the project they're working on, which is unsurprisingly the case here. Krennic also "motivates" Erso by threatening to kill his co-workers, who have as little freedom as Erso himself. The scientist feels he must continue to work on the Death Star, but he also hides a dangerous flaw in its implementation.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>Lesson: Forcibly hire and torture your workforce for the most disastrous results!</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="skip-design-reviews-and-quality-assurance-to-ensure-failure"><em>Skip design reviews and quality assurance</em> <em>to ensure failure!</em></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The Death Star project also proceeds again a backdrop of poor engineering design and brittle operational practices. Incompetent and dictatorial management has no idea how to design robust engineering infrastructure and does not understand the necessity of investing into these "overhead" areas. Such deficiencies often arise from an organizational focus limited to feature delivery, without recognizing the results of operational failures and the necessity of trying to prevent outages and limit the blast radius when they do occur, sometimes literally. They are also endemic to a culture that does not respect the expertise of its engineers.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>Lesson: Leave out design reviews because quality and reliability assurances have no place in your product!</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em><strong>Now you should have all the skills you need to create an unsuccessful product and destabilize your entire organization!</strong></em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="if-you-re-part-of-the-rebel-alliance-you-may-also-want-to-check-out-our-new-book"><em>If you're part of the Rebel Alliance, you may also want to check out our new book!</em></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>Learn how to</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><em>Reprogram Imperial droids!</em></li>
+<li><em>Make those droids snarky!</em></li>
+<li><em>Steal Imperial transports and landing codes!</em></li>
+<li><em>Retrieve disks from Imperial archives!</em></li>
+<li><em>Run data cables to transmit stolen blueprints!</em></li>
+<li><em>Reposition satellite dishes!</em></li>
+<li><em>Take out planetary force fields!</em></li>
+<li><em>Disable star destroyers with ion blasts!</em></li>
+<li><em>And more!</em></li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator" />
+<!-- /wp:separator --></p>
+<p><!-- wp:paragraph --></p>
+<p>In closing, we have a good idea of why the Empire failed. Don't repeat their mistakes, unless, of course, you're working from within to sabotage and destabilize your whole organization, too!</p>
+<p><!-- /wp:paragraph --></p>

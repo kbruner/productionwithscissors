@@ -1,0 +1,618 @@
+---
+layout: post
+title: 'Adventures in Freebernetes Tutorial: Build Your Own Bare-VM Kubernetes Cluster
+  the Hard Way'
+date: 2020-12-08 09:38:45.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- FreeBSD Virtualization
+tags:
+- freebsd
+- kubernetes
+- tutorial
+meta:
+  _wpcom_is_markdown: '1'
+  _last_editor_used_jetpack: block-editor
+  timeline_notification: '1607420329'
+  _publicize_job_id: '51968940184'
+  _oembed_fa6f60e33e6d72912cb70674aaca0beb: "{{unknown}}"
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/2020/12/08/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-kubernetes-cluster-the-hard-way/"
+excerpt: Step-by-step tutorial for manually deploying a Kubernetes cluster on FreeBSD
+  bhyve VMs
+---
+<p><!-- wp:paragraph {"fontSize":"medium"} --></p>
+<p class="has-medium-font-size"><em>Step-by-step tutorial for manually deploying a Kubernetes cluster on FreeBSD bhyve VMs</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://productionwithscissors.run/freebsd-virtualization-series/">See all posts in the FreeBSD Virtualization Series</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:html --></p>
+<div class="toc">
+<ol>
+<li><a href="#overview">Overview</a></li>
+<ul>
+<li><a href="#caveats">Caveats</a></li>
+<li><a href="#intended-audience">Intended Audience</a></li>
+<li><a href="#host-requirements">Host Requirements</a></li>
+<li><a href="#test-system">Test System</a></li>
+</ul>
+<li><a href="#page-1">Page 1: Prerequisites</a></li>
+<li><a href="2/#page-2">Page 2: Installing Client Tools</a></li>
+<li><a href="3/#page-3">Page 3: Compute Resources</a></li>
+<li><a href="4/#page-4">Page 4: Provisioning a CA and Generating TLS Certificates</a></li>
+<li><a href="5/#page-5">Page 5: Generating Kubernetes Configuration Files for Authentication</a></li>
+<li><a href="6/#page-6">Page 6: Generating the Data Encryption Config and Key</a></li>
+<li><a href="7/#page-7">Page 7: Bootstrapping the etcd Cluster</a></li>
+<li><a href="8/#page-8">Page 8: Bootstrapping the Kubernetes Control Plane</a></li>
+<li><a href="9/#page-9">Page 9: Bootstrapping the Kubernetes Worker Nodes</a></li>
+<li><a href="10/#page-10">Page 10: Configuring kubectl for Remote Access</a></li>
+<li><a href="11/#page-11">Page 11: Provisioning Pod Network Routes</a></li>
+<li><a href="12/#page-12">Page 12: Deploying the DNS Cluster Add-on</a></li>
+<li><a href="13/#page-13">Page 13: Smoke Test</a></li>
+<li><a href="14/#page-14">Page 14: Cleaning Up</a></li>
+<li><a href="14/#sources-references">Sources / References</a></li>
+</ol>
+<p>
+</div>
+<p><!-- /wp:html --></p>
+<p><!-- wp:heading --></p>
+<h2 id="overview">Overview</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This tutorial will take you step-by-step through setting up a fully-functional Kubernetes cluster installed on <code>bhyve</code> virtual machines (VMs) on a single FreeBSD host/hypervisor. We'll be following Kelsey Hightower's <a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/tree/1.18.6">Kubernetes the Hard Way</a> tutorial based on Kubernetes version 1.18.6, adapting it for the FreeBSD environment. While the VM guests that make up the Kubernetes cluster run Ubuntu Linux, we will use native FreeBSD functionality and tools as much as possible for the virtual infrastructure underneath, such as the virtualization platform, but also the cluster's virtual network and support services.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Topics covered:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Setting up <code>bhyve</code> virtualization</li>
+<li>Creating a custom CBSD configuration for creating our cluster's VMs</li>
+<li>Configuring the FreeBSD firewall, DNS, and routing for cluster networking</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can find custom files and examples in <a href="https://github.com/kbruner/freebernetes">my <code>freebernetes</code> repo</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This tutorial is based on a series of meandering posts I wrote about my original experiments working through the tutorial on top of FreeBSD. You can read them starting <a href="https://productionwithscissors.run/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/">here</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="caveats">Caveats</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Note that Kubernetes the Hard Way is one of the most manual ways to create a Kubernetes cluster, so while it's great for understanding what all the piece are in a cluster and how they fit together, it's not the most practical method for most users.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This tutorial covers installing the cluster on a single FreeBSD host. You will end up with a fully-functional cluster, suitable for learning how to use Kubernetes, testing applications, running your containers, etc. However, it's not suitable for most production uses, because of a lack of redundancy and security hardening.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This tutorial is not a Kubernetes user tutorial. It won't spend time defining terms or providing deep explanations of concepts. For that, you should start with the <a href="https://kubernetes.io/">official Kubernetes documentation</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="intended-audience">Intended Audience</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>For this tutorial, you don't need to know anything about Kubernetes. You do need to have a host with FreeBSD installed; an understanding of basic FreeBSD system administration tasks, such as installing software from FreeBSD ports or packages, and loading kernel modules; and familiarity with <code>csh</code> or <code>sh</code>. Experience with FreeBSD <code>bhyve</code> virtual machines and the CBSD interface is useful but not required.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="host-requirements">Host (FreeBSD Hypervisor) Requirements</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Hardware, physical or virtual
+<ul>
+<li>CPU
+<ul>
+<li>The guest VMs have a shared total of 12 "CPUs" between them, but these do not have to map to actual host CPUs. My system has a total of 8 cores, for example</li>
+</ul>
+<ul>
+<li>CPUs must support FreeBSD bhyve virtualization (see <a href="https://www.freebsd.org/doc/handbook/virtualization-host-bhyve.html">the FreeBSD Handbook page on bhyve</a> for compatible CPUs)</li>
+</ul>
+</li>
+<li>RAM: at least 18Gb; 30Gb+ preferred</li>
+<li>Free disk space: at least 100Gb</li>
+</ul>
+</li>
+<li>Operating system
+<ul>
+<li>FreeBSD: 13.0-CURRENT. It may work with 12.0-RELEASE, but it haas not been tested</li>
+<li>File system: ZFS. It could work with UFS with user modifications</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="test-system">Test System</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Hardware
+<ul>
+<li>CPUs: Intel(R) Core(TM) i5-6260U: 4 CPUs, 2 cores each</li>
+<li>RAM: 32Gb</li>
+</ul>
+</li>
+<li>Operating system
+<ul>
+<li>FreeBSD 13.0-HEAD-f659bf1d31c</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-1"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/01-prerequisites.md" target="_blank" rel="noreferrer noopener">Page 1: Prerequisites</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can skip this section in Kubernetes the Hard Way.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-2"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/02-client-tools.md" target="_blank" rel="noreferrer noopener">Page 2: Installing the Client Tools</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We're going to install both the tools listed in original, plus additional software that we will need on the FreeBSD host. You don't need to follow any specific steps listed in the original.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://www.freebsd.org/doc/handbook/ports.html">You can compile from the <code>ports</code> tree or install from packages</a>, whichever you prefer. The tutorial assumes you have already installed all these ports. When additional post-installation configuration is required, we will walk through it at the appropriate point in the tutorial.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here is the full list of required packages, including the versions, with the <code>ports</code> section in parentheses:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><a href="https://svnweb.freebsd.org/ports/head/sysutils/cbsd/"><code>CBSD</code> 12.2.3</a> (<code>sysutils</code>)</li>
+<li><a href="https://svnweb.freebsd.org/ports/head/security/cfssl"><code>cfssl</code> 1.5.0</a> (<code>security</code>)</li>
+<li><a href="https://svnweb.freebsd.org/ports/head/devel/etcd34"><code>etcd</code> 3.4.14</a> (package name: <code>coreos-etcd34</code>, port: <code>devel/etcd34</code>)</li>
+<li><a href="https://svnweb.freebsd.org/ports/head/sysutils/kubectl"><code>kubectl</code> 1.19.4</a> (<code>sysutils</code>)</li>
+<li><a href="https://svnweb.freebsd.org/ports/head/dns/nsd"><code>nsd</code> 4.3.3</a> (<code>dns</code>)</li>
+<li><a href="https://svnweb.freebsd.org/ports/head/sysutils/tmux"><code>tmux</code> 3.1c</a> (<code>sysutils</code>)</li>
+<li><a href="https://svnweb.freebsd.org/ports/head/ftp/wget"><code>wget</code> 1.20.3_1</a> (<code>ftp</code>)</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-3"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/03-compute-resources.md">Page 3: Compute Resources</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:html --></p>
+<li><a href="#3-0">3.0 Clone the Freebernetes Repo</a></li>
+<li><a href="#3-1">3.1 Choose Your Virtual Network Layout</a></li>
+<li><a href="#3-2">3.2 Create the Linux VMs</a></li>
+<li><a href="#3-3">3.3 Configure Networking</a></li>
+<li><a href="#3-4">3.4 Configure Local DNS</a></li>
+<p><!-- /wp:html --></p>
+<p><!-- wp:paragraph --></p>
+<p>In this section, we will perform the bulk of our FreeBSD-specific infrastructure configurations. You won't need to follow any specific steps in the original.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There are a bunch of steps here, but with few exceptions, most of the FreeBSD customization work happens here.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="3-0">3.0 Clone the Freebernetes Repo</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can find most of the custom files used here in <a rel="noreferrer noopener" href="https://github.com/kbruner/freebernetes" target="_blank">https://github.com/kbruner/freebernetes</a>. This tutorial assumes you've cloned it to <code>~/src/freebernetes</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="3-1">3.1 Choose Your Virtual Network Layout</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This tutorial will use the private (<a href="https://tools.ietf.org/html/rfc1918">RFC1918</a>)  IPv4 CIDR blocks and addresses from the original tutorial, where appropriate. These are all in the <code>10.0.0.0/8</code> block; if you have a collision in your existing network, you can use another block. <strong>Note: </strong>If you do use different IP blocks, you will need to make a number of changes to files and commands.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><code>10.32.0.0/24</code> - <a href="https://kubernetes.io/docs/concepts/services-networking/service/">The Kubernetes <code>Service</code> network</a>, for the virtual IP endpoints in the cluster</li>
+<li><code>10.200.0.0/16</code> - <a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">The Kubernetes <code>pod</code> network</a></li>
+<li><code>10.240.0.0/24</code> - Cluster VMs and "external" endpoints (those you will need to reach from the FreeBSD host)</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>I very strongly recommend using these network allocations if at all possible, both to avoid having to make frequent edits and because it will be less confusing if something does not work in the cluster.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>3.1.1 Pick a <code>.local</code> Zone for DNS</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This zone just needs to resolve locally on the FreeBSD host. I'm going with <code>hardk8s.local</code> because who doesn't like a bad pun?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="3-2">3.2 Create the Linux VMs</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>3.2.1 Initialize CBSD</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you haven't run <a href="https://cbsd.io/">CBSD</a> on your FreeBSD host before, you will need to set it up. You can use the seed file at <code>~/src/freebernetes/harder-way/cbsd/initenv.conf</code>. Edit it first to set <code>node_name</code> to your FreeBSD host's name and to change <code>jnameserver</code> and <code>nodeippool</code> if you are using a private network other than <code>10.0.0.0/8</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/2f0db56ee4c7beefd41984ca25e824b8","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/2f0db56ee4c7beefd41984ca25e824b8
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Note that CBSD version 12.2.3 seems to have a bug where it enables <code>cbsdrsyncd</code> even if you configure it for one node and one SQL replica only. That's why we are disabling it and stopping the service. (Not critical, but I get annoyed by random, unused services hanging around.)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>3.2.2 Configure VM Profile</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We will use the existing CBSD cloud image for Ubuntu Linux 20.04, but we want to create our own profile (VM configuration settings and options). Copy <code>~/src/freebernetes/harder-way/cbsd/usr.cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-kubernetes-base-amd64-20.04.conf</code> to <code>/usr/cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-kubernetes-base-amd64-20.04.conf</code></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This profile uses a custom <code>cloud-init</code> field, <code>ci_pod_cidr</code>, to pass a different address block to each worker node, which they will use to assign unique IP addresses to pods. As CBSD does not know about this setting and does not support ad-hoc parameters, we're going to update the <code>bhyve</code> VM creation script and use our own <code>cloud-init</code> template.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/1ec1c74f746a7d01850719d822572a5b","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/1ec1c74f746a7d01850719d822572a5b
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>3.2.3 Create VMs</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Copy <code>~/src/freebernetes/harder-way/cbsd/instance.jconf</code> and update <code>ci_gw4</code>, <code>ci_nameserver_search</code>, and <code>ci_nameserver_address</code> as needed. If you want to set a password for the <code>ubuntu</code> user in case you want to log in on the console via VNC, you can assign it to <code>cw_user_pw_user</code>, but note this is a plain-text field.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>When you run <code>cbsd bcreate</code>, if CBSD does not have a copy of the installation ISO image, it will prompt you asking to download it. After the first time, it will re-use the local image.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/d3c5adb7050f9db561194addb4c51cbb","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/d3c5adb7050f9db561194addb4c51cbb
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="3-3">3.3 Configure Networking</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Note that you cannot yet connect to the VMs. CBSD creates a <code><a href="https://www.freebsd.org/doc/handbook/network-bridging.html">bridge</a></code> interface the first time you create a VM, and we need to add our gateways to that interface. In most cases, CBSD will use the <code>bridge1</code> interface.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The <code>10.0.0.1/32</code> does not act as a gateway for any of the subnets, but we're using it as the DNS server endpoint for the virtual networks.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>3.3.1 Add Bridge Gateways</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/57363aaff423e768cbef5042f76cf023","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/57363aaff423e768cbef5042f76cf023
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Note that these changes will not survive across reboots. I have not tested if adding a persistent entry for <code>bridge1</code> in <code>/etc/rc.conf</code> would work as expected with CBSD.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>3.3.2 Configure NAT</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We can reach our VM just fine from the host, but the VMs can't talk to the Internet because only the FreeBSD host can route to this <code>10.0.0.0/8</code> block. We will use <code><a href="https://www.freebsd.org/doc/handbook/firewalls-ipfw.html">ipfw</a></code> as a NAT (Network Address Translation) service. These steps will enable <code>ipfw</code> with open firewall rules and then configure the NAT. These changes will take effect immediately and persist across reboots.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Note that my host's physical interface is named <code>em0</code>. You may have to alter some commands if yours has a different name.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/a6570bf7345f63353d2307e4f6acae77","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/a6570bf7345f63353d2307e4f6acae77
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="3-4">3.4 Configure Local DNS</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We need a way to resolve our VM host names. We need to pick a private <code>.local</code> DNS domain, configure an authoritative server for the domain, and then set up a local caching server that knows about our domain but can also still resolve external addresses for us. We will follow <a rel="noreferrer noopener" href="https://blog.socruel.nu/freebsd/how-to-implement-unbound-and-nsd-on-freebsd.html" target="_blank">this <code>nsd</code>/<code>unbound</code> tutorial</a> closely.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>3.4.1 Enable <code>unbound</code> for recursive/caching DNS</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>FreeBSD has a caching (lookup-only) DNS service called <code><a href="https://www.freebsd.org/doc/handbook/network-dns.html">unbound</a></code> in the base system. It will use the nameservers configured in the local <code>/etc/resolv.conf</code> for external address lookups and the local <code>nsd</code> service (configured next) for lookups to our private zone. Copy <code>unbound.conf</code> and make any edits as necessary to IP addresses or your local zone name.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You will also want to update the FreeBSD host's <code>/etc/resolv.conf</code> to add your local domain to the <code>search</code> list and add an entry for <code>nameserver 127.0.0.1</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/c38ec65350211472e17a1e422f9bdc8b","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/c38ec65350211472e17a1e422f9bdc8b
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>3.4.2 Configure the Authoritative DNS Service</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We will use <code><a href="https://nlnetlabs.nl/projects/nsd/about/">nsd</a></code>, a lightweight, authoritative-only service, for our local zone. After copying the files, you can edit/rename the copied files before proceeding to make changes as necessary to match your local domain or IP addresses.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/32320b63e6a044386c26b7ab6a4fea71","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/32320b63e6a044386c26b7ab6a4fea71
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-4"><a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/04-certificate-authority.md" target="_blank">Page 4: Provisioning a CA and Generating TLS Certificates</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can follow all the original steps in this section, with a few exceptions.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Note: You can use any common names, locations, etc., in the JSON certificate signing request (CSR) files, as long as they are consistent and match your CA (certificate authority).</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In <a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/04-certificate-authority.md#the-kubelet-client-certificates" target="_blank">The Kubelet Client Certificates</a> section:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/9fb1fa5a88812c02356f5fd6c44afdd1","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/9fb1fa5a88812c02356f5fd6c44afdd1
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p><a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/04-certificate-authority.md#the-kubernetes-api-server-certificate" target="_blank">The Kubernetes API Server Certificate</a> section:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/2711d1c793596fd73bb5da75f17968c8","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/2711d1c793596fd73bb5da75f17968c8
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/04-certificate-authority.md#distribute-the-client-and-server-certificates">Distribute the Client and Server Certificates</a> section:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/e8be56da8738f3ac035dfc894123e614","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/e8be56da8738f3ac035dfc894123e614
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-5"><a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/05-kubernetes-configuration-files.md" target="_blank">Page 5: Generating Kubernetes Configuration Files for Authentication</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>You only need to make two changes to this section: at the very beginning, set <code>KUBERNETES_PUBLIC_ADDRESS=10.240.0.2</code> instead of using the <code>gcloud</code> command shown, and at the very end when copying files to the VMs. Otherwise, follow the rest of the steps in the original.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/0cc263d4786bc8372916707c401e9119","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/0cc263d4786bc8372916707c401e9119
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-6"><a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/06-data-encryption-keys.md" target="_blank">Page 6: Generating the Data Encryption Config and Key</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>FreeBSD's Base64 tool differs from Linux's, so we need to use</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><code>ENCRYPTION_KEY=$(head -c 32 /dev/urandom | b64encode -r -)</code></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>at the beginning. The config file generation is the same, but we need to use our <code>scp -i ~cbsd/.ssh/id_rsa</code> command instead of <code>gcloud</code>'s to copy the file to the controllers.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-7"><a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/07-bootstrapping-etcd.md" target="_blank">Page 7: Bootstrapping the etcd Cluster</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>For this section, use <code>ssh -i ~cbsd/.ssh/id_rsa ...</code> instead of the <code>gcloud</code> command to log in to the controllers.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Replace the <code>INTERNAL_IP</code> setter:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><code>INTERNAL_IP=$(dig @10.0.0.1 +short `hostname`.hardk8s.local)</code> </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you are using your own IP address ranges, you will need to make some additional changes.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>After that, all commands are executed on each of the controllers. As the tutorial recommends, using <code>tmux</code> synchronization makes this section much easier.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you're on a slow Internet connection, you may also want to download the tarball once and copy it from your FreeBSD host to the controller VMs.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The commands on the next page also need to be executed on each controller, so you can leave your <code>tmux</code> session open.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-8"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/08-bootstrapping-kubernetes-controllers.md" target="_blank" rel="noreferrer noopener">Page 8: Bootstrapping the Kubernetes Control Plane</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Most of this section should be executed as written, with the following exceptions:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Set <code>INTERNAL_IP</code> as we did on the previous page</li>
+<li>If you're on a slow Internet connection, you may also want to download the tarballs once and copy them from your FreeBSD host to the controller VMs.</li>
+<li>If you are using your own IP address ranges, you will need to make some additional changes.</li>
+<li>In place of the last section, The Kubernetes Frontend Load Balancer, follow these instructions:</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>The (Replacement) Kubernetes Frontend Load Balancer</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We have three control plane servers, each running the Kubernetes API service. In a production system, we would want to use a load balancer that could also perform service health checks and avoid sending requests to unavailable servers, like the Google Cloud load balancing service in the original, but for this experimental cluster, we can just use a simple round-robin method using <code>ipfw</code> rules by creating a virtual IP address, <code>10.240.0.2</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>First we create the rules, then we need to configure the three controllers to accept traffic for the virtual IP address. Note this second IP address will not persists across VM reboots. You will need to add <code>10.240.0.2/</code>32 to the <code>addresses</code> field in <code>/etc/netplan/50-cloud-init.yaml</code> if you want to save the configuration.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/0bf3aec5548386e0ef266c9ca32cb46b","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/0bf3aec5548386e0ef266c9ca32cb46b
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>These rules look odd, but each of the three controllers should get 1/3 of the requests over time. (Rules are evaluated in numerical order.)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Rule 300 gives <code>10.240.0.10</code> a 1/3 probability</li>
+<li>Rule 301 gives <code>10.240.0.11</code> a .5 probability, but that's half of the remaining two of the original three slots, so it has a 1/2 * 2/3 = 1/3 chance overall</li>
+<li>Rule 302 gives <code>10.240.0.12</code> a 100% probability of being the final 1/3 hosts selected.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>After this section, we can exit the controller <code>tmux </code>session.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-9"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/09-bootstrapping-kubernetes-workers.md" target="_blank" rel="noreferrer noopener">Page 9: Bootstrapping the Kubernetes Worker Nodes</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We'll need a new <code>tmux</code> session with panes for each worker, similar to the one we used to configure the controllers.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>We'll follow all of the source tutorial, with a one exception, setting the <code>POD_CIDR</code> value on each worker:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><code>POD_CIDR=$(cat /run/cloud-init/instance-data.json | python3 -c 'import sys, json; print(json.load(sys.stdin)["ds"]["meta_data"]["pod-cidr"])')</code></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you are using your own IP address ranges, you will need to make some additional changes.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Once this part is done, you can close the worker <code>tmux</code> session.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-10"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/10-configuring-kubectl.md" target="_blank" rel="noreferrer noopener">Page 10: Configuring kubectl for Remote Access</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>To generate the <code>admin</code> <code>kubeconfig</code> file on your FreeBSD host, set <code>KUBERNETES_PUBLIC_ADDRESS=10.240.0.2</code> (the VIP we have configured on our <code>bridge1</code> interface), then follow the rest of the steps in the original.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-11"><a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/11-pod-network-routes.md" target="_blank">Page 11: Provisioning Pod Network Routes</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Configure <code>ipfw</code> to handle the pod network routing:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/9a5ac6c5e33ad1e7192c2a08f4d4b995","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/9a5ac6c5e33ad1e7192c2a08f4d4b995
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-12"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/12-dns-addon.md" target="_blank" rel="noreferrer noopener">Page 12: Deploying the DNS Cluster Add-on</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Follow these instructions without modification. If you are using custom network ranges, you will need to download the <code>coredns-1.7.0.yaml</code> file first and make some edits before running <code>kubectl apply -f coredns-1.7.0.yaml</code></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-13"><a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/13-smoke-test.md" target="_blank">Page 13: Smoke Test</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Most of these tests can be run as described in the original, with a few exceptions.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>In the Data Encryption section, you will have to use <code>ssh ~cbsd/.ssh/id_rsa</code> instead of the <code>gcloud ssh</code> command to log in to a controller.</li>
+<li>In the Services section:
+<ul>
+<li>Skip the <code>gcloud</code> command to create a firewall rule</li>
+<li>The worker nodes' "external" IPs are the same as their internal IPs from the point-of-view of the FreeBSD host. You can set <code>EXTERNAL_IP=10.240.0.20</code> (or another of the worker node IP addresses)</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:nextpage --><br />
+<!--nextpage--><br />
+<!-- /wp:nextpage --></p>
+<p><!-- wp:heading --></p>
+<h2 id="page-14"><a rel="noreferrer noopener" href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.18.6/docs/14-cleanup.md" target="_blank">Page 14: Cleaning Up</a></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>To clean up:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Stop and remove the VMs
+<ul>
+<li><code>cbsd bstop worker-0</code> # etc</li>
+<li><code>cbsd bremove worker-0</code> # etc</li>
+</ul>
+</li>
+<li>Edit <code>/etc/rc.conf</code> to remove any settings that were added</li>
+<li>Edit /etc/sysctl.conf to remove any settings that were added</li>
+<li>Reboot</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator" />
+<!-- /wp:separator --></p>
+<p><!-- wp:paragraph --></p>
+<p>Please let me know if you have questions or suggestions either in the comments or <a href="https://twitter.com/fuzzyKB" target="_blank" rel="noreferrer noopener">on Twitter</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Sources and References</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><a href="https://blog.socruel.nu/freebsd/how-to-implement-unbound-and-nsd-on-freebsd.html">https://blog.socruel.nu/freebsd/how-to-implement-unbound-and-nsd-on-freebsd.html</a></li>
+<li><a href="https://cbsd.io/">https://cbsd.io/</a></li>
+<li><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">https://github.com/kelseyhightower/kubernetes-the-hard-way</a></li>
+<li><a href="https://kubernetes.io/">https://kubernetes.io/</a></li>
+<li><a href="https://www.freebsd.org/doc/handbook/firewalls-ipfw.html">https://www.freebsd.org/doc/handbook/firewalls-ipfw.html</a></li>
+<li><a href="https://www.freebsd.org/doc/handbook/network-bridging.html ">https://www.freebsd.org/doc/handbook/network-bridging.html</a></li>
+<li><a href="https://www.freebsd.org/doc/handbook/ports.html">https://www.freebsd.org/doc/handbook/ports.html</a></li>
+</ul>
+<p><!-- /wp:list --></p>

@@ -1,0 +1,51 @@
+---
+layout: post
+title: Don't Fear the Beeper
+date: 2017-10-01 07:09:27.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Running With Scissors
+tags:
+- devops
+- on-call
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '9848600522'
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/2017/10/01/dont-fear-the-beeper/"
+---
+<p>In one of Aesop's fables, a shepherd boy gets his jollies by raising the alarm that a wolf is threatening the herd to trick the villagers to run out to offer protection, only to find they'd been tricked. &nbsp;After the boy had pulled his prank a few times, a wolf really does come to threaten the sheep, but by now, the villagers no longer believe the boy's cries of "Wolf!" and the herd, and in some variants, the boy, are consumed by the predator.</p>
+<p>Any engineer who has spent any amount of time in an on-call rotation that invariably bombards them with constant alerts, particularly when a sizable number of those are either invalid or not really critical, has probably also been tempted to risk letting a wolf eat the bratty shepherd boy. &nbsp; This "pager fatigue" gets compounded when the same issues arise time after time and never get fixed at the root cause level, and the engineer feels powerless to improve the situation over time. &nbsp;When the on-call rotation is 24 hours, with alerts coming any time of day or night, the physical effects of sleep interruption and deprivation can quickly compound the psychological issues.</p>
+<p>I've had more than my fair share of on-call rotations from hell over the years. &nbsp;What would invariably make an already awful situation even worse was the knowledge that it was not likely to get any better. &nbsp;Particularly when the software developers were well-removed from the bugs in their code that were making the service brittle and unreliable, but also when management would not take the time to prioritize those fixes, or, worse, thought a week every month or two of no sleep for an operations engineer was "normal" and part of the job description (not, of course, of the job description they actually posted to hire you), and the situation starts to seem helpless. &nbsp;MTTA (Mean Time To Acknowledge) starts to rise as people are too demoralized or physically tired to jump on every page.</p>
+<p>For those deeply-unempathetic upper management types who still believe that, well, this is just part of the job, they're missing the business costs of this effect. &nbsp;Time spent responding over and over to the same issues which never get fixed at the root cause really adds up over time. &nbsp;Site uptime and service-level agreements also get put at risk, which can sometimes result in loss of income or financial penalties to customers. &nbsp;And one of the well-known effects of sleep deprivation (which, after all, is used as a form of torture for a reason) is that it <a href="http://www.huffingtonpost.com/2013/12/03/sleep-deprivation-accidents-disasters_n_4380349.html">greatly increases the risk of accidents</a>. &nbsp;Do you really want an engineer who can barely keep their eyes open trying to fix a complex, broken system, when there's a very non-negligible chance they will just make it worse?</p>
+<p>I've also personally witnessed in more than one organization a form of "<a href="https://en.wikipedia.org/wiki/Learned_helplessness">learned helplessness</a>," where engineers, feeling disempowered and just plain tired, stop pushing for fixes and don't even take care of simple root-cause fixes within their ability. &nbsp;Even on the off-chance that everything else about the job is great (and it's probably not when there's an elephant in the room everyone is ignoring, so no one is cleaning up the elephant-scale dung heaps, either), the never-ending cycle of frustration and stress becomes demoralizing.</p>
+<p>While this may be an unwinnable war at many organizations because of the almost industry-wide, deeply-entrenched&nbsp;<a href="https://danluu.com/wat/">normalization of deviance</a>&nbsp;around how pagers are just going to be noisy and engineers are just going to lose sleep, on-call duty should not have to be an unavoidably soul-sucking experience. &nbsp;And since I've just started a new job, and after one week noticed the engineer on-call seemed to be ack'ing a lot of pages, I knew I had to nip that in the bud. &nbsp;Specifically, before I went on-call.</p>
+<p>Here's my plan of action.</p>
+<ol>
+<li>Technical or configuration actions
+<ol>
+<li><span style="text-decoration:underline;">Get rich metrics for paging alerts</span>. &nbsp;Unfortunately, the canned reports and analytics for the paging service we're using leave a lot to be desired, so I will probably have to go through the API and generate the per-service, per-error metrics myself. &nbsp;I was also looking at <a href="https://github.com/etsy/opsweekly">Etsy's opsweekly tool</a>, but it doesn't support our pager service, either, so we'd have to write the plugin.</li>
+<li><span style="text-decoration:underline;">Identify the alerts that are non-actionable and stop making them page.</span>&nbsp; If the on-call can't fix (or temporarily ameliorate) an issue, they shouldn't get woken up for it. &nbsp;If a situation does need handling but does not pose an immediate threat, can it wait until morning? &nbsp;Then wait until morning. &nbsp;If it's still important that people be aware of a situation. send it to Slack or something. &nbsp;If it's a bug that can only be fixed by code change, which may take time, you may need to mute it temporarily, although that's risky. &nbsp;(Do you <strong>always</strong> remember to re-enable an alert when the underlying condition is fixed? &nbsp;Really?)</li>
+<li><span style="text-decoration:underline;">Prioritize fixes for the most frequent and most time-consuming alerts.&nbsp;</span> &nbsp;If it's broke, fix it. &nbsp;Developer time is precious, yes, and there are new features to deliver, but those same developers are the people getting paged in this on-call rotation. &nbsp;We're <a href="https://en.wikipedia.org/wiki/To_rob_Peter_to_pay_Paul">borrowing from Peter to pay Paul</a>.</li>
+</ol>
+</li>
+<li>Engineering culture and attitudes towards on call
+<ol>
+<li><span style="text-decoration:underline;">Get top-down buy-in.</span> &nbsp;Engineers generally have a natural inclination to fix what's broken. &nbsp;However, they need the time and power to do that. &nbsp;All levels of management need to be cognizant of the entire on-call experience, including being willing to make short-term trade-offs of priorities when possible, with the understanding that payoffs both in time resources and team effectiveness and morale will pay off in the longer term. &nbsp;(Fortunately, I have that now.)</li>
+<li><span style="text-decoration:underline;">Empower team members to own their on-call experience.</span> &nbsp;Again, as the developers are in this rotation, they are the ones who can fix issues. &nbsp;They're also not removed from the incentive of knowing if they fix a certain issue, it won't wake them up the next time they're on-call. &nbsp;(This very separation of power from pain is one of the factors that has made the traditional dev vs ops silos and their associated services so dysfunctional.) &nbsp;And if it's not something that can be fixed quickly, make sure it gets tracked and priotized as needed for a permanent fix.</li>
+<li><span style="text-decoration:underline;">Use those metrics to show improvements.</span> &nbsp;Being able to see in hard numbers that, over time, yeah, we really aren't getting woken up as often, or interrupted by alerts that we can't fix is both the goal and incentive. &nbsp;A noisy pager isn't something you fix for once and for all, but requires ongoing vigilance and incentives.</li>
+</ol>
+</li>
+</ol>
+<p>I admit, I've been woken up too many times by unimportant, misdirected, or&nbsp;<em><a href="https://translate.google.com/#fr/en/d%C3%A9j%C3%A0%20vu%20millions%20de%20fois">déjà vu millions de fois</a>&nbsp;</em>alerts. &nbsp;It kills morale, breeds resentment, and has probably shortened my life because of all the sleep deprivation and stress. &nbsp;I would love to help build an org where the pager is usually so quiet, engineers start to check their phones to make sure the battery didn't die. &nbsp;No one's going to jump for joy when they go on-call, but it's a win if they aren't filled with dread.</p>
+<p>&nbsp;</p>

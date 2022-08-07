@@ -1,0 +1,326 @@
+---
+layout: post
+title: 'Adventures in Freebernetes: Cloudy with a Chance of Rain'
+date: 2020-11-19 01:11:11.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- FreeBSD Virtualization
+tags:
+- freebsd
+- linux
+- virtualization
+meta:
+  _wpcom_is_markdown: '1'
+  _thumbnail_id: '0'
+  _last_editor_used_jetpack: block-editor
+  _oembed_4088ba2739a0f6239e47dac71d936eed: "{{unknown}}"
+  timeline_notification: '1605748275'
+  _oembed_c42a98414c8947ea3b370c759a482ffd: "{{unknown}}"
+  _oembed_08260af46875a37a5506a909319cd186: "{{unknown}}"
+  _oembed_e8d1e0307c43c341b4e3da648fc0084c: "{{unknown}}"
+  _oembed_cd1534290eb5e87fc9e48528bcc2d84f: "{{unknown}}"
+  _oembed_59949981000d72547bcc33bf5bdb1e97: "{{unknown}}"
+  _oembed_a78b0f51d38e985ecec26cf404935346: "{{unknown}}"
+  _oembed_358abc1b1e0661e8a40774849d378df5: "{{unknown}}"
+  _oembed_835e99767467b626ea39ef3d1b43b625: "{{unknown}}"
+  _oembed_5dda607c7a1ff4f3e311999b3344281b: "{{unknown}}"
+  _oembed_9d950a3cb7c27717be78f4c777fe7eb3: "{{unknown}}"
+  _oembed_502a2356c4f1e2104cc2255a90610608: "{{unknown}}"
+  _oembed_b887a764dd979e6a9d0ff6680938cf26: "{{unknown}}"
+  _oembed_c0d1b27df3d8cfb13e0a9f1b15f08ee1: "{{unknown}}"
+  _oembed_eee0de75e26f7bdbb590ca519ec64111: "{{unknown}}"
+  _oembed_aaf677f8b061a144fa3e4d79d1aff4a7: "{{unknown}}"
+  _publicize_job_id: '51224064549'
+  _oembed_c994567c1fea55796b7fc745c92d8952: "{{unknown}}"
+  _oembed_208485a5ed3f40c167aad5462c3d6133: "{{unknown}}"
+  _oembed_c0ee5e3334ca3755fff040bbeb2a2adf: "{{unknown}}"
+  _oembed_51e2474a73937b5c073726684d5a29d6: "{{unknown}}"
+  _oembed_049685a0a45e0c8016a5c04f3d7a5111: "{{unknown}}"
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/2020/11/19/adventures-in-freebernetes-cloudy-with-a-chance-of-rain/"
+excerpt: 'Part 8 of experiments in FreeBSD and Kubernetes: Building a Custom Cloud
+  Image in CBSD'
+---
+<p><!-- wp:paragraph {"fontSize":"medium"} --></p>
+<p class="has-medium-font-size"><em>Part 8 of experiments in FreeBSD and Kubernetes: Building a Custom Cloud Image in CBSD</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://productionwithscissors.run/freebsd-virtualization-series/"><em>See all posts in this series</em></a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Table of Contents</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:html --></p>
+<div class="toc">
+<ol>
+<li><a href="#great-image-bake-off">Great Image Bake-Off</a></li>
+<li><a href="#cloud-seeding">Cloud Seeding</a></li>
+<li><a href="#great-image-bake-off-round-2">Great Image Bake-Off Round 2</a></li>
+<li><a href="#cloud-seeding-round-2">Cloud Seeding Round 2</a></li>
+<li><a href="#great-image-bake-off-finals">Great Image Bake-Off Finals</a></li>
+</ol>
+<p>
+</div>
+<p><!-- /wp:html --></p>
+<p><!-- wp:paragraph --></p>
+<p>In <a href="https://productionwithscissors.run/2020/11/17/adventures-in-freebernetes-bespoke-vms-in-cbsd/">the previous post</a> in this series, I created a custom VM configuration so I could create Alpine Linux VMs in CBSD. That experiment went well. Next up was creating a cloud image for Alpine to allow completely automated configuration of the target VM. However, that plan hit some roadblocks and requires doing a deep dive into a new rabbit hole, documented in this post.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator" />
+<!-- /wp:separator --></p>
+<p><!-- wp:heading --></p>
+<h2 id="great-image-bake-off">Great Image Bake-Off</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I'm going to try to use my existing Alpine VM to install <code>cloud-init</code> from the <code>edge</code> branch (I have no idea whether it's compatible, but I guess we will find out). The Alpine package tool, <code>apk</code>, doesn't seem to support specifying packages for a different branch than the one installed, so I uncomment the <code>edge</code> repositories in the apk configuration.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/dc5876eb198af5024cc5f3675876b7e6","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/dc5876eb198af5024cc5f3675876b7e6
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>I can't easily test whether it will work with rebooting and then having to clean up the markers cloud-init leaves to maintain state across reboots so it doesn't bootstrap more than once. I will just have to test in the new VM. <em>(I also needed to run </em><code>rc-update add cloud-init default</code><em> in the VM before I shut it down, but more on that later.)</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I can't find any specific docs in CBSD on how they generate their cloud images, or even what the specific format is, although <a href="https://cbsd.io/cbsd/tutorials/bhyve-and-cloud-init/">this doc</a> implies that it's a ZFS volume.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So, I look at the raw images in <code>/usr/cbsd/src/iso</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/3f18ff679322fc0e3cccd99acab379b3","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/3f18ff679322fc0e3cccd99acab379b3
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Oh. They're symbolic links to actually ZFS volume devices. Ok. I create the image directly from <code>alpine1</code>'s ZFS volume.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/2d8942d93c34ec260e66348ae3e95629","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/2d8942d93c34ec260e66348ae3e95629
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>I left the raw file in <code>~cbsd/src/iso</code> to see if CBSD would import it into ZFS automatically when I run <code>cbsd bconstruct-tui</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="cloud-seeding">Cloud Seeding</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Again, I have no idea if the above steps actually created a bootable image which CBSD will accept, but before I can try, I have to create the cloud VM profile's configuration.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I have no idea what variables or custom parameters Alpine uses or supports for cloud-init and since I've been combing through CBSD and other docs all day, I would just as soon skip digging into cloud-init.  I copied over the CBSD configuration file for a cloud Ubuntu VM profile in <code>~cbsd/etc/defaults</code> and edited that.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Also, I could not find it documented, but the cloud-init template files used to populate VMs are stored in <code>/usr/local/cbsd/modules/bsdconf.d/cloud-tpl</code>. The Debian cloud VM I made earlier used the <code>centos7</code> templates, so I will try those with Alpine.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here's the VM profile I create as <code>/usr/cbsd/etc/defaults/vm-linux-cloud-AlpineLinux-3.12.1-x86_64-standard.conf</code>:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/3bff605091fff6a959fe12c04ac92124","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/3bff605091fff6a959fe12c04ac92124
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>And then I create the new VM using that profile.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":1232,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-17-at-18.57.11-01.jpeg?w=706" alt="Screenshot of CBSD Linux profile selections" class="wp-image-1232" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"id":1234,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-17-at-19.07.12-01.jpeg?w=701" alt="Screenshot of CBSD interface configuring our cloud Alpine VM" class="wp-image-1234" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/4f46ca9b748f5ff4537cf3d33680d9c8","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/4f46ca9b748f5ff4537cf3d33680d9c8
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>The good news: CBSD did indeed import the disk file. The bad news: bhyve couldn't start the VM.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/d7f2c2e82f79f4088c8d54957048707f","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/d7f2c2e82f79f4088c8d54957048707f
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ok, that's a little weird... There are four raw device files instead of the one the other cloud images have.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/ef9982566d81489531f85b450e9f361f","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/ef9982566d81489531f85b450e9f361f
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>OOOOOOOOOkay. I copied <code>alpine1</code>'s entire virtual disk, which includes the partition table, EFI partition, and swap partition, in addition to the system partition. I'm not sure how CBSD's import ended up breaking out the partitions, but either way, we only care about the system data, not EFI or swap. We'll need to extract the root partition into its own raw file.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="great-image-bake-off-round-2">Great Image Bake-Off, Round 2</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I need to get the contents of the <code>linux-data</code> partition out of the <code>vhd</code> file. There are a few ways to do this, but the simplest way is to create <a href="https://www.freebsd.org/cgi/man.cgi?query=md&amp;sektion=4">memory disk</a> so we can access each partition through a device file. First we need to get the vhd contents into a regular file, because <code>mdconfig</code> cannot work from the character special device in the ZFS /dev/zvol tree.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/06c130d58c044e9b482defff35b76040","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/06c130d58c044e9b482defff35b76040
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p><code>mdconfig</code> created <code>/dev/md0</code> for the entire virtual hard disk, and because the <code>vhd</code> had a partition table, the <code>md</code> driver (I assume) also created device files for each partition. I just want the third partition, so I need to read from <code>/dev/md0p3</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/6e50aa648e9bb925c7153fe8a8784d25","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/6e50aa648e9bb925c7153fe8a8784d25
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:heading --></p>
+<h2 id="cloud-seeding-round-2">Cloud Seeding, Round 2</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We now have <code>alpine1</code>'s root file system in <code>raw</code> format. I copy that file to <code>cbsd-cloud-cloud-AlpineLinux-3.12.1-x86_64-standard.raw</code> and try to create my VM again.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/9c9539be853df0e7a0eeabc531bf4350","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/9c9539be853df0e7a0eeabc531bf4350
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>It started without error! CBSD once again automatically handles importing the raw file I just dropped into the <code>src/iso</code> directory. Now we need to see if it actually booted via VNC. I opened the VNC client and... it timed out trying to connect. I go back to the terminal window with the <code>ssh</code> session to my NUC and... that's hanging. So, I connect my HDMI capture dongle to the NUC, and see FreeBSD had panicked.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":1255,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/11/img_20201118_133131.jpg?w=1024" alt="Screenshot of FreeBSD console showing a kernel panic" class="wp-image-1255" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>But when the NUC rebooted, it brought up the <code>alpine2</code> VM without any obvious issues, and I could connect to the console. I don't know why.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/da35fd9111f666857622f3bc55626600","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/da35fd9111f666857622f3bc55626600
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:image {"id":1260,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-18-at-14.21.55.png?w=1024" alt="Screenshot of VNC client showing the new VM successfully booted but did not get reconfigured" class="wp-image-1260" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>However, the new <code>alpine2</code> VM still thinks it's <code>alpine1</code> and did not apply any of the other cloud-init configurations. And even if cloud-init had run successfully, I couldn't really count it as much of a win if causing the host to panic is part of the deal.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>But I'll worry about the panic problem later. First, I want to diagnose the cloud-init issue. If I run <code>openrc --service cloud-init start</code> in my VM, cloud-init runs <em>and</em> successfully reconfigures tthe hostname to <code>alpine2</code>. It also rewrites <code>/etc/network/interfaces</code> with the static IP address I had assigned, and... ok, it did not use my password hash for root. Meh, I'll still consider that a win.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":1264,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-18-at-15.10.25.png?w=1024" alt="Screenshot of console for alpine2 VM after running cloud-init manually" class="wp-image-1264" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"id":1266,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-18-at-15.17.10.png?w=1024" alt="Screenshot showing rc-status output with cloud-init set to manual" class="wp-image-1266" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ok, I'll need to go back to my source VM and run <code>rc-update add cloud-init default</code> to run cloud-init at boot, then make a new raw image. But I should also figure out what may have caused the FreeBSD kernel panic.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>After I rebooted the NUC, I saw similar GPT-related messages for the other cloud <code>raw</code> ZFS volumes in the <code>dmesg</code> log.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/dc39775895bb098be44adb1bf8664ce8","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/dc39775895bb098be44adb1bf8664ce8
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ok, fine, I should check to see what how the disks in the CBSD-distributed raw cloud images are laid out.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/64217ca01d1fd7b0ae5b1bfe396cba4d","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/64217ca01d1fd7b0ae5b1bfe396cba4d
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ok, the CBSD-distributed <code>raw</code> cloud files are in fact full disk images, including partition table and other partitions, with no consistency between the number, order, or even types of partitions. So I apparently was overthinking when I decided I needed to extract the root data partition.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I update the <code>alpine1</code> image in a non-cloud VM to set cloud-init to run at boot, and then it's time to try again to create a raw image that won't cause a kernel panic.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="great-image-back-off-finals">Great Image Bake-Off Finals</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I'm not sure what else to try to get a safe image or even if I hadn't missed something the first time I tried to copy the source ZFS volume contents to a raw file. So, I figure I may as well try that again with my updated raw image. I remove the artifacts of the previous attempt and try again.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/235d067ea6241cb0d7d746210d18e439","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/235d067ea6241cb0d7d746210d18e439
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Then I run <code>cbsd bconstruct-tui</code> again with the same settings (except for details like hostname and IP addresses) and start the VM.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https:\/\/gist.github.com\/kbruner\/297266d5ef7c639eae306f4429fa8ff1","type":"rich","providerNameSlug":"embed","className":""} --></p>
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed">
+<div class="wp-block-embed__wrapper">
+https://gist.github.com/kbruner/297266d5ef7c639eae306f4429fa8ff1
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:image {"id":1274,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-18-at-16.35.42.png?w=1024" alt="Screenshot of VM console showing a successful boot and cloud-init run" class="wp-image-1274" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>It starts, it boots, cloud-init runs, and as a bonus, no FreeBSD kernel panic! (No, my password hash for the <code>root</code> user did not get applied this time, either, and I think <code>/etc/network/interfaces</code> gets written with the correct information because I used the Centos template, but Alpine does not use the same network configuration method. But do you really want this post to get longer so you can watch me debug that?)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator" />
+<!-- /wp:separator --></p>
+<p><!-- wp:paragraph --></p>
+<p>That took a lot of trial and error, even after I omitted a few dead-ends and lots and lots of web searches.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the next part, I will actually live up to the original premise of this series and start doing real Kubernetty things that involve FreeBSD.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="sources-references">Sources / References</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><a href="https://cbsd.io/cbsd/tutorials/bhyve-and-cloud-init/">https://cbsd.io/cbsd/tutorials/bhyve-and-cloud-init/</a></li>
+<li><a href="https://www.cyberciti.biz/faq/how-to-enable-and-start-services-on-alpine-linux/">https://www.cyberciti.biz/faq/how-to-enable-and-start-services-on-alpine-linux/</a></li>
+<li><a href="https://github.com/cbsd/cbsd">https://github.com/cbsd/cbsd</a></li>
+</ul>
+<p><!-- /wp:list --></p>

@@ -1,0 +1,33 @@
+---
+layout: post
+title: Equihax
+date: 2017-09-14 23:49:45.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Running With Scissors
+tags:
+- security
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '9298847893'
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/2017/09/14/equihax/"
+---
+<p>A number of cultures have the concept of a <em>doppelgänger, </em>a person's double, presaging death or doom.  One might say the modern American would feel the same terror if they realized another person was walking around not with the same face, but using the same name and Social Security Number.  With the revelation last week that the credit reporting agency Equifax was hacked and just this kind of critical personally identifiable information for 143 million was stolen, the incidence of credit <em>doppelgängers </em>is likely to skyrocket.</p>
+<p><a href="https://www.wired.com/story/equifax-breach-no-excuse/">Apparently the hackers exploited a known vulnerability in the Apache Struts web application framework.</a>  The bug had been patched in March; Equifax said their site had been hacked starting in May, although they didn't realize it for two months.  Therefore, if they had patched the version of Apache Struts they were using in a timely manner, the hack never would have happened.  (There's also no way to tell right now what, if any, intrusion detection and prevention systems they have in place, but it seems to be a no-brainer that they were clearly inadequate if no one noticed that the information of almost half the country's population was being systematically stolen for two months without detection.)</p>
+<p>I will grant that web application and system security is hard.  It's very hard.  However, when a company is collecting some of the most critically sensitive data of virtually everyone in the country, they should have a certain burden of Doing the Right Thing.  Unfortunately for American consumers, the forces that normally push companies to formulate and follow strict security practices simply don't exist for the credit reporting agencies.  Those forces are generally either government or industry self-regulation, or the negative incentive that a company's customers would lose trust after a breach and take their business elsewhere.</p>
+<p>While the credit card industry requires those processing payments to follow PCI, the Payment Card Industry security standard, and federal law requires any organization or company handling health records to comply with HIPAA, the Health Industry Protection and Accountability Act, to secure data, the credit reporting industry, dominated by three companies (Equifax, TransUnion, and Experian), <a href="https://www.nytimes.com/2017/09/08/business/equifax.html">has no such security standard</a>.  The industry is only barely legally regulated as it is.  While the breach has generated huge outrage, the government is not in a position to punish, let alone shut down, the company, even if the present administration were amenable.  But wait, it gets worse.</p>
+<p>The second motivation for a company to practice rigorous site security, fear of losing customers, also doesn't apply here.  The average citizen is not their main customer, although they do make money when individuals request to see their own credit score, use the credit monitoring service, or even freeze and unfreeze their credit.  <a href="https://investor.equifax.com/news-and-events/news/2017/04-26-2017">The main customers are all the businesses, particularly banks and credit card companies, that regularly request these reports</a>.  American consumers have no way to remove or prevent the collection of their credit information by Equifax or any credit reporting agency.  Our information is their product, but we have few legal rights to how it is collected or used, and we have few avenues to punish Equifax, other than lawsuits and pushing our lawmakers to respond, neither of which is guaranteed to succeed.</p>
+<p>Like I said, security is very hard.  It has real overhead costs for a company, in terms of training every employee, because every employee can pose a risk, even if a given person's sphere of risk is limited; building and maintaining the infrastructure to maintain and monitor security; software engineer time to understand and follow secure coding practices, and to respond to vulnerabilities as they become known; and specialized personnel to formulate the company's security practices and make sure they are implemented and followed continuously, updating the requirements as new classes of threats arise.  Even if a company does follow all the best practices stringently, there is always risk, whether it's because of zero-day exploit in third-party software or, when it comes down to it, that people, even the most well-trained and skilled, will make mistakes.  The best security policies and practices will take measures to defend against the mistake of a single person creating great risk, but it can still happen.</p>
+<p>Web application security has to be designed in from the beginning; you cannot bolt it on later and expect it to be adequate, or think it's irrelevant to make your code secure if you have a web application firewall or intrusion prevention system.  And it's not any one person's job in an engineering team: architects need to consider what type of data may be collected or transferred and design controls on handling it; software developers need to understand how to write safe code and need to follow the security controls laid out in the design, and if they see an issue, raise it accordingly; whoever is responsible for builds needs to make sure third-party libraries and frameworks are constantly updated so hackers can't exploit a bug that was patched months ago; infrastructure engineers need to harden systems and implement controls.  The list goes on.  Security has to be part of everyone's job.</p>
+<p>Yes, it's a huge amount of work.  And too many developers and executives overestimate their security and underestimate their risk.  Cybersecurity has to be seen as one of the standard costs of doing business on the Internet, though.  While, sadly, Equifax will survive this security breach, <a href="https://www.datacenters.com/news/cloud/157-cloud-horror-stories-don-t-repeat-these-mistakes">a serious hack at a start-up</a> <a href="http://www.denverpost.com/2016/10/23/small-companies-cyber-attack-out-of-business/">can kill the company,</a> particularly when the company's ability to do business rests on securing critical customer data.</p>
