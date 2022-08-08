@@ -5,7 +5,6 @@ url: "http://localhost:4000"
 # THEME-SPECIFIC CONFIGURATION
 title: Running In Production With Scissors
 description: "Techniques, stories, and rants about DevOps and site reliability engineering"
-#avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
 # Header and footer text
@@ -16,7 +15,7 @@ footer_text: >
   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
 # Blog
-excerpt: truncate                                           # Or "truncate" (first 250 characters), "false" to disable
+excerpt: true                                           # Or "truncate" (first 250 characters), "false" to disable
 post_navigation: true
 color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
 
