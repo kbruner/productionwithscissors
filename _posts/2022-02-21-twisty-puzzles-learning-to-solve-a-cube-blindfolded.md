@@ -18,6 +18,7 @@ author:
   first_name: Karen
   last_name: Bruner
 permalink: "/2022/02/21/twisty-puzzles-learning-to-solve-a-cube-blindfolded/"
+excerpt: Describes one method to learn to solve a puzzle cube blindfolded
 ---
 
 This post describes the basics on learning to solve 3x3x3 cubes blindfolded. You can find a lot of good guides and videos, but I'm going to describe what finally clicked for me and how I do it. There are a couple other approaches, but most work pretty similarly.
