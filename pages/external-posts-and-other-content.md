@@ -29,6 +29,7 @@ Links to sites with some of my blog posts, talks, slides, or other content.
     * [https://cloud.redhat.com/blog/better-kubernetes-security-with-open-policy-agent-opa-part-1](https://cloud.redhat.com/blog/better-kubernetes-security-with-open-policy-agent-opa-part-1)
     * [https://cloud.redhat.com/blog/how-to-make-istio-work-with-your-apps](https://cloud.redhat.com/blog/how-to-make-istio-work-with-your-apps)
     * [https://www.stackrox.io/blog/amazon-eks-security-best-practices/](https://www.stackrox.io/blog/amazon-eks-security-best-practices/)
+    * <https://medium.com/stackrox-engineering/tagged/istio>
     * EKS series (original by-line removed):
       * [https://www.stackrox.io/blog/guide-to-eks-cluster-design-for-better-security/](https://www.stackrox.io/blog/guide-to-eks-cluster-design-for-better-security/)
       * [https://www.stackrox.io/blog/securing-eks-cluster-add-ons-dashboard-fargate-ec2-components-and-more/](https://www.stackrox.io/blog/securing-eks-cluster-add-ons-dashboard-fargate-ec2-components-and-more/)
