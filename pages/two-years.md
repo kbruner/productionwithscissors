@@ -38,9 +38,16 @@ This went on for two years. TWO YEARS. Finally, I had had it. I sat down, combed
 I don't generally have the inclination to say, "I told you so," (especially when it should really go without saying), but TWO YEARS. I told my boss I wanted t-shirts distributed to everyone in engineering saying, "Karen was right."
 
 
-![Stick figure drawing of a person wearing a t-shirt that reads "Karen was right"]({{ site.baseurl }}/assets/images/2021/03/sketch1615358278475-01.png?w=415)  
-
-_A shirt for any and all contexts_
+<div align="center">
+<img
+src="{{ site.baseurl }}assets/images/2021/03/sketch1615358278475-01.png"
+alt="Stick figure drawing of a person wearing a t-shirt that reads 'Karen was right'">
+<br>
+<i><small>
+A shirt for any and all contexts
+</small></i>
+</div>
+<br>
 
 
 The t-shirts were not forthcoming. I left the company soon thereafter.
