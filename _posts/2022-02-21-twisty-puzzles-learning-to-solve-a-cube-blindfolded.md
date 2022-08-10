@@ -83,7 +83,6 @@ I use this convention illustrated below. You can pick any lettering you like as 
 <img
 src="{{ site.baseurl }}/assets/images/2022/02/screenshot-2022-02-20-13.47.29-01.jpeg"
 alt="Image of flattened cube with each edge and corner lettered in order around each face">
-</small></i>
 </div>
 <br>
 
