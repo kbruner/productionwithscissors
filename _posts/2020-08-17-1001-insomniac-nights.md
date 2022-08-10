@@ -16,9 +16,7 @@ tags:
 - stories
 - worst practices
 meta:
-  _publicize_job_id: '47796708494'
   timeline_notification: '1597639196'
-  _last_editor_used_jetpack: block-editor
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
@@ -96,7 +94,7 @@ I had minimal exposure to Wacko for the first few months that I was on the team.
 It was consistently falling further and further behind on backups, and our multiple terabytes of live datasets threatened to fill our filer space. The pending backup queue had fallen a month behind. And even though this data was used for billing advertisers to the tune of half the company's gross revenue and thus fell under government regulations regarding data retention, no one was buying us more disk space. After about the third time the tier 1 engineers escalated to me because they were getting alerts about disk space or related issues, I said, fuck this, I am fixing this damn thing. Wacko then took over my life.
 
 
-A couple years ago, I wrote about a form of application architecture which I call the [Winchester Mystery App](https://productionwithscissors.run/2017/09/11/winchester-mystery-app/). Wacko was one such application. A set of Perl scripts, its maintenance had passed through many hands. Wacko "observability" consisted of its log files and its shell interface, which showed the number of dataset backups pending or in various other states. Wacko's shell interface would take over my life.
+A couple years ago, I wrote about a form of application architecture which I call the [Winchester Mystery App]({{ site.baseurl }}2017/09/11/winchester-mystery-app/). Wacko was one such application. A set of Perl scripts, its maintenance had passed through many hands. Wacko "observability" consisted of its log files and its shell interface, which showed the number of dataset backups pending or in various other states. Wacko's shell interface would take over my life.
 
 
 So, here's the thing. Even though Wacko performed a critical function, it had become "deprecated" software. And while someone really should have killed it with fire, the powers-that-be had deprecated it without finding or creating a replacement for the production teams which still depended on its critical functionality. Ah, classic Kazoo! Before you ask, of course there was no documentation. And, again, Perl code. Deciphering Perl you didn't write (actually, any Perl code you did write, too) is like reading a doctor's handwriting when that doctor was using their non-dominant hand to write while riding a roller coaster through a pitch black tunnel. You could still open a Bugzilla ticket against Wacko, but no team owned it anymore. One engineer somewhere would occasionally look at the tickets and tell you it works fine for this other team which had about 1/100 the volume of data we did. Bugzilla status: `WONTFIX`. Wacko, an application which existed in limbo, was taking my life with it.

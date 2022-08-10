@@ -14,10 +14,6 @@ tags:
 - engineering fails
 meta:
   timeline_notification: '1596432421'
-  _wp_old_slug: '382'
-  _wp_old_date: '2020-07-27'
-  _publicize_job_id: '47286051697'
-  _edit_last: '108235749'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

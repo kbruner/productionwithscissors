@@ -14,19 +14,6 @@ tags:
 - engineering culture
 - site reliability
 meta:
-  _oembed_63b6a3156312f36bc894c25c2b66fb30: <div class="embed-twitter"><blockquote
-    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">This
-    has me thinking of this time several years ago when I was at a monitoring meetup.<br><br>During
-    Q&amp;A, some dev defensively said, &quot;It sounds like DevOps is just an excuse
-    to put software developers oncall.&quot;<br><br>I instantly said, &quot;If you
-    don&#39;t want to get paged, write better code.&quot; <a href="https://t.co/iVX8dAY09C">https://t.co/iVX8dAY09C</a></p>&mdash;
-    Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1312463511285506048?ref_src=twsrc%5Etfw">October
-    3, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
-    charset="utf-8"></script></div>
-  _publicize_job_id: '49392322795'
-  _thumbnail_id: '806'
-  timeline_notification: '1601452522'
-  _oembed_time_63b6a3156312f36bc894c25c2b66fb30: '1602223494'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
@@ -53,7 +40,7 @@ SREs coming for the scrum board from hell
 <br>
 
 
-When I recently wrote about [when Agile isn't](https://productionwithscissors.run/2020/09/23/agile-inferno/), I mentioned how making Site Reliability Engineers follow Agile can be like trying to shove a square peg in a round hole. This post describes major issues I've seen and heard of in many engineering organizations that can come from trying to force your SRE teams to conform to your product software development schedules and processes.
+When I recently wrote about [when Agile isn't]({{ site.baseurl }}2020/09/23/agile-inferno/), I mentioned how making Site Reliability Engineers follow Agile can be like trying to shove a square peg in a round hole. This post describes major issues I've seen and heard of in many engineering organizations that can come from trying to force your SRE teams to conform to your product software development schedules and processes.
 
 
 I will note that every company does SRE differently, and even within companies, especially large ones, the experience can vary. (Expect future posts on the different idiosyncrasies of SRE teams.)
@@ -105,7 +92,7 @@ _Ask yourself_
 
 - _Is this work is troubleshooting or otherwise responding to downtime?_
 
-See the [firefighting section](https://productionwithscissors.run/2020/09/30/agile-is-lava/#fires-fires-everywhere) above.
+See the [firefighting section]({{ site.baseurl }}2020/09/30/agile-is-lava/#fires-fires-everywhere) above.
 
 - _Are many of the surprise tasks related to current product engineering sprint tasks?_ _Should these tasks have been prioritized during sprint planning? Do they concern dependencies that no one thought of until the development work had started? Were SREs_ _ **not** _ _involved in the design meetings for the epics in progress, or the product sprint planning meetings? Does the product team not consider SRE work an integral part of successfully-delivered features?_
 

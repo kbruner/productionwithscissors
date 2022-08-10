@@ -114,7 +114,7 @@ I'm not taking the stance that no organization can or actually does practice Agi
 Actually, come to think of it, maybe that near-motionless Bose-Einstein condensate is the right analogy after all.
 
 
-## [tl;dr](https://productionwithscissors.run/2020/09/23/agile-inferno#tldr)
+## [tl;dr]({{ site.baseurl }}2020/09/23/agile-inferno#tldr)
 
 
 * Make sure your various ~~particles~~ developers have some alignment and enough of the greater context (other near-future pending changes or work in progress, etc.) not to step on each other's toes or put time into something that will just have to be redone almost immediately, unless a very good need exists to take the human time hit

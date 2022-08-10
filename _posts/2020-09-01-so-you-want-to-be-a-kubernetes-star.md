@@ -12,54 +12,7 @@ categories:
 tags:
 - kubernetes
 meta:
-  _publicize_job_id: '48339748560'
   timeline_notification: '1598939088'
-  _oembed_e71adb8ff0973e0dcbe3b4132b1aa499: <div class="embed-twitter"><blockquote
-    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">I
-    just spent an hour comparing several cloud providers to see which, if any, actually
-    offered a &quot;free-tier&quot; basic Kubernetes cluster for new users to experiment
-    with.<br><br>At this point, I can say with feline Schrödinger certainty that cloud
-    free tier offerings are bullshit.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1300943852719595521?ref_src=twsrc%5Etfw">September
-    1, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
-    charset="utf-8"></script></div>
-  _oembed_time_e71adb8ff0973e0dcbe3b4132b1aa499: '1599004727'
-  _oembed_60a13314adcc86a262a20fa115cc21d0: <div class="embed-twitter"><blockquote
-    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">I
-    just spent an hour comparing several cloud providers to see which, if any, actually
-    offered a &quot;free-tier&quot; basic Kubernetes cluster for new users to experiment
-    with.<br><br>At this point, I can say with feline Schrödinger certainty that cloud
-    free tier offerings are bullshit.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1300943852719595521?ref_src=twsrc%5Etfw">September
-    1, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
-    charset="utf-8"></script></div>
-  _oembed_time_60a13314adcc86a262a20fa115cc21d0: '1601055870'
-  _oembed_3303c5cf203a9521ed1b128b5fd0d0f9: <div class="embed-twitter"><blockquote
-    class="twitter-tweet" data-width="420" data-dnt="true"><p lang="en" dir="ltr">I
-    just spent an hour comparing several cloud providers to see which, if any, actually
-    offered a &quot;free-tier&quot; basic Kubernetes cluster for new users to experiment
-    with.<br><br>At this point, I can say with feline Schrödinger certainty that cloud
-    free tier offerings are bullshit.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1300943852719595521?ref_src=twsrc%5Etfw">September
-    1, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
-    charset="utf-8"></script></div>
-  _oembed_time_3303c5cf203a9521ed1b128b5fd0d0f9: '1599004753'
-  _wp_old_slug: learning-kubernetes
-  _oembed_2e38771bb00a474a475e93676c31a05c: <div class="embed-twitter"><blockquote
-    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">I
-    just spent an hour comparing several cloud providers to see which, if any, actually
-    offered a &quot;free-tier&quot; basic Kubernetes cluster for new users to experiment
-    with.<br><br>At this point, I can say with feline Schrödinger certainty that cloud
-    free tier offerings are bullshit.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1300943852719595521?ref_src=twsrc%5Etfw">September
-    1, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
-    charset="utf-8"></script></div>
-  _oembed_time_2e38771bb00a474a475e93676c31a05c: '1600056176'
-  _oembed_bb6b46df641e63587651e221f6f0a05a: <div class="embed-twitter"><blockquote
-    class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">I
-    just spent an hour comparing several cloud providers to see which, if any, actually
-    offered a &quot;free-tier&quot; basic Kubernetes cluster for new users to experiment
-    with.<br><br>At this point, I can say with feline Schrödinger certainty that cloud
-    free tier offerings are bullshit.</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1300943852719595521?ref_src=twsrc%5Etfw">September
-    1, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
-    charset="utf-8"></script></div>
-  _oembed_time_bb6b46df641e63587651e221f6f0a05a: '1603248372'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

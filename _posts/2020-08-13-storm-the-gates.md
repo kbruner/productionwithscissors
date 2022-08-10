@@ -15,14 +15,6 @@ tags:
 - hiring
 - job search
 meta:
-  _coblocks_attr: ''
-  _coblocks_dimensions: '{"coblocks-hero-712152041342":{"padding":{"paddingTop":"60px","paddingRight":"60px","paddingBottom":"60px","paddingLeft":"60px","paddingTopTablet":null,"paddingRightTablet":null,"paddingBottomTablet":null,"paddingLeftTablet":null,"paddingTopMobile":null,"paddingRightMobile":null,"paddingBottomMobile":null,"paddingLeftMobile":null}}}'
-  _coblocks_responsive_height: '{"coblocks-hero-712152041342":{"height":{"height":40}}}'
-  _coblocks_accordion_ie_support: ''
-  amp_status: ''
-  spay_email: ''
-  timeline_notification: '1597292733'
-  _publicize_job_id: '47654005449'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
@@ -36,7 +28,7 @@ excerpt: Stop gatekeeping tech jobs with superfluous CS degree requirements
 _Stop gatekeeping tech jobs with superfluous CS degree requirements_
 
 
-A couple weeks ago, I wrote about [the Sphinx](http://productionwithscissors.run/2020/07/31/riddle-me-this-job-listing/) guarding the gate of Thebes and devouring all would-be visitors who could not solve its riddle as a metaphor for decoding SRE job listings. (I still don't understand why the Thebans did not just build a second gate on the other side of the city, but whatever.)
+A couple weeks ago, I wrote about [the Sphinx]({{ site.baseurl }}2020/07/31/riddle-me-this-job-listing/) guarding the gate of Thebes and devouring all would-be visitors who could not solve its riddle as a metaphor for decoding SRE job listings. (I still don't understand why the Thebans did not just build a second gate on the other side of the city, but whatever.)
 
 
 There's another, more prevalent, form of gatekeeping common in many types of software engineering job listings and hiring requirements, however: CS degrees.

@@ -14,8 +14,6 @@ tags:
 - engineering culture
 meta:
   timeline_notification: '1598487355'
-  _publicize_job_id: '48157425046'
-  _last_editor_used_jetpack: block-editor
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

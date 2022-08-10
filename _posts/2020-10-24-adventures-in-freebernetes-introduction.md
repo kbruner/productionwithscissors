@@ -28,7 +28,7 @@ thumbnail: assets/images/2020/10/5680040477_3796979f90_o.jpg
 _Introduction to a series of experiments with FreeBSD and Kubernetes_
 
 
-[_See all posts in this series_](https://productionwithscissors.run/freebsd-virtualization-series/)
+[_See all posts in this series_]({{ site.baseurl }}freebsd-virtualization-series/)
 
 
 For various reasons, some of which are far too scary even for this blog, I haven't felt really excited or motivated to hack on tech in a long time.
@@ -83,6 +83,6 @@ I have one HDMI-compatible display: my TV. (I've decided to get an inexpensive H
 
 * * *
 
-In [Part 1](http://productionwithscissors.run/2020/10/25/adventures-in-freebernetes-installing-freebsd/), I'll write up step-by-step how I (eventually) successfully installed FreeBSD 13.0-CURRENT with ZFS-on-root.
+In [Part 1]({{ site.baseurl }}2020/10/25/adventures-in-freebernetes-installing-freebsd/), I'll write up step-by-step how I (eventually) successfully installed FreeBSD 13.0-CURRENT with ZFS-on-root.
 
 

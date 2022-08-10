@@ -14,9 +14,7 @@ tags:
 - hiring
 - job search
 meta:
-  _publicize_job_id: '47182118842'
   timeline_notification: '1596170932'
-  _last_editor_used_jetpack: block-editor
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

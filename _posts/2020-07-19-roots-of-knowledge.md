@@ -13,16 +13,6 @@ tags:
 - engineering culture
 - succulents
 meta:
-  _publicize_job_id: '46731647238'
-  timeline_notification: '1595127300'
-  _oembed_1efde11cfaec46197ead2b1924abbe25: <div class="embed-twitter"><blockquote
-    class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">Write
-    your internal docs like the person who has to use them is the on-call, just started
-    working there last week, and just got woken up at 3AM.</p>&mdash; Karen Bruner
-    (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1285020925260251137?ref_src=twsrc%5Etfw">July
-    20, 2020</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
-    charset="utf-8"></script></div>
-  _oembed_time_1efde11cfaec46197ead2b1924abbe25: '1595265771'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

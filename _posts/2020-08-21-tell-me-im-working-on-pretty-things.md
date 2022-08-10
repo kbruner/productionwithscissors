@@ -12,8 +12,6 @@ categories:
 tags:
 - engineering culture
 meta:
-  _publicize_job_id: '47957922306'
-  _thumbnail_id: '609'
   timeline_notification: '1598002046'
 author:
   login: nightmarebeforedevops

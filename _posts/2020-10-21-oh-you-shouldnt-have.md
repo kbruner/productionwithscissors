@@ -26,7 +26,7 @@ thumbnail: /assets/images/2020/10/sketch1603088565601-01.jpeg
 _You don't need 5 firewall devices for your 50-person office, but you do need to respect your engineers' time and expertise_
 
 
-##### _[tl;dr for Executives](https://productionwithscissors.run/2020/10/21/oh-you-shouldnt-have/#what-execs-need-to-know)_
+##### _[tl;dr for Executives]({{ site.baseurl }}2020/10/21/oh-you-shouldnt-have/#what-execs-need-to-know)_
 
 
 In the famous O. Henry story "The Gift of the Magi," a young couple with limited funds exchange Christmas gifts. The husband buys his wife a set of fancy combs for her beautiful long hair, while his wife gets him a platinum chain for his pocket watch. But irony! The wife has cut off and sold her long hair to a wig maker to pay for the watch chain, and the husband sold his pocket watch to purchase the hair combs.

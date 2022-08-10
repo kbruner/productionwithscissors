@@ -12,8 +12,6 @@ categories:
 tags: []
 meta:
   timeline_notification: '1596661095'
-  _publicize_job_id: '47389051689'
-  _edit_last: '108235749'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

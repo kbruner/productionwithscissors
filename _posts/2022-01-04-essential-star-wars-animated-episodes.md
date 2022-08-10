@@ -11,11 +11,6 @@ categories:
 - Star Wars
 tags: []
 meta:
-  _wpcom_is_markdown: '1'
-  _last_editor_used_jetpack: block-editor
-  _thumbnail_id: '1652'
-  _publicize_job_id: '67264344099'
-  timeline_notification: '1641271673'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
@@ -23,67 +18,42 @@ author:
   first_name: Karen
   last_name: Bruner
 permalink: "/2022/01/04/essential-star-wars-animated-episodes/"
+excerpt: It's all about Ahsoka
 ---
-<!-- wp:group -->
-
-<!-- wp:paragraph -->
 
 Way back in 2020, immediately prior to the release of _The Mandalorian_ season 2, I put together a list of essential episodes from the animated series _The Clone Wars_ and _Rebels_, focusing mainly on Ahsoka Tano and on the history of Mandalore and the Darksaber. I shoved that into a Google Doc that I shared around to prep people who had never watched the animated series _The Clone Wars_ and _Rebels_ with a quickstart guide for characters making their live-action debut in _The Mandalorian_.
 
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
 
 With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming series, apparently one each for just about every character in the Star Wars universe, I've updated the list with a few more characters.
 
-<!-- /wp:paragraph -->
-
-<!-- /wp:group -->
-
-<!-- wp:heading {"level":3} -->
 
 ### A few notes
 
-<!-- /wp:heading -->
 
-<!-- wp:list {"style":{"typography":{"lineHeight":"1.2"}}} -->
+* This list contains episodes which I personally think are important or interesting. Other people who have also sat through a bajillion hours of these shows and movies are entitled to make their own lists.
+* For table entries with multiple episodes, the episodes comprise a story arc.
+* I use the season.episode number convention. (_Example_: episode 3 of season 1 would be 1.3. An arc of episodes 12-14 from season 2 would be 2.12-14)
+* Main characters/entities for an arc are **in bold**.
+* Currently supported characters/entities
+  * Ahsoka Tano
+  * Mandalore
+    * Bo-Katan Kryze
+    * Darksaber
+  * Boba Fett
+  * Asajj Ventress (_Clone Wars_ series villain)
+  * Maul (oops, spoiler)
+* Disney+ lists _The Clone Wars_ in their original release order, which does not correspond at all with the actual story chronology until the final seasons. The list below conforms to [the proper order](https://www.starwars.com/news/star-wars-the-clone-wars-chronological-episodeorder).
+* _Bad Batch_ season 1 features many supporting characters we've seen in other series. I haven't added any of them here, although that may change.
+* _Rebels_ has a more linear, self-contained storyline. You can watch the whole thing or not. Warning: Ezra Bridger is just so ducking annoying.
 
-- This list contains episodes which I personally think are important or interesting. Other people who have also sat through a bajillion hours of these shows and movies are entitled to make their own lists.
-- For table entries with multiple episodes, the episodes comprise a story arc.
-- I use the season.episode number convention. (_Example_: episode 3 of season 1 would be 1.3. An arc of episodes 12-14 from season 2 would be 2.12-14)
-- Main characters/entities for an arc are **in bold**.
-- Currently supported characters/entities
-  - Ahsoka Tano
-  - Mandalore
-    - Bo-Katan Kryze
-    - Darksaber
-  - Boba Fett
-  - Asajj Ventress (_Clone Wars_ series villain)
-  - Maul (oops, spoiler)
-- Disney+ lists _The Clone Wars_ in their original release order, which does not correspond at all with the actual story chronology until the final seasons. The list below conforms to [the proper order](https://www.starwars.com/news/star-wars-the-clone-wars-chronological-episodeorder).
-- _Bad Batch_ season 1 features many supporting characters we've seen in other series. I haven't added any of them here, although that may change.
-- _Rebels_ has a more linear, self-contained storyline. You can watch the whole thing or not. Warning: Ezra Bridger is just so ducking annoying.
-
-<!-- /wp:list -->
-
-<!-- wp:heading {"level":3} -->
 
 ### _The Clone Wars_
 
-<!-- /wp:heading -->
 
-<!-- wp:table {"className":"is-style-stripes"} -->
-
-|
-| |
- Season . Episodes(s) | Featured Characters | Importance | Notes || Movie | **Ahsoka** , Asajj | **High** | Introduces Ahsoka as Anakin Skywalker's new padawan |
-
-Introduces villain Asajj Ventress
-
-| 1.2-4 | **Ahsoka** | Medium | Fills in Ahsoka's background and explains her character |
-
-Ahsoka is only a major character in 1.2 and 1.3
-
+| Season . Episodes(s) | Featured Characters | Importance | Notes |
+| --- | --- | --- | --- | --- |
+| Movie | **Ahsoka** , Asajj | **High** | Introduces Ahsoka as Anakin Skywalker's new padawan, Introduces villain Asajj Ventress |
+| 1.2-4 | **Ahsoka** | Medium | Fills in Ahsoka's background and explains her character; Ahsoka is only a major character in 1.2 and 1.3 |
 | 1.9-10 | **Ahsoka, Asajj** | Medium | Ahsoka and Asajj are only major characters in episode 1.9 |
 | 1.13-14 | **Ahsoka** | Low | |
 | 1.17-18 | **Ahsoka** | Low | |
@@ -103,40 +73,24 @@ Ahsoka is only a major character in 1.2 and 1.3
 | 4.11-13 | **Ahsoka** | Medium | |
 | 4.14 | **Ahsoka** , Bo-Katan Kryze, Darksaber | **High** | First appearance of Bo-Katan |
 | 4.19-20 | **Asajj** , Boba Fett | High | Boba Fett only appears in 4.20 |
-| 4.21-22 | **Maul** | **High** | Maul really hates Obi-Wan Kenobi |
-
-This arc's storyline is picked up later in 5.1
-
+| 4.21-22 | **Maul** | **High** | Maul really hates Obi-Wan Kenobi (This arc's storyline is picked up later in 5.1) |
 | 5.2-5 | **Ahsoka** | Medium | Important character development for Ahsoka, also introduces Saw Gerrera from Rogue One |
 | 5.6-9 | **Ahsoka** | Low | |
 | 5.1 | **Maul** | Medium | Maul really, really hates Kenobi |
 | 5.14-16 | **Maul, Bo-Katan Kryze, Mandalore, Darksaber** | **High** | Maul really, really, really hates Kenobi |
-| 5.17-20 | **Ahsoka** , Asajj | **Highest** | The most critical turning point in Ahsoka's life |
-
-Asajj appears in 5.19-20
-
+| 5.17-20 | **Ahsoka** , Asajj | **Highest** | The most critical turning point in Ahsoka's life. Asajj appears in 5.19-20 |
 | 6.1-4 | | **High** | Important background for the clone troopers and Order 66 |
 | 6.10-13 | Yoda | Low | Not vital, but shows origins of an important piece of Jedi mythology |
 | 7.5-8 | **Ahsoka** , Bo-Katan, Maul | **High** | Bo-Katan and Maul briefly appear in episodes 7-8 |
-| 7.9-12 | **Ahsoka, Maul, Bo-Katan, Mandalore** | **Highest** | The final gut-punch episodes |
+| 7.9-12 | **Ahsoka, Maul, Bo-Katan, Mandalore** | **Highest** | The final gut-punch episodes. Also, Maul still really hates Kenobi |
+<center><small><i>Must-see The Clone Wars story arcs for selected characters (Ahsoka, it's all Ahsoka)</i></small></center>
 
-Also, Maul still really hates Kenobi  
-
-_Must-see The Clone Wars story arcs for selected characters (Ahsoka, it's all Ahsoka)_
-
-<!-- /wp:table -->
-
-<!-- wp:heading {"level":3} -->
 
 ### _Rebels_
 
-<!-- /wp:heading -->
-
-<!-- wp:table {"className":"is-style-stripes"} -->
-
-|
-| |
- Season . Episode(s) | Featured Characters | Importance | Notes || 2.1-2 | **Ahsoka** | **High** | Catches up with Ahsoka after the fall of the Republic |
+| Season . Episode(s) | Featured Characters | Importance | Notes |
+| --- | --- | --- | --- |
+| 2.1-2 | **Ahsoka** | **High** | Catches up with Ahsoka after the fall of the Republic |
 | 2.3-4 | **Ahsoka** | Low | Ahsoka appears only briefly in both episodes but it focuses on an important character from her past |
 | 2.10 | **Ahsoka** | **High** | Ties with _Clone Wars_ episodes 2.1-3 |
 | 2.13 | **Mandalore** | Medium | Introduction to Mandalore under the Empire |
@@ -148,18 +102,11 @@ _Must-see The Clone Wars story arcs for selected characters (Ahsoka, it's all Ah
 | 3.20 | **Maul** | **High** | And Maul just still really hates Kenobi |
 | 4.1-2 | **Mandalore, Bo-Katan, Darksaber** | **High** | |
 | 4.15-16 | **Ahsoka** | **High** | |
+<center><small><i>Must-see Rebels story arcs for selected characters (as much Ahsoka as possible)</i></small></center>
 
-_Must-see Rebels story arcs for selected characters (as much Ahsoka as possible)_
-
-<!-- /wp:table -->
-
-<!-- wp:heading -->
 
 ## Viewing chronology
 
-<!-- /wp:heading -->
-
-<!-- wp:list {"ordered":true,"style":{"typography":{"lineHeight":"1.2"}}} -->
 
 1. Theatrical Episodes I & II
 2. A few stray episodes from _The Clone Wars_
@@ -179,18 +126,11 @@ _Must-see Rebels story arcs for selected characters (as much Ahsoka as possible)
 11. _Star Wars Resistance_: animated series leading up to Episode VII (I couldn't watch past the first season)
 12. Episodes VII-IX
 
-<!-- /wp:list -->
-
-<!-- wp:heading {"level":3} -->
 
 ### References
 
-<!-- /wp:heading -->
 
-<!-- wp:list -->
+* Chronological list of [Clone Wars episodes](https://www.starwars.com/news/star-wars-the-clone-wars-chronological-episodeorder)
+* [Wookieepedia](https://starwars.fandom.com/wiki/Main_Page)
 
-- Chronological list of [Clone Wars episodes](https://www.starwars.com/news/star-wars-the-clone-wars-chronological-episodeorder)
-- [Wookieepedia](https://starwars.fandom.com/wiki/Main_Page)
-
-<!-- /wp:list -->
 

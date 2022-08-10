@@ -1,13 +1,31 @@
 ---
 layout: page
 title: About
-permalink: /about/
-feature-img: "assets/img/pexels/travel.jpeg"
+date: 2016-07-30 05:57:05.000000000 -07:00
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+author:
+  login: nightmarebeforedevops
+  email: kbcontactxyz@gmail.com
+  display_name: karenb
+  first_name: Karen
+  last_name: Bruner
+permalink: "/about/"
+excerpt: This is just a short excerpt for the about page.
 ---
 
-Type on Strap is based on Type Theme, a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+Formerly known as "The Nightmare Before Devops."
 
-Head over to the [theme's documentation](https://github.io/sylhare/Type-on-Strap) for much more information about Type on Strap or to install this theme on your own Jekyll site.
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
- 
+Running In Production With Scissors is blog devoted to topics, experiences, and musings on the DevOps movement and related site reliability processes, engineering culture and practices, Kubernetes, security, and whatever else I end up wanting to talk about.
+
+
+Opinions expressed here are my own, unless someone else is smart enough to agree with me.
+
+

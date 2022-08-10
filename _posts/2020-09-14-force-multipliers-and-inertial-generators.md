@@ -13,9 +13,7 @@ tags:
 - engineering culture
 - force multipliers
 meta:
-  _thumbnail_id: '726'
   timeline_notification: '1600056174'
-  _publicize_job_id: '48794779657'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

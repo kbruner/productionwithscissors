@@ -82,6 +82,6 @@ When I worked for a record company, the systems engineering team was split betwe
 One bright winter's day in Los Angeles, I came into the office and was told the NYC servers were offline. "Uh, what happened?" It turns out that the skyscraper in Manhattan...
 
 
-_[to be continued...](https://productionwithscissors.run/2020/11/15/1001-3-insomniac-nights/)_
+_[to be continued...]({{ site.baseurl }}2020/11/15/1001-3-insomniac-nights/)_
 
 

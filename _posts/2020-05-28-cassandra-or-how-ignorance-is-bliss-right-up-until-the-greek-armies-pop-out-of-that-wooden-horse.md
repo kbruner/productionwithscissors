@@ -13,20 +13,6 @@ categories:
 tags:
 - site reliability
 meta:
-  _publicize_job_id: '44788500269'
-  timeline_notification: '1590656352'
-  _oembed_7c0823bf2891a051dd28c2849813f268: "{{unknown}}"
-  _oembed_3c987a0e3348bf86dc922baee27b7e21: '<div class="embed-slideshare"><iframe
-    title="Trust No 8 / Ne faisez pas confiance à 8" src="https://www.slideshare.net/slideshow/embed_code/key/oclNPr1nvKKa91"
-    width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
-    style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width:
-    100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a
-    href="https://www.slideshare.net/KarenBruner/trust-no-8-ne-faisez-pas-confiance-8"
-    title="Trust No 8 / Ne faisez pas confiance à 8" target="_blank">Trust No 8 /
-    Ne faisez pas confiance à 8</a> </strong> from <strong><a href="https://www.slideshare.net/KarenBruner"
-    target="_blank">KarenBruner</a></strong> </div></div>'
-  _oembed_time_3c987a0e3348bf86dc922baee27b7e21: '1594076576'
-  _last_editor_used_jetpack: block-editor
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
