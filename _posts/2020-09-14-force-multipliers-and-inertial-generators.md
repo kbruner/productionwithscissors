@@ -68,7 +68,7 @@ Hopefully we can all agree that this situation is just going to be a forever-sno
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/09/sketch1600048881806.png"
+src="{{ site.baseurl }}/assets/images/2020/09/sketch1600048881806.png"
 alt="Original process to claim a ticket: one click. Process after change: lots of clicks, scrolling, typing and cursing">
 <br>
 <center>
@@ -78,9 +78,6 @@ Process to claim a ticket: before and after
 </center>
 </div>
 <br>
-
-![Original process to claim a ticket: one click. Process after change: lots of clicks, scrolling, typing and cursing]({{ site.baseurl }}/assets/images/2020/09/sketch1600048881806.png?w=800)  
-
 
 
 I don't know if there's a popular or accepted term for the foil of a "force multiplier," but I'm going throw a few out there: inertia generator, force denier, effort black hole. Every engineering org has tools or processes which could benefit from an investment of time and effort to simplify their use and speed up tasks, of course. And well-managed, empowered organizations will have time to invest in their improvement, but every team has competing priorities, a to-do list, and a finite amount of resources. You want to try to divvy up the resources you have where they will provide the biggest bang for the buck. Sometimes those dividends are delivered purely in time or money (and time is money), but you need to keep an eye on other metrics that are not generally measured outright in any team (at least none that I've seen), but which are also critical indicators of how well an engineering team is functioning at a given moment.
@@ -96,7 +93,7 @@ There's a weird imbalance with changes that act as force multipliers, though. Th
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/09/sketch1600053072103.png"
+src="{{ site.baseurl }}/assets/images/2020/09/sketch1600053072103.png"
 alt="Fake graph showing net engineer frustration level over time based on whether the 'assign to me' button had previously existed and been removed (big red spike in frustration which never completely settles back to normal) vs had been added as new (small decrease in net frustration level which quickly reverts back to normal)">
 <br>
 <i><small>

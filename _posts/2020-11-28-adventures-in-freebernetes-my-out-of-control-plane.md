@@ -31,7 +31,7 @@ thumbnail: assets/images/2020/11/screenshot-2020-11-27-at-03.54.07-01.jpeg
 _Part 11 of experiments in FreeBSD and Kubernetes: Bootstrapping_ _the Kubernetes Control Plane_
 
 
-[_See all posts in this series_]({{ site.baseurl }}freebsd-virtualization-series/)
+[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
 
 
 #### Table of Contents
@@ -49,7 +49,7 @@ _Part 11 of experiments in FreeBSD and Kubernetes: Bootstrapping_ _the Kubernete
 ## Recap
 
 
-In [the previous post]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/) in this series, I created my Kubernetes cluster's [virtual machines]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#creating-instances), [the cluster certificates]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#generating-certificate-authority), and [client authentication files]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#generating-kubernetes-configuration-files), following the tutorial in [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way). I also set up an authoritative [DNS]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#rabbit-hole-1-dns) server to handle my local zone on the hypervisor, as well as creating firewall rules to [load balance]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#rabbit-hole-2-fake-load-balancing) across the three controller instances. Now I'm ready to bootstrap `etcd`.
+In [the previous post]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/) in this series, I created my Kubernetes cluster's [virtual machines]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#creating-instances), [the cluster certificates]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#generating-certificate-authority), and [client authentication files]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#generating-kubernetes-configuration-files), following the tutorial in [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way). I also set up an authoritative [DNS]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#rabbit-hole-1-dns) server to handle my local zone on the hypervisor, as well as creating firewall rules to [load balance]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#rabbit-hole-2-fake-load-balancing) across the three controller instances. Now I'm ready to bootstrap `etcd`.
 
 
 A few details for reference:
@@ -76,7 +76,7 @@ First off, I fire up tmux, create three panes, then google to figure out how to 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-27-at-02.27.58-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-27-at-02.27.58-01.jpeg"
 alt="Screen shot of my terminal with three tmux panes divided by lines of q">
 </div>
 <br>
@@ -85,7 +85,7 @@ alt="Screen shot of my terminal with three tmux panes divided by lines of q">
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-27-at-02.58.19-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-27-at-02.58.19-01.jpeg"
 alt="Screenshot of terminal with three tmux panes setting the IP and name variables on each controller VM">
 </div>
 <br>
@@ -97,7 +97,7 @@ And done.
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-27-at-03.54.07-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-27-at-03.54.07-01.jpeg"
 alt="Screenshot of 3 panes in tmux showing each controller has etcd running">
 </div>
 <br>
@@ -135,7 +135,7 @@ I ended up not setting up CARP for a few reasons:
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/sketch1606526054394-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/sketch1606526054394-01.jpeg"
 alt="Diagram of 3-way failover with CARP when each controllers sharing a different virtual IP address with each of the other two controllers">
 <br>
 <i><small>
@@ -158,7 +158,7 @@ After escaping from that rabbit hole, it's time to see if I set up the control p
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-27-at-15.10.16-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-27-at-15.10.16-01.jpeg"
 alt="Screen shot of shell with three tmux panes showing all three controllers are using an invalid certificate due to missing IP address">
 </div>
 <br>
@@ -182,7 +182,7 @@ I delete those files, restart `kube-apiserver` and as I expected, it regenerates
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-27-at-23.40.40-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-27-at-23.40.40-01.jpeg"
 alt="Screen shot of shell with tmux panes showing the kubectl command now works on all the controllers.">
 </div>
 <br>
@@ -197,7 +197,7 @@ I configure `kubelet` RBAC, skip the section on creating a load balancer in Goog
 
 * * *
 
-In the [next installment]({{ site.baseurl }}2020/12/01/adventures-in-freebernetes-tripping-to-the-finish-line/), I'll start off by bootstrapping the worker nodes and maybe finish building the cluster, depending, as always, on the number of rabbit holes I can't resist.
+In the [next installment]({{ site.baseurl }}/2020/12/01/adventures-in-freebernetes-tripping-to-the-finish-line/), I'll start off by bootstrapping the worker nodes and maybe finish building the cluster, depending, as always, on the number of rabbit holes I can't resist.
 
 
 ## Sources / References

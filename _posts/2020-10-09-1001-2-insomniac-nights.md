@@ -28,8 +28,8 @@ _Still more stories from the trenches_
 
 Previous insomniac nights:
 
-* [1001]({{ site.baseurl }}/2020/08/17/1001-insomniac-nights)
-* [1001 + 1]({{ site.baseurl }}/2020/08/29/1001-1-insomniac-nights)
+* [1001]({{ site.baseurl }}//2020/08/17/1001-insomniac-nights)
+* [1001 + 1]({{ site.baseurl }}//2020/08/29/1001-1-insomniac-nights)
 
 ## Bleeding Heart (cont)
 
@@ -82,6 +82,6 @@ When I worked for a record company, the systems engineering team was split betwe
 One bright winter's day in Los Angeles, I came into the office and was told the NYC servers were offline. "Uh, what happened?" It turns out that the skyscraper in Manhattan...
 
 
-_[to be continued...]({{ site.baseurl }}2020/11/15/1001-3-insomniac-nights/)_
+_[to be continued...]({{ site.baseurl }}/2020/11/15/1001-3-insomniac-nights/)_
 
 

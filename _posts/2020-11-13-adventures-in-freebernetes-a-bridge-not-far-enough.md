@@ -29,7 +29,7 @@ thumbnail: /assets/images/2020/11/screenshot-2020-11-11-at-22.01.30-01.jpeg
 _Part 6 of experiments in FreeBSD and Kubernetes: Automated VM installation with CBSD and falling down the network rabbit hole_
 
 
-[_See all posts in this series_]({{ site.baseurl }}freebsd-virtualization-series/)
+[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
 
 
 ## Automated CBSD VMs with Cloud-Init
@@ -43,7 +43,7 @@ I speed through `cbsd bconstruct-tui`, use all the defaults (except changing the
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-13-at-13.04.33-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-13-at-13.04.33-01.jpeg"
 alt="Screenshot of the cloud-init options menu in cbsd">
 <br>
 <i><small>
@@ -55,7 +55,7 @@ cloud-init options menu
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-11-at-22.01.30-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-11-at-22.01.30-01.jpeg"
 alt="Main cbsd bhyve menu with everything filled out">
 <br>
 <i><small>

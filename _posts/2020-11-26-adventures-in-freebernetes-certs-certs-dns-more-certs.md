@@ -30,7 +30,7 @@ excerpt: 'Part 10 of experiments in FreeBSD and Kubernetes: More Net Work Plus I
 _Part 10 of experiments in FreeBSD and Kubernetes: More Net Work Plus Initial Cluster Creation Tasks_
 
 
-[_See all posts in this series_]({{ site.baseurl }}freebsd-virtualization-series/)
+[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
 
 
 #### Table of Contents
@@ -49,7 +49,7 @@ _Part 10 of experiments in FreeBSD and Kubernetes: More Net Work Plus Initial Cl
 * [Sources / References](#sources-references)
 
 
-In [the previous post]({{ site.baseurl }}2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/) in this series, I had finished creating [a raw image of Ubuntu Server 20.04]({{ site.baseurl }}2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#great-image-bake-off-season-2) with cloud-init configured for use with CBSD to create `bhyve` virtual machines. I also [installed the tools]({{ site.baseurl }}2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#command-and-ctl) I would need to work through the [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) tutorials to create a Kubernetes cluster completely manually, and [I configured `ipfw`]({{ site.baseurl }}2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#nat-done-yet) on my FreeBSD hypervisor to act as a NAT (Network Address Translation service) so my VMs, which have their own private network, can still reach sites on the Internet. I will still have [a few details to work out]({{ site.baseurl }}2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#make-the-net-work), mainly around Kubernetes cluster networking, but I should be ready to start.
+In [the previous post]({{ site.baseurl }}/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/) in this series, I had finished creating [a raw image of Ubuntu Server 20.04]({{ site.baseurl }}/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#great-image-bake-off-season-2) with cloud-init configured for use with CBSD to create `bhyve` virtual machines. I also [installed the tools]({{ site.baseurl }}/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#command-and-ctl) I would need to work through the [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) tutorials to create a Kubernetes cluster completely manually, and [I configured `ipfw`]({{ site.baseurl }}/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#nat-done-yet) on my FreeBSD hypervisor to act as a NAT (Network Address Translation service) so my VMs, which have their own private network, can still reach sites on the Internet. I will still have [a few details to work out]({{ site.baseurl }}/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#make-the-net-work), mainly around Kubernetes cluster networking, but I should be ready to start.
 
 
 A few details for reference:
@@ -73,7 +73,7 @@ I've already done the relevant initial steps and skipped those that are specific
 ### Rabbit Hole #1: DNS
 
 
-I started creating VMs before I remembered one [network detail]({{ site.baseurl }}2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#make-the-net-work) I had punted in the previous post: hostname resolution. I could just do low-initial-friction-but-potentially-annoying-later-on solution of hardcoding the cluster members into `/etc/hosts` on all the VMs and the hypervisor, but that solution, while perfectly serviceable, would not be _the harder way_ of solving my resolution issues. Yes, I need to set up a DNS server locally on FreeBSD.
+I started creating VMs before I remembered one [network detail]({{ site.baseurl }}/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#make-the-net-work) I had punted in the previous post: hostname resolution. I could just do low-initial-friction-but-potentially-annoying-later-on solution of hardcoding the cluster members into `/etc/hosts` on all the VMs and the hypervisor, but that solution, while perfectly serviceable, would not be _the harder way_ of solving my resolution issues. Yes, I need to set up a DNS server locally on FreeBSD.
 
 
 FreeBSD offers the recursive-only server `Unbound` in its base system. However, I need an authoritative server for my `.local` domain. NSD (Name Server Daemon) can only operate as an authoritative server, so between the two, my DNS resolution problems would be solved. I install the `dns/nsd` port and start configuring.
@@ -138,7 +138,7 @@ This section is mostly pretty straightforward, other than replacing the `gcloud`
 ### Rabbit Hole #2: Fake Load Balancing
 
 
-However, when it comes time to generate the API server certificate, I need to supply the IP address for the endpoint, which, in the tutorial, is a Google Cloud load balancer. As I mentioned in [the previous post]({{ site.baseurl }}2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#make-the-net-work), I don't really want to run my own load balancer service for this experiment. I thought I could use FreeBSD's `carp(4)` module to simulate basic load balancer functionality, but it doesn't quite work that way.
+However, when it comes time to generate the API server certificate, I need to supply the IP address for the endpoint, which, in the tutorial, is a Google Cloud load balancer. As I mentioned in [the previous post]({{ site.baseurl }}/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/#make-the-net-work), I don't really want to run my own load balancer service for this experiment. I thought I could use FreeBSD's `carp(4)` module to simulate basic load balancer functionality, but it doesn't quite work that way.
 
 
 However, I _can_ use `ipfw(4)` module. I'm already using `ipfw` to handle Network Address Translation for my cluster network.
@@ -180,7 +180,7 @@ This section requires swapping the Linux standard `base64` command with FreeBSD'
 
 * * *
 
-Now that my cluster has all the certificates and other cluster authentication files, the [next post]({{ site.baseurl }}2020/11/28/adventures-in-freebernetes-my-out-of-control-plane/) will pick up at the next step: bootstrapping `etcd`.
+Now that my cluster has all the certificates and other cluster authentication files, the [next post]({{ site.baseurl }}/2020/11/28/adventures-in-freebernetes-my-out-of-control-plane/) will pick up at the next step: bootstrapping `etcd`.
 
 
 ## Sources / References

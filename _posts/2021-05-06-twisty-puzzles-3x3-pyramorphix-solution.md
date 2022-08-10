@@ -26,7 +26,7 @@ thumbnail: assets/images/2021/05/pxl_20210503_182455250-01.jpeg
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2021/05/20210505_170641.gif"
+src="{{ site.baseurl }}/assets/images/2021/05/20210505_170641.gif"
 alt="Animated gif of a tuxedo cat ignoring a hand rotating a solved kilomorphix puzzle in front of her face">
 <br>
 <i><small>
@@ -56,7 +56,7 @@ Many write-ups of the puzzle's mechanics already exist, so I will just quickly r
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2021/05/parts.jpg"
+src="{{ site.baseurl }}/assets/images/2021/05/parts.jpg"
 alt="Marked up photo of a logical side of the pyramorphix puzzle labeling the pieces">
 <br>
 <i><small>
@@ -96,7 +96,7 @@ This solution works to keep the centers in the same correct position after each 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2021/05/pxl_20210503_182444772-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2021/05/pxl_20210503_182444772-01.jpeg"
 alt="Photo of a scrambled pyramorphix twisty puzzle showing three red triangle sides of center pieces">
 <br>
 <i><small>
@@ -109,7 +109,7 @@ The red sides of three center pieces correctly placed and oriented. In the compl
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2021/05/pxl_20210503_182455250-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2021/05/pxl_20210503_182455250-01.jpeg"
 alt="Photo of an unsolved twisty puzzle showing three center-type pieces, blue/green, green/yellow, and yellow/blue, forming a triangle and pointing up in the same direction">
 <br>
 <i><small>
@@ -166,7 +166,7 @@ I'll use standard [NxNxN notation](https://www.speedsolving.com/wiki/index.php/N
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2021/05/pxl_20210505_235323492-1.jpg"
+src="{{ site.baseurl }}/assets/images/2021/05/pxl_20210505_235323492-1.jpg"
 alt="Marked up photo of the face of a pyramorphix showing the included pieces, which are numbered 1 (top-left), 2 (top center), 3 (top right), 4 (center left), 5 (center), 6 (center right), 7 (bottom left), 8 (bottom center), 9 (bottom right)">
 <br>
 <i><small>

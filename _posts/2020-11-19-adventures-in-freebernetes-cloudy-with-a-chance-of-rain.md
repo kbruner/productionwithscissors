@@ -28,7 +28,7 @@ thumbnail: assets/images/2020/11/img_20201118_133131.jpg
 _Part 8 of experiments in FreeBSD and Kubernetes: Building a Custom Cloud Image in CBSD_
 
 
-[_See all posts in this series_]({{ site.baseurl }}freebsd-virtualization-series/)
+[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
 
 
 #### Table of Contents
@@ -41,7 +41,7 @@ _Part 8 of experiments in FreeBSD and Kubernetes: Building a Custom Cloud Image 
 5. [Great Image Bake-Off Finals](#great-image-bake-off-finals)
 
 
-In [the previous post]({{ site.baseurl }}2020/11/17/adventures-in-freebernetes-bespoke-vms-in-cbsd/) in this series, I created a custom VM configuration so I could create Alpine Linux VMs in CBSD. That experiment went well. Next up was creating a cloud image for Alpine to allow completely automated configuration of the target VM. However, that plan hit some roadblocks and requires doing a deep dive into a new rabbit hole, documented in this post.
+In [the previous post]({{ site.baseurl }}/2020/11/17/adventures-in-freebernetes-bespoke-vms-in-cbsd/) in this series, I created a custom VM configuration so I could create Alpine Linux VMs in CBSD. That experiment went well. Next up was creating a cloud image for Alpine to allow completely automated configuration of the target VM. However, that plan hit some roadblocks and requires doing a deep dive into a new rabbit hole, documented in this post.
 
 
 * * *
@@ -99,7 +99,7 @@ And then I create the new VM using that profile.
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-17-at-18.57.11-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-17-at-18.57.11-01.jpeg"
 alt="Screenshot of CBSD Linux profile selections">
 </div>
 <br>
@@ -108,7 +108,7 @@ alt="Screenshot of CBSD Linux profile selections">
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-17-at-19.07.12-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-17-at-19.07.12-01.jpeg"
 alt="Screenshot of CBSD interface configuring our cloud Alpine VM">
 </div>
 <br>
@@ -162,7 +162,7 @@ It started without error! CBSD once again automatically handles importing the ra
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/img_20201118_133131.jpg"
+src="{{ site.baseurl }}/assets/images/2020/11/img_20201118_133131.jpg"
 alt="Screenshot of FreeBSD console showing a kernel panic">
 </div>
 <br>
@@ -177,7 +177,7 @@ But when the NUC rebooted, it brought up the `alpine2` VM without any obvious is
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-18-at-14.21.55.png"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-18-at-14.21.55.png"
 alt="Screenshot of VNC client showing the new VM successfully booted but did not get reconfigured">
 </div>
 <br>
@@ -192,7 +192,7 @@ But I'll worry about the panic problem later. First, I want to diagnose the clou
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-18-at-15.10.25.png"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-18-at-15.10.25.png"
 alt="Screenshot of console for alpine2 VM after running cloud-init manually">
 </div>
 <br>
@@ -201,7 +201,7 @@ alt="Screenshot of console for alpine2 VM after running cloud-init manually">
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-18-at-15.17.10.png"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-18-at-15.17.10.png"
 alt="Screenshot showing rc-status output with cloud-init set to manual">
 </div>
 <br>
@@ -246,7 +246,7 @@ Then I run `cbsd bconstruct-tui` again with the same settings (except for detail
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-18-at-16.35.42.png"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-18-at-16.35.42.png"
 alt="Screenshot of VM console showing a successful boot and cloud-init run">
 </div>
 <br>

@@ -53,7 +53,7 @@ We tried these three flavors together in person when I visited Dan and Ana.
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/07/20220716_141622.jpg"
+src="{{ site.baseurl }}/assets/images/2022/07/20220716_141622.jpg"
 alt="Photo of can of OLIPOP Banana Cream soda with a yellow cartoon minion waving from it. Behind are three glasses with various levels of a hazy, lemonade-colored liquid">
 <br>
 <i><small>
@@ -106,7 +106,7 @@ After I admit that I'd never seen of the Minion movies, Dan asks if I'm more lik
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/07/20220716_161522.jpg"
+src="{{ site.baseurl }}/assets/images/2022/07/20220716_161522.jpg"
 alt="Photo of can of OLIPOP Tropical Punch sparkling tonic in a sea blue can with stylized palm trees. Behind the car are three glasses with a yellow liquid">
 <br>
 <i><small>
@@ -158,7 +158,7 @@ Dan: It makes me want to try real Hawaiian Punch again
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/07/20220716_183601.jpg"
+src="{{ site.baseurl }}/assets/images/2022/07/20220716_183601.jpg"
 alt="Photo of can of OLIPOP Classic Grape sparkling tonic in a light purple can with a stylized cluster or purple grapes. Behind the car are three glasses with a ruby red liquid">
 <br>
 <i><small>
@@ -166,8 +166,6 @@ Ana really liked the ruby red color
 </small></i>
 </div>
 <br>
-
-
 
 
 ### Color

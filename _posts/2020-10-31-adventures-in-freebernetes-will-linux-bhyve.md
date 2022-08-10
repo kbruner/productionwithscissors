@@ -29,13 +29,13 @@ thumbnail: /assets/images/2020/10/screenshot-2020-10-30-at-21.59.40-01.jpeg
 _Part 3 of experiments in FreeBSD and Kubernetes: Linux guests_
 
 
-[_See all posts in this series_]({{ site.baseurl }}freebsd-virtualization-series/)
+[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
 
 
 ## Prep Work
 
 
-In the [previous post]({{ site.baseurl }}2020/10/29/adventures-in-freebernetes-bhyve-my-guest/), we started compiling the [`sysutils/grub2-bhyve`](https://svnweb.freebsd.org/ports/head/sysutils/grub2-bhyve/pkg-descr) port, required for running Linux guests with bhyve. We also need the ISO 9660 image for a Linux installer (I'm using [Arch Linux](https://www.archlinux.org/)).
+In the [previous post]({{ site.baseurl }}/2020/10/29/adventures-in-freebernetes-bhyve-my-guest/), we started compiling the [`sysutils/grub2-bhyve`](https://svnweb.freebsd.org/ports/head/sysutils/grub2-bhyve/pkg-descr) port, required for running Linux guests with bhyve. We also need the ISO 9660 image for a Linux installer (I'm using [Arch Linux](https://www.archlinux.org/)).
 
 `grub-bhyve` is the bhyve boot loader for Linux images. Just like we realized in the previous post that we needed to run `bhyveload` before we could run a FreeBSD guest, we need `grub-bhyve` so we can boot Linux guests.
 
@@ -124,7 +124,7 @@ That option only loads the kernel with the installer arguments. We still have to
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/10/screenshot-2020-10-30-at-21.59.40-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/10/screenshot-2020-10-30-at-21.59.40-01.jpeg"
 alt="Screen shot of the text-based Debian installer">
 </div>
 <br>
@@ -154,7 +154,7 @@ Anyway, I am now down the FreeBSD maintainers rabbit hole, so I will throw this 
 
 * * *
 
-[The next post in this series]({{ site.baseurl }}2020/11/05/adventures-in-freebernetes-more-linux-bhyve-iour-plus-cbsd/), as we work toward, yes, someday actually running Kubernetes on FreeBSD, will hopefully show a working Linux-with-ZFS-disk VM and then look at [CBSD](https://cbsd.io/), which helps manage your bhyve VMs.
+[The next post in this series]({{ site.baseurl }}/2020/11/05/adventures-in-freebernetes-more-linux-bhyve-iour-plus-cbsd/), as we work toward, yes, someday actually running Kubernetes on FreeBSD, will hopefully show a working Linux-with-ZFS-disk VM and then look at [CBSD](https://cbsd.io/), which helps manage your bhyve VMs.
 
 
 ## Sources / References

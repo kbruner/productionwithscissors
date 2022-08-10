@@ -26,7 +26,7 @@ _New name, same nightmares_
 
 <div align="center">
 <img 
-src="{{ site.baseurl }}assets/images/2020/08/sketch1596660776299-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/08/sketch1596660776299-01.jpeg"
 alt="Stick figure image of a person running with scissors into a computer and setting it on fire">
 <br>
 <i><small>

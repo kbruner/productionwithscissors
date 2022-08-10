@@ -61,7 +61,7 @@ Let's look at that.
 
 <div class="picrow">
 <div class="piccol">
-<img src="{{ site.baseurl }}assets/images/2020/07/512px-Snow_Canyon_4.JPG" alt="Photo of a red rock formations">
+<img src="{{ site.baseurl }}/assets/images/2020/07/512px-Snow_Canyon_4.JPG" alt="Photo of a red rock formations">
 <br>
 <center>
 <i><small>Snow Canyon, Utah</small></i><br>
@@ -69,7 +69,7 @@ Let's look at that.
 </center>
 </div>
 <div class="piccol">
-<img src="{{ site.baseurl }}assets/images/2020/07/512px-Naadam_rider_2.jpg" alt="Picture of a horse rider in a green field">
+<img src="{{ site.baseurl }}/assets/images/2020/07/512px-Naadam_rider_2.jpg" alt="Picture of a horse rider in a green field">
 <br>
 <center>
 <i><small>Mongolian Steppes</small></i><br>

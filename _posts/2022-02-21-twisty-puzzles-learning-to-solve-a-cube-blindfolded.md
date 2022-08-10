@@ -62,7 +62,7 @@ I use the [Old Pochmann](https://www.speedcubereview.com/blind-solving-algorithm
   * [Ja perm](https://www.speedsolving.com/wiki/index.php/PLL#J_Permutation_:_a) -- L U' R' U L' U2 R U' R' U2 R
   * [Jb perm](https://www.speedsolving.com/wiki/index.php/PLL#J_Permutation_:_b) -- L' U R U' L U2 R' U R U2 R'
 * Practice scramble -- R' F' Rw Uw' Rw' F2 R' U' Rw F R2 Fw' Rw' F' R
-  * ![Image of a scrambled speed cube]({{ site.baseurl }}/assets/images/2022/02/scramble.png)
+  * ![Image of a scrambled speed cube]({{ site.baseurl }}//assets/images/2022/02/scramble.png)
 * Terminology
   * Buffer piece -- the next piece to move into the correct, target position
 
@@ -80,7 +80,7 @@ I use this convention illustrated below. You can pick any lettering you like as 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/screenshot-2022-02-20-13.47.29-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2022/02/screenshot-2022-02-20-13.47.29-01.jpeg"
 alt="Image of flattened cube with each edge and corner lettered in order around each face">
 </small></i>
 </div>
@@ -90,7 +90,7 @@ alt="Image of flattened cube with each edge and corner lettered in order around 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/20220219_162739.jpg"
+src="{{ site.baseurl }}/assets/images/2022/02/20220219_162739.jpg"
 alt="Photo of two solved cubes, one with letter stickers on each piece">
 </div>
 <br>
@@ -132,18 +132,18 @@ You can solve the whole cube using just one algorithm, but I started by using T 
 <div class="picrow">
 <div class="piccol">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/tperm-edge.png"
+src="{{ site.baseurl }}/assets/images/2022/02/tperm-edge.png"
 alt="Image of puzzle cube showing the T permutation">
 </div>
 <div class="piccol">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/japerm-edge.png"
+src="{{ site.baseurl }}/assets/images/2022/02/japerm-edge.png"
 alt="Image of puzzle cube showing the Ja edge permutation">
 <br>
 </div>
 <div class="piccol">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/japerm-corner.png"
+src="{{ site.baseurl }}/assets/images/2022/02/japerm-corner.png"
 alt="Image of puzzle cube showing the Ja corner permutation">
 <br>
 </div>
@@ -190,7 +190,7 @@ The below images show the steps required to move the UR edge to FL. Remember, <m
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/wp-1645396347464.jpg"
+src="{{ site.baseurl }}/assets/images/2022/02/wp-1645396347464.jpg"
 alt="Photo of jumbled puzzle cube">
 <br>
 <i><small>
@@ -202,7 +202,7 @@ Starting position: UR ('H' edge piece) -> FL ('H' edge target)
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/wp-1645396347447.jpg"
+src="{{ site.baseurl }}/assets/images/2022/02/wp-1645396347447.jpg"
 alt="Photo of jumbled puzzle cube">
 <br>
 <i><small>
@@ -217,7 +217,7 @@ _Start to move 'R' from UR to FL_
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/wp-1645396347430.jpg"
+src="{{ site.baseurl }}/assets/images/2022/02/wp-1645396347430.jpg"
 alt="Photo of a scrambled speed cube">
 <br>
 <i><small>
@@ -229,7 +229,7 @@ Work T algorithm
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2022/02/wp-1645396347407.jpg"
+src="{{ site.baseurl }}/assets/images/2022/02/wp-1645396347407.jpg"
 alt="Photo of a scrambled speed cube">
 <br>
 <i><small>

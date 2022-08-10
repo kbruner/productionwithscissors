@@ -26,7 +26,7 @@ thumbnail: /assets/images/2020/10/sketch1603088565601-01.jpeg
 _You don't need 5 firewall devices for your 50-person office, but you do need to respect your engineers' time and expertise_
 
 
-##### _[tl;dr for Executives]({{ site.baseurl }}2020/10/21/oh-you-shouldnt-have/#what-execs-need-to-know)_
+##### _[tl;dr for Executives]({{ site.baseurl }}/2020/10/21/oh-you-shouldnt-have/#what-execs-need-to-know)_
 
 
 In the famous O. Henry story "The Gift of the Magi," a young couple with limited funds exchange Christmas gifts. The husband buys his wife a set of fancy combs for her beautiful long hair, while his wife gets him a platinum chain for his pocket watch. But irony! The wife has cut off and sold her long hair to a wig maker to pay for the watch chain, and the husband sold his pocket watch to purchase the hair combs.
@@ -48,7 +48,7 @@ Maybe this has happened to you: someone in upper management tells your team that
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/10/sketch1603088565601-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/10/sketch1603088565601-01.jpeg"
 alt="Engineer wearing cat t-shirt: We need a foofy-thing-to-whatchamadoodad adapter now & Sales person wearing a tie: We have 5 customers who want to sell us one of... what was that again?">
 <br>
 <i><small>

@@ -30,7 +30,7 @@ thumbnail: assets/images/2020/12/screenshot-2020-11-29-at-23.45.34-01.jpeg
 _Part 12 of experiments in FreeBSD and Kubernetes: Completing and testing the Kubernetes Cluster_
 
 
-[_See all posts in this series_]({{ site.baseurl }}freebsd-virtualization-series/)
+[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
 
 
 #### Table of Contents
@@ -52,7 +52,7 @@ _Part 12 of experiments in FreeBSD and Kubernetes: Completing and testing the Ku
 ## Recap
 
 
-In [the last post]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/), I bootstrapped my cluster's control plane, both the [etcd cluster]({{ site.baseurl }}2020/11/28/adventures-in-freebernetes-my-out-of-control-plane/#bootstrapping-etcd-cluster) and [Kubernetes components]({{ site.baseurl }}2020/11/28/adventures-in-freebernetes-my-out-of-control-plane/#bootstrapping-control-plane), following the tutorial in [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way). In this post, I will bootstrap the worker nodes, but first, I need to fix a few issues.
+In [the last post]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/), I bootstrapped my cluster's control plane, both the [etcd cluster]({{ site.baseurl }}/2020/11/28/adventures-in-freebernetes-my-out-of-control-plane/#bootstrapping-etcd-cluster) and [Kubernetes components]({{ site.baseurl }}/2020/11/28/adventures-in-freebernetes-my-out-of-control-plane/#bootstrapping-control-plane), following the tutorial in [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way). In this post, I will bootstrap the worker nodes, but first, I need to fix a few issues.
 
 
 A few details for reference:
@@ -77,7 +77,7 @@ A few details for reference:
 ### I Need This in a Larger Size
 
 
-First off, the disks on the controllers filled up. The bulk of the usage came from `etcd` data in `/var/lib/etcd`. [As I noted]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#creating-instances), I had only allocated 10Gb to each disk, because I don't have an infinite amount of storage on the NUC. However, I still have enough space on the hypervisor's disk to add space to each controller, especially because their virtual disks are ZFS clones of a snapshot base image. ZFS clones use copy-on-write (COW); they only consume disk space when a change is made on the cloned volume.
+First off, the disks on the controllers filled up. The bulk of the usage came from `etcd` data in `/var/lib/etcd`. [As I noted]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#creating-instances), I had only allocated 10Gb to each disk, because I don't have an infinite amount of storage on the NUC. However, I still have enough space on the hypervisor's disk to add space to each controller, especially because their virtual disks are ZFS clones of a snapshot base image. ZFS clones use copy-on-write (COW); they only consume disk space when a change is made on the cloned volume.
 
 
 However, as I also noted, using ZFS volumes and CBSD makes it pretty easy to increase the size of the guest VM's virtual disk.
@@ -121,12 +121,12 @@ Now that these issues are taken care, the control plane hosts should be stable a
 Most of this section is straightforward, other than updating IP addresses and ranges.
 
 
-When I [created the worker VMs]({{ site.baseurl }}2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#creating-instances), I added, through some hackery of CBSD's `cloud-init` data handling, a `pod_cidr` field to the instance metadata to configure each worker with its unique slice of the pod network. `cloud-init` puts the metadata in `/run/cloud-init/instance-data.json`. We need this value now to configure the CNI (Container Network Interface) plugin.
+When I [created the worker VMs]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/#creating-instances), I added, through some hackery of CBSD's `cloud-init` data handling, a `pod_cidr` field to the instance metadata to configure each worker with its unique slice of the pod network. `cloud-init` puts the metadata in `/run/cloud-init/instance-data.json`. We need this value now to configure the CNI (Container Network Interface) plugin.
 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/12/screenshot-2020-11-29-at-23.45.34-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/12/screenshot-2020-11-29-at-23.45.34-01.jpeg"
 alt="Screen shot of tmux showing the pod cidr value of worker nodes">
 <br>
 <i><small>

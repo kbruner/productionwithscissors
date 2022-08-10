@@ -29,7 +29,7 @@ _Code is lava. So is everything else._
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/08/ixion.gif"
+src="{{ site.baseurl }}/assets/images/2020/08/ixion.gif"
 alt="Animated gif of a stick figure on a rotating wheel on fire">
 </div>
 <br>

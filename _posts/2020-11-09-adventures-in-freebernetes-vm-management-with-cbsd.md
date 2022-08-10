@@ -29,10 +29,10 @@ thumbnail: /assets/images/2020/11/screenshot-2020-11-08-at-15.56.30.png
 _Part 5 of experiments in FreeBSD and Kubernetes: Getting started with CBSD_
 
 
-[_See all posts in this series_]({{ site.baseurl }}freebsd-virtualization-series/)
+[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
 
 
-[At the end of the previous post]({{ site.baseurl }}2020/11/05/adventures-in-freebernetes-more-linux-bhyve-iour-plus-cbsd/), I had finally finished installing CBSD and its dependencies and configuration.
+[At the end of the previous post]({{ site.baseurl }}/2020/11/05/adventures-in-freebernetes-more-linux-bhyve-iour-plus-cbsd/), I had finally finished installing CBSD and its dependencies and configuration.
 
 
 ## Doing Stuff with CBSD
@@ -43,7 +43,7 @@ There are a bunch of [video tutorials](https://cbsd.io/cbsd/tutorials/tutorials-
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-05-at-08.55.48-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-05-at-08.55.48-01.jpeg"
 alt="Screen shot of CBSD's text-based user interface showing menu options for creating a new bhyve virtual machine">
 <br>
 <i><small>
@@ -58,7 +58,7 @@ Other than choosing a `jname` of `freebsd1`, I keep all the defaults, and tell i
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-06-at-15.16.42-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-06-at-15.16.42-01.jpeg"
 alt="Screenshot of shell output after telling cbsd to create my VM immediately, with commands for interacting with the VM">
 </div>
 <br>
@@ -76,7 +76,7 @@ Oh, wait, I could use my Chromebook's VNC app if the VNC port was bound to a rou
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-07-at-22.41.36.png"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-07-at-22.41.36.png"
 alt="VNC desktop image of FreeBSD LiveCD menu">
 <br>
 <i><small>
@@ -92,14 +92,14 @@ I select "Install" and let it go. After rebooting, all is copacetic.
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-07-at-23.21.27.png"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-07-at-23.21.27.png"
 alt="Screenshot of VNC app showing FreeBSD VM console after successful boot">
 </div>
 <br>
 
 
 
-With CBSD, we get a FreeBSD bhyve guest with a ZFS-backed virtual disk and VNC desktop with just a few commands. Compare that to [my first experiment]({{ site.baseurl }}2020/10/29/adventures-in-freebernetes-bhyve-my-guest/) with manual bhyve VM creation, when I had to create the virtual network interfaces manually, create my disk file, download the FreeBSD ISO disk image, keep track of the virtual device files, and execute separate load and boot commands each time to bring up the VM.
+With CBSD, we get a FreeBSD bhyve guest with a ZFS-backed virtual disk and VNC desktop with just a few commands. Compare that to [my first experiment]({{ site.baseurl }}/2020/10/29/adventures-in-freebernetes-bhyve-my-guest/) with manual bhyve VM creation, when I had to create the virtual network interfaces manually, create my disk file, download the FreeBSD ISO disk image, keep track of the virtual device files, and execute separate load and boot commands each time to bring up the VM.
 
 
 ## Doing Linux Stuff with CBSD
@@ -110,7 +110,7 @@ Ok, a FreeBSD guest was pretty simple. What about Linux? Arch Linux was the firs
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-07-at-23.29.21-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-07-at-23.29.21-01.jpeg"
 alt="Screenshot of CBSD installer OS selector menu">
 </div>
 <br>
@@ -119,7 +119,7 @@ alt="Screenshot of CBSD installer OS selector menu">
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-07-at-23.29.55-01.jpeg"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-07-at-23.29.55-01.jpeg"
 alt="Screenshot of CBSD installer supported Linux distributions">
 </div>
 <br>
@@ -155,19 +155,19 @@ alt="">
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-08-at-14.47.12.png"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-08-at-14.47.12.png"
 alt="Screen shot of VNC client showing ArchLinux installer shell">
 </div>
 <br>
 
 
 
-I follow [the same installation steps]({{ site.baseurl }}2020/10/31/adventures-in-freebernetes-will-linux-bhyve/) as earlier. (One difference: the ZFS disk shows up as `/dev/sda`). I reboot and voila.
+I follow [the same installation steps]({{ site.baseurl }}/2020/10/31/adventures-in-freebernetes-will-linux-bhyve/) as earlier. (One difference: the ZFS disk shows up as `/dev/sda`). I reboot and voila.
 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}assets/images/2020/11/screenshot-2020-11-08-at-15.56.30.png"
+src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-08-at-15.56.30.png"
 alt="Screen shot of VNC client showing rebooted ArchLinux VM console">
 </div>
 <br>
@@ -200,7 +200,7 @@ And my new VM boots right up!
 
 * * *
 
-In [the next part]({{ site.baseurl }}2020/11/13/adventures-in-freebernetes-a-bridge-not-far-enough/) of this series, we will look at more options with CBSD, including configuring a custom VM profile.
+In [the next part]({{ site.baseurl }}/2020/11/13/adventures-in-freebernetes-a-bridge-not-far-enough/) of this series, we will look at more options with CBSD, including configuring a custom VM profile.
 
 
 ## Sources / References
