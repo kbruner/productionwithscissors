@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "/productionwithscissors/"
+baseurl: "/"
 url: "http://localhost:4000"
 
 # THEME-SPECIFIC CONFIGURATION
