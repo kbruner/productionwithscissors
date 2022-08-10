@@ -46,7 +46,7 @@ With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming se
 ### _The Clone Wars_
 
 | Season . Episodes(s) | Featured Characters | Importance | Notes |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | Movie | **Ahsoka** , Asajj | **High** | Introduces Ahsoka as Anakin Skywalker's new padawan, Introduces villain Asajj Ventress |
 | 1.2-4 | **Ahsoka** | Medium | Fills in Ahsoka's background and explains her character; Ahsoka is only a major character in 1.2 and 1.3 |
 | 1.9-10 | **Ahsoka, Asajj** | Medium | Ahsoka and Asajj are only major characters in episode 1.9 |
@@ -78,6 +78,7 @@ With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming se
 | 6.10-13 | Yoda | Low | Not vital, but shows origins of an important piece of Jedi mythology |
 | 7.5-8 | **Ahsoka** , Bo-Katan, Maul | **High** | Bo-Katan and Maul briefly appear in episodes 7-8 |
 | 7.9-12 | **Ahsoka, Maul, Bo-Katan, Mandalore** | **Highest** | The final gut-punch episodes. Also, Maul still really hates Kenobi |
+
 <center><small><i>Must-see The Clone Wars story arcs for selected characters (Ahsoka, it's all Ahsoka)</i></small></center>
 
 ### _Rebels_
@@ -96,6 +97,7 @@ With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming se
 | 3.20 | **Maul** | **High** | And Maul just still really hates Kenobi |
 | 4.1-2 | **Mandalore, Bo-Katan, Darksaber** | **High** | |
 | 4.15-16 | **Ahsoka** | **High** | |
+
 <center><small><i>Must-see Rebels story arcs for selected characters (as much Ahsoka as possible)</i></small></center>
 
 ## Viewing chronology
