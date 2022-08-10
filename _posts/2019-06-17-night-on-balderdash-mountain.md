@@ -13,11 +13,6 @@ tags:
 - code smell
 - devops
 meta:
-  _rest_api_client_id: '2697'
-  _rest_api_published: '1'
-  _edit_last: '108235749'
-  _publicize_job_id: '31905002314'
-  timeline_notification: '1560756296'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

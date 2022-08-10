@@ -13,9 +13,6 @@ tags:
 - devops
 - on-call
 meta:
-  _rest_api_published: '1'
-  _rest_api_client_id: "-1"
-  _publicize_job_id: '9848600522'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
@@ -25,6 +22,7 @@ author:
 permalink: "/2017/10/01/dont-fear-the-beeper/"
 excerpt: You shouldn't have to be afraid of being on-call
 ---
+
 In one of Aesop's fables, a shepherd boy gets his jollies by raising the alarm that a wolf is threatening the herd to trick the villagers to run out to offer protection, only to find they'd been tricked. After the boy had pulled his prank a few times, a wolf really does come to threaten the sheep, but by now, the villagers no longer believe the boy's cries of "Wolf!" and the herd, and in some variants, the boy, are consumed by the predator.
 
 Any engineer who has spent any amount of time in an on-call rotation that invariably bombards them with constant alerts, particularly when a sizable number of those are either invalid or not really critical, has probably also been tempted to risk letting a wolf eat the bratty shepherd boy.  This "pager fatigue" gets compounded when the same issues arise time after time and never get fixed at the root cause level, and the engineer feels powerless to improve the situation over time. When the on-call rotation is 24 hours, with alerts coming any time of day or night, the physical effects of sleep interruption and deprivation can quickly compound the psychological issues.

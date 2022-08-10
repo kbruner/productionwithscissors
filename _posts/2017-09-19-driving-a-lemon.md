@@ -24,6 +24,7 @@ author:
 permalink: "/2017/09/19/driving-a-lemon/"
 excerpt: Services can be lemons, too
 ---
+
 There's a popular urban myth known as "The Killer in the Backseat." The most common variations of the story involve a lone driver, almost always a woman, on a deserted backroad at night. Another vehicle, usually some sort of truck, is following her, flashing its lights, trying to pass her, or even trying to ram her. The car's driver naturally panics and tries to evade the truck, but ultimately either gets pushed off the road or finds a gas station to pull into. The truck's driver then runs up to the window to tell her there's a threatening stranger in the backseat of her car. She had been mistaken about the true threat all along, instead fearing the person who was trying to help her.`
 
 A more realistic automobile fear may be of buying a lemon, a car, usually used, that just ends up having either a series of non-stop issues or one major issue that never quite gets fixed. (My mother ended up with a lemon once; a Buick with a sticky gas pedal. You would be at a stop, then gradually press the gas to start moving, and nothing would happen. If you kept pressing the gas, it would eventually engage and then lurch forward, like it suddenly applied the amount of gas that it should have been ramping up to as the pedal was pushing down. Apparently neither my father nor the mechanic could replicate the behavior, which, granted, didn't happen all the time, but when I came to visit and borrowed the car, it happened to me, too.)

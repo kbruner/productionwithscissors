@@ -11,7 +11,6 @@ categories:
 - Running With Scissors
 tags: []
 meta:
-  timeline_notification: '1596661095'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
@@ -42,5 +41,4 @@ Also, the nightmares continue.
 
 
 And the new .run TLD makes the domain name its own little programming joke.
-
 

@@ -13,7 +13,6 @@ tags:
 - architecture
 - engineering culture
 meta:
-  timeline_notification: '1598487355'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
@@ -60,7 +59,6 @@ Depending on the type of software and what your specific use case is, you may ha
 
 ### Common Traits
 
-
 Pros:
 
 * You're paying them money so they have at least some incentive to keep you happy
@@ -75,9 +73,7 @@ Cons:
 * If their software has a bug, you have to wait for them to fix it
 * If you want a feature that does not exist, they have to first agree to implement it (rather than shoot it down or lead you on, most likely the latter. "It's on our roadmap" is product manager speak for "Don't hold your breath") and then _actually implement and ship it._ And there's nothing you can do to speed that along (unless you're a really, really big customer) or even get a realistic idea of if and when it will ship. Until then, you're left to create your own workaround or glue code, and by the time they do actually ship the feature, it may be _more_ work to pull out your workaround so you can use their solution.
 
-
 ### Proprietary On-prem Software
-
 
 Pros:
 
@@ -88,9 +84,7 @@ Cons:
 * You still have to manage deploying, configuring, and upgrading the software
 * You still have to allocate, manage, and pay for the compute and other infrastructure resources it requires
 
-
 ### SaaS
-
 
 Pros:
 
@@ -103,7 +97,6 @@ Cons:
 
 ### Platform-as-a-Service / Managed Services
 
-
 Pros:
 
 - They're managing the physical infrastructure so you don't have to
@@ -111,7 +104,6 @@ Pros:
 Cons:
 
 - You must manage cloud and service configuration as needed
-
 
 * * *
 

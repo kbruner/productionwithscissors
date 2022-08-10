@@ -12,11 +12,6 @@ categories:
 tags:
 - devops
 meta:
-  _rest_api_published: '1'
-  _rest_api_client_id: '2697'
-  timeline_notification: '1567670740'
-  _publicize_job_id: '34953431336'
-  _edit_last: '108235749'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

@@ -15,9 +15,6 @@ tags:
 - engineering fails
 - root cause analysis
 meta:
-  _edit_last: '108235749'
-  timeline_notification: '1579782246'
-  _publicize_job_id: '39864564710'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

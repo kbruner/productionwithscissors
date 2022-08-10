@@ -13,10 +13,6 @@ tags:
 - devops
 - worst practices
 meta:
-  _edit_last: '108235749'
-  _rest_api_published: '1'
-  _rest_api_client_id: "-1"
-  _publicize_job_id: '9186732469'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

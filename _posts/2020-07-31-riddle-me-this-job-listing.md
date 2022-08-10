@@ -14,7 +14,6 @@ tags:
 - hiring
 - job search
 meta:
-  timeline_notification: '1596170932'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com
@@ -41,6 +40,7 @@ Answer: An SRE crawling out of bed to get their laptop after getting paged at 3A
 
 I've been on both sides of SRE job postings and I'm actively in the middle of a job search now, so I've got a lot of opinions about what SRE job descriptions should and should not look like. The list comes from efforts trying to encourage diversity of applicants, to optimize for both my time and the potential candidate/employer, and not to be a total asshole to job seekers.
 
+<a id="best-practices"/>
 ## Karen's List of Best Practices for SRE Job Postings
 
 ### 1. State the Opening's Level

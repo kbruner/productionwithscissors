@@ -23,12 +23,9 @@ excerpt: It's all about Ahsoka
 
 Way back in 2020, immediately prior to the release of _The Mandalorian_ season 2, I put together a list of essential episodes from the animated series _The Clone Wars_ and _Rebels_, focusing mainly on Ahsoka Tano and on the history of Mandalore and the Darksaber. I shoved that into a Google Doc that I shared around to prep people who had never watched the animated series _The Clone Wars_ and _Rebels_ with a quickstart guide for characters making their live-action debut in _The Mandalorian_.
 
-
 With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming series, apparently one each for just about every character in the Star Wars universe, I've updated the list with a few more characters.
 
-
 ### A few notes
-
 
 * This list contains episodes which I personally think are important or interesting. Other people who have also sat through a bajillion hours of these shows and movies are entitled to make their own lists.
 * For table entries with multiple episodes, the episodes comprise a story arc.
@@ -46,9 +43,7 @@ With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming se
 * _Bad Batch_ season 1 features many supporting characters we've seen in other series. I haven't added any of them here, although that may change.
 * _Rebels_ has a more linear, self-contained storyline. You can watch the whole thing or not. Warning: Ezra Bridger is just so ducking annoying.
 
-
 ### _The Clone Wars_
-
 
 | Season . Episodes(s) | Featured Characters | Importance | Notes |
 | --- | --- | --- | --- | --- |
@@ -85,7 +80,6 @@ With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming se
 | 7.9-12 | **Ahsoka, Maul, Bo-Katan, Mandalore** | **Highest** | The final gut-punch episodes. Also, Maul still really hates Kenobi |
 <center><small><i>Must-see The Clone Wars story arcs for selected characters (Ahsoka, it's all Ahsoka)</i></small></center>
 
-
 ### _Rebels_
 
 | Season . Episode(s) | Featured Characters | Importance | Notes |
@@ -104,9 +98,7 @@ With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming se
 | 4.15-16 | **Ahsoka** | **High** | |
 <center><small><i>Must-see Rebels story arcs for selected characters (as much Ahsoka as possible)</i></small></center>
 
-
 ## Viewing chronology
-
 
 1. Theatrical Episodes I & II
 2. A few stray episodes from _The Clone Wars_
@@ -126,9 +118,7 @@ With the release of _The Book of Boba Fett_ and the Disney+ slate of upcoming se
 11. _Star Wars Resistance_: animated series leading up to Episode VII (I couldn't watch past the first season)
 12. Episodes VII-IX
 
-
 ### References
-
 
 * Chronological list of [Clone Wars episodes](https://www.starwars.com/news/star-wars-the-clone-wars-chronological-episodeorder)
 * [Wookieepedia](https://starwars.fandom.com/wiki/Main_Page)

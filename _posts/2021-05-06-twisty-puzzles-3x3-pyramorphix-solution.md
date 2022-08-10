@@ -36,12 +36,9 @@ George was unimpressed the first time I solved the puzzle
 <br>
 
 
-
 I've recently taken up twisty puzzles for a pandemic hobby. I've been tinkering quite a bit with the 3x3 pyramorphix, so I thought I'd write up the way I finally figured out how to solve it reliably. My method won't win any speed solving contests but it works.
 
-
 Many write-ups of the puzzle's mechanics already exist, so I will just quickly recap:
-
 
 * The puzzle has many similarities to a standard 3x3x3 cube, including some of the same basic algorithms
 * Those things that look like edges are actually faces 
@@ -51,7 +48,6 @@ Many write-ups of the puzzle's mechanics already exist, so I will just quickly r
 * Center orientation matters, unlike standard cubes
 * Centers aren't fixed relative to each other, unlike standard cubes
 * Edges can be rotated 180° so they stick out of the plane of the surface like fan blades
-
 
 
 <div align="center">
@@ -67,9 +63,7 @@ Ceci n'est pas un cube?
 
 
 
-
 ## Solution Steps
-
 
 1. Position centers
 2. Position edges
@@ -78,21 +72,15 @@ Ceci n'est pas un cube?
 5. Rotate (align) tri-color corners
 6. Rotate (align) flipped centers
 
-
 ### Position Centers
-
 
 I don't have algorithms for this step.
 
-
 I get my centers into the right relative position first. For example, the solved puzzle has a flat blue "side" around the flat blue triangle center piece. That means 3 centers which are half-red will circle around the flat red center piece.
-
 
 The corner opposite ("down" face) the flat triangle side will be the blue/green/yellow corner. It will be surrounded by the blue/yellow, yellow/green, and green/blue centers.
 
-
 This solution works to keep the centers in the same correct position after each sequence and center pieces' corners "pointing" in the correct direction.
-
 
 <div align="center">
 <img
@@ -106,7 +94,6 @@ The red sides of three center pieces correctly placed and oriented. In the compl
 <br>
 
 
-
 <div align="center">
 <img
 src="{{ site.baseurl }}/assets/images/2021/05/pxl_20210503_182455250-01.jpeg"
@@ -118,51 +105,35 @@ On the opposite side, the blue/green, green/yellow, and yellow/blue corner piece
 </div>
 <br>
 
-
 **Important** : After each sequence, make sure the color alignment of the center is NOT flipped 90°. I found an algo for flipping centers 180° non-destructively, but none for rotating a single center 90° without changing other pieces.
-
 
 ### Position Edges
 
-
 You can position these around the centers intuitively, or you can use the algorithms in the table below to permute edges (in groups of 3). (Hint: they're PLL algorithms used for rotating 3 edges for 3x3 cubes). These algorithms flip the centers 180° and swap corners, so we apply them first.
-
 
 Note: Don't worry if an edge is flipped.
 
-
 ### Position Corners
-
 
 See the algorithms below, which permute corners around a shared center in groups of three. You may need to apply them several times.
 
-
 Note: Don't worry if a corner's colors are rotated.
-
 
 ### Rotate Twisted Edges
 
-
 Twisted edges come in pairs (unless I'm missing something or someone modified your puzzle). The algorithm below expects a pair of twisted edges to be across a shared center, so you may have to perform one or two moves to pair them, perform the algorithm, then revert the temporary moves.
-
 
 ### Rotate Corners
 
-
 One algorithm will rotate both the corner in position 3 120° clockwise AND the corner in position 9 120° counterclockwise at the same time. Since one of these corners will be a solid flat corner if the pieces are all in their correct positions, this should not cause any problems.
-
 
 ### Rotate Centers
 
-
 If you've kept the centers in the correct positions and aligned, you may have some which are flipped, but none that are rotated only 90°. You can use the algorithm below to unflip each center that is rotated 180°.
-
 
 ## Algorithms
 
-
 I'll use standard [NxNxN notation](https://www.speedsolving.com/wiki/index.php/NxNxN_Notation) and all the algorithms below use the "up" face for the working face, using the piece position numbering shown above, where the "front" face is the one sharing pieces 7,8,9. For example, to use an algorithm that rotates the corner #3 in place, you'll hold the puzzle so the corner you want to modify is in position 3 on the "up" face.
-
 
 <div align="center">
 <img
@@ -174,7 +145,6 @@ Position numbers for the "up" face pieces used in the table below
 </small></i>
 </div>
 <br>
-
 
 
 | Change | Algorithm | Side effects |
@@ -191,9 +161,7 @@ Position numbers for the "up" face pieces used in the table below
 <center><small><i>Algorithms used in this method</i></small></center>
 <br>
 
-
 ## References
-
 
 * [http://www.multiwingspan.co.uk/puzzle.php?solution=mastermorphix](http://www.multiwingspan.co.uk/puzzle.php?solution=mastermorphix)
 * [https://www.speedsolving.com/wiki/index.php/Master\_Pyramorphix](https://www.speedsolving.com/wiki/index.php/Master_Pyramorphix)
