@@ -155,7 +155,7 @@ With that list of tasks done, I should be ready to start creating my Kubernetes 
 * [https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html](https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html)
 * [https://cloudinit.readthedocs.io/en/latest/topics/examples.html](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
 * [https://github.com/kelseyhightower/kubernetes-the-hard-way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
-* [https://www.bsdstore.ru/en/12.x/wf\_bcreate\_ssi.html](https://www.bsdstore.ru/en/12.x/wf_bcreate_ssi.html)
+* [https://www.bsdstore.ru/en/12.x/wf_bcreate_ssi.html](https://www.bsdstore.ru/en/12.x/wf_bcreate_ssi.html)
 * [https://www.freebsd.org/doc/handbook/carp.html](https://www.freebsd.org/doc/handbook/carp.html)
 * [https://www.freebsd.org/doc/handbook/firewalls-ipfw.html](https://www.freebsd.org/doc/handbook/firewalls-ipfw.html)
 

@@ -124,7 +124,7 @@ Here is the full list of required packages, including the versions, with the `po
   * `CBSD` 12.2.4 (`sysutils`)
   * `nsd` 4.3.4 (`dns`)
 * Misc tools
-  * `wget` 1.20.3\_1 (`ftp`)
+  * `wget` 1.20.3_1 (`ftp`)
 
 
 <!--nextpage-->  

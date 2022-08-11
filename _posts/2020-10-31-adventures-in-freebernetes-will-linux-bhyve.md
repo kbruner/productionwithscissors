@@ -121,6 +121,6 @@ Anyway, I am now down the FreeBSD maintainers rabbit hole, so I will throw this 
 
 ## Sources / References
 
-* [https://wiki.archlinux.org/index.php/installation\_guide](https://wiki.archlinux.org/index.php/installation_guide)
+* [https://wiki.archlinux.org/index.php/installation_guide](https://wiki.archlinux.org/index.php/installation_guide)
 * [https://www.freebsd.org/doc/handbook/virtualization-host-bhyve.html](https://www.freebsd.org/doc/handbook/virtualization-host-bhyve.html)
 

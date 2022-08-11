@@ -120,6 +120,6 @@ OK FINE. In the next part, I will actually create an image to create and configu
 
 - [https://alpinelinux.org/](https://alpinelinux.org/)
 - [https://wiki.alpinelinux.org/wiki/Installation](https://wiki.alpinelinux.org/wiki/Installation)
-- [https://www.bsdstore.ru/en/11.2.x/wf\_bcreate\_ssi.html](https://www.bsdstore.ru/en/11.2.x/wf_bcreate_ssi.html)
+- [https://www.bsdstore.ru/en/11.2.x/wf_bcreate_ssi.html](https://www.bsdstore.ru/en/11.2.x/wf_bcreate_ssi.html)
 
 

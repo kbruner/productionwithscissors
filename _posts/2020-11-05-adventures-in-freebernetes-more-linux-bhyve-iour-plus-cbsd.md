@@ -121,5 +121,5 @@ Yes, I need to find a better terminal type for these menus in my Chrome OS Linux
 
 * [https://cbsd.io/](https://cbsd.io/)
 * [https://cbsd.io/cbsd/docs/Quick-start/](https://cbsd.io/cbsd/docs/Quick-start/ )
-* [https://www.freebsd.org/doc/en\_US.ISO8859-1/books/handbook/virtualization-host-bhyve.html](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/virtualization-host-bhyve.html)
+* [https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/virtualization-host-bhyve.html](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/virtualization-host-bhyve.html)
 

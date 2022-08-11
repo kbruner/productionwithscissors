@@ -227,12 +227,12 @@ In this example, we just need to use the A* permutations twice to position the c
 ## References
 
 
-* <https://www.reddit.com/r/Cubers/comments/3y7q36/megamorphix\_help\_please/>
-* <https://www.speedsolving.com/wiki/index.php/4x4x4\_parity\_algorithms>
-* <https://www.speedsolving.com/wiki/index.php/CFOP\_method>
+* <https://www.reddit.com/r/Cubers/comments/3y7q36/megamorphix_help_please/>
+* <https://www.speedsolving.com/wiki/index.php/4x4x4_parity_algorithms>
+* <https://www.speedsolving.com/wiki/index.php/CFOP_method>
 * <https://www.speedsolving.com/wiki/index.php/Commutator>
-* <https://www.speedsolving.com/wiki/index.php/NxNxN\_Notation>
-* <https://www.speedsolving.com/wiki/index.php/Reduction\_Method>
+* <https://www.speedsolving.com/wiki/index.php/NxNxN_Notation>
+* <https://www.speedsolving.com/wiki/index.php/Reduction_Method>
 * <https://youtu.be/8KzCzqmHk88>
 
 

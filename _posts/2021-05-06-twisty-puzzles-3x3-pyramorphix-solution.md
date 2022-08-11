@@ -164,6 +164,6 @@ Position numbers for the "up" face pieces used in the table below
 ## References
 
 * [http://www.multiwingspan.co.uk/puzzle.php?solution=mastermorphix](http://www.multiwingspan.co.uk/puzzle.php?solution=mastermorphix)
-* [https://www.speedsolving.com/wiki/index.php/Master\_Pyramorphix](https://www.speedsolving.com/wiki/index.php/Master_Pyramorphix)
+* [https://www.speedsolving.com/wiki/index.php/Master_Pyramorphix](https://www.speedsolving.com/wiki/index.php/Master_Pyramorphix)
 
 

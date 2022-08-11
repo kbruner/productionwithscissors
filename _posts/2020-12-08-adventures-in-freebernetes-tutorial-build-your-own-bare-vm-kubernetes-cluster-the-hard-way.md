@@ -118,7 +118,7 @@ Here is the full list of required packages, including the versions, with the `po
 * [`kubectl` 1.19.4](https://svnweb.freebsd.org/ports/head/sysutils/kubectl) (`sysutils`)
 * [`nsd` 4.3.3](https://svnweb.freebsd.org/ports/head/dns/nsd) (`dns`)
 * [`tmux` 3.1c](https://svnweb.freebsd.org/ports/head/sysutils/tmux) (`sysutils`)
-* [`wget` 1.20.3\_1](https://svnweb.freebsd.org/ports/head/ftp/wget) (`ftp`)
+* [`wget` 1.20.3_1](https://svnweb.freebsd.org/ports/head/ftp/wget) (`ftp`)
 
 <!--nextpage-->  
 

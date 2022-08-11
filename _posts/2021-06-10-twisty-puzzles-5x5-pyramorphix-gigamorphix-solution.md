@@ -97,6 +97,6 @@ If you have one last unsolved edge with the top and bottom swapped, you can just
 ## References
 
 * <https://www.speedsolving.com/wiki/index.php/Commutator>
-* <https://www.speedsolving.com/wiki/index.php/NxNxN\_Notation>
-* <https://www.speedsolving.com/wiki/index.php/Reduction\_Method>
+* <https://www.speedsolving.com/wiki/index.php/NxNxN_Notation>
+* <https://www.speedsolving.com/wiki/index.php/Reduction_Method>
 
