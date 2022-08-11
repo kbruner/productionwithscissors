@@ -29,7 +29,7 @@ _Stop torturing SREs with Agile processes that don't fit_
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/09/sketch1601445033757-01.jpeg"
+src="/assets/images/2020/09/sketch1601445033757-01.jpeg"
 alt="SREs with torches and pitchforks coming for the scrum board with an infinite to-do list and nothing completed">
 <br>
 <i><small>
@@ -38,7 +38,7 @@ SREs coming for the scrum board from hell
 </div>
 <br>
 
-When I recently wrote about [when Agile isn't]({{ site.baseurl }}/2020/09/23/agile-inferno/), I mentioned how making Site Reliability Engineers follow Agile can be like trying to shove a square peg in a round hole. This post describes major issues I've seen and heard of in many engineering organizations that can come from trying to force your SRE teams to conform to your product software development schedules and processes.
+When I recently wrote about [when Agile isn't](/2020/09/23/agile-inferno/), I mentioned how making Site Reliability Engineers follow Agile can be like trying to shove a square peg in a round hole. This post describes major issues I've seen and heard of in many engineering organizations that can come from trying to force your SRE teams to conform to your product software development schedules and processes.
 
 I will note that every company does SRE differently, and even within companies, especially large ones, the experience can vary. (Expect future posts on the different idiosyncrasies of SRE teams.)
 
@@ -52,15 +52,15 @@ A lot of people assume this non-stop firefighting pattern only happens in smalle
 
 _Ask yourself_
 
-- _Who gets woken up when code breaks in production? The people who wrote it or someone else (your SREs)?_
+* _Who gets woken up when code breaks in production? The people who wrote it or someone else (your SREs)?_
 
 If you are not paging the people who wrote the errant code, you are both expecting someone who is less familiar and less likely to be able to fix it to respond to the issue **and** you're not creating enough incentive for the code authors to write better code that is less likely to wake someone up at 3AM in the first place. (Before you say, "but I can't wake up my SWEs, they're too important," their sleep is not more important than your SRE's sleep. That's some broken, antiquated, whipping-boy logic to think otherwise right there.)
 
-- _Why do we constantly have fires in production?_
+* _Why do we constantly have fires in production?_
 
 Aside from not providing commonsense feedback loops to motivate writing and pushing more stable code, my next guess: you seem to be using your SRE team as a reactive response team rather than a proactive tool for building reliable, resilient systems. You likely also have a great deal of technical debt which is just collecting interest in the form of downtime, missed deadlines, and, oh, yes, disrupted SRE sleep cycles. And until your SREs have the time, space, and focus (which requires, among other things, rest) to improve your monitoring and observability tooling and other crucial infrastructure to increase stability, the problem will almost certainly just continue to get worse.
 
-- _What am I going to do when my SREs quit from burnout caused by constant emergencies with no agency or autonomy for preventing the fires in the first place?_
+* _What am I going to do when my SREs quit from burnout caused by constant emergencies with no agency or autonomy for preventing the fires in the first place?_
 
 I dunno. Good question. Have fun with that.
 
@@ -76,15 +76,15 @@ Let's say your SRE team does have enough bandwidth, in theory, to work on at lea
 
 _Ask yourself_
 
-- _Is this work is troubleshooting or otherwise responding to downtime?_
+* _Is this work is troubleshooting or otherwise responding to downtime?_
 
-See the [firefighting section]({{ site.baseurl }}/2020/09/30/agile-is-lava/#fires-fires-everywhere) above.
+See the [firefighting section](/2020/09/30/agile-is-lava/#fires-fires-everywhere) above.
 
-- _Are many of the surprise tasks related to current product engineering sprint tasks?_ _Should these tasks have been prioritized during sprint planning? Do they concern dependencies that no one thought of until the development work had started? Were SREs_ _ **not** _ _involved in the design meetings for the epics in progress, or the product sprint planning meetings? Does the product team not consider SRE work an integral part of successfully-delivered features?_
+* _Are many of the surprise tasks related to current product engineering sprint tasks?_ _Should these tasks have been prioritized during sprint planning? Do they concern dependencies that no one thought of until the development work had started? Were SREs_ _ **not** _ _involved in the design meetings for the epics in progress, or the product sprint planning meetings? Does the product team not consider SRE work an integral part of successfully-delivered features?_
 
 If you answered "yes" to any of the above questions, congratulations, your organization looks like a beautiful farm with lots of nice, tall silos! (That's bad, by the way.) You need to fix how your product management and engineering teams see and work with your SRE team.
 
-- _Do the tasks come from other internal teams, like customer success or sales?_
+* _Do the tasks come from other internal teams, like customer success or sales?_
 
 If, for whatever reason, these out-of-band requests are frequent, genuinely urgent (and not just the typical sales org's definition of urgent, because everything would be urgent), and not always foreseeable, you may need placeholder sprint tasks to buffer for the time. But really, you need to take pains to make sure you do not allow this out-of-band work to become normalized and friction-free for the teams pouring it on your SREs.
 
@@ -96,11 +96,11 @@ Some of these tasks might not fall into clear categories. Perhaps an SRE found a
 
 _Ask yourself_
 
-- _Does our sprint-planning/issue tracker use labels and buckets that make sense for our SRE work?_
+* _Does our sprint-planning/issue tracker use labels and buckets that make sense for our SRE work?_
 
 Trying to play by someone else's rules can confuse everyone and just make it harder to track the SRE team work.
 
-- _Do tickets tracking improvements and other important work not attached to a product epic seem to get "lost" or remain unprioritized?_
+* _Do tickets tracking improvements and other important work not attached to a product epic seem to get "lost" or remain unprioritized?_
 
 Does your PM system control the entire queue? If so, why are they not actively tracking this work? Is an SRE representative involved in the meetings that handle priorities? If your PM team is going to insist on being the owner of your ticketing system and/or sprint priority planning, make sure they are really taking a holistic view, both of the SRE team's internal priority needs and wants and of their bandwidth.
 

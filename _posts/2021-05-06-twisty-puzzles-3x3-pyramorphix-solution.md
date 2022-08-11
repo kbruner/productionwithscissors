@@ -26,7 +26,7 @@ thumbnail: assets/images/2021/05/pxl_20210503_182455250-01.jpeg
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2021/05/20210505_170641.gif"
+src="/assets/images/2021/05/20210505_170641.gif"
 alt="Animated gif of a tuxedo cat ignoring a hand rotating a solved kilomorphix puzzle in front of her face">
 <br>
 <i><small>
@@ -52,7 +52,7 @@ Many write-ups of the puzzle's mechanics already exist, so I will just quickly r
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2021/05/parts.jpg"
+src="/assets/images/2021/05/parts.jpg"
 alt="Marked up photo of a logical side of the pyramorphix puzzle labeling the pieces">
 <br>
 <i><small>

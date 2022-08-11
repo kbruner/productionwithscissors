@@ -56,7 +56,7 @@ Let's look at some ways engineering teams use and abuse, and sometimes are used 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/12/sketch1606992353868-01.jpeg"
+src="/assets/images/2020/12/sketch1606992353868-01.jpeg"
 alt="Stick figure drawing of a Service Level Agreement of 99.999 with current uptime of 93.999 changed to 99.999 by drawing over the 3">
 <br>
 <i><small>

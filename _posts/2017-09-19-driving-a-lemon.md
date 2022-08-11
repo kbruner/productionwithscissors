@@ -34,7 +34,7 @@ How does all this car stuff relate to devops? Well, let's set up the following a
 What do I mean by _"traditional" operations engineer_? Basically, when web companies became a thing, they had a clear separation between the people writing the code and the people who kept it running in production. Much of this is because the operations side generally evolved from pre-web system administrators, the people who kept the servers running in any given company. Except those companies, whether they were shrink-wrap software companies or government research labs or visual effects companies, rarely scaled in size and customer base at the rate of the new web businesses. The traditional silo model didn't translate to web applications, and in fact, it helped create and perpetuate major issues.
 
 <div align="center">
-<img alt="Two silos standing next to each other labeled dev and ops" src="{{ site.baseurl }}/assets/images/2017/09/untitled-drawing.png" align="center">
+<img alt="Two silos standing next to each other labeled dev and ops" src="/assets/images/2017/09/untitled-drawing.png" align="center">
 <br><i><small>The traditional silo model of web application development and operations. Note the one-way arrow.</small></i>
 </div>
 <br>

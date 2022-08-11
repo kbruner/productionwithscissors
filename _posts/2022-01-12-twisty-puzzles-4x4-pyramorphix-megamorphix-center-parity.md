@@ -60,7 +60,7 @@ If you have solved the puzzle without a parity, you can stop now!
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2022/01/20220111_143344_edited.png"
+src="/assets/images/2022/01/20220111_143344_edited.png"
 alt="Photo of a solved megamorphix puzzle">
 <br>
 <i><small>
@@ -87,7 +87,7 @@ If your puzzle looks like this, although any two corners can be swapped on the l
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2022/01/20220111_141531_edited.png"
+src="/assets/images/2022/01/20220111_141531_edited.png"
 alt="Two corners are swapped in otherwise solved 4x4 megamorphix">
 <br>
 <i><small>
@@ -107,7 +107,7 @@ Two of your edges should be flipped out like bird wings (the red edges in the ex
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2022/01/20220111_141936_edited.png"
+src="/assets/images/2022/01/20220111_141936_edited.png"
 alt="Photo of partially solved megamorphix with last layer edges permuted 90 degrees around the center block">
 <br>
 <i><small>
@@ -122,7 +122,7 @@ First we rotate the edges around the last layer center block by 90 degrees
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2022/01/20220111_142122_edited.png"
+src="/assets/images/2022/01/20220111_142122_edited.png"
 alt="4x4 megamorphix with edges rotated 90 degrees around the last layer center">
 <br>
 <i><small>
@@ -158,7 +158,7 @@ The easiest way to do this is to pick one of the solid center pieces and use com
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2022/01/20220111_142834_edited.png"
+src="/assets/images/2022/01/20220111_142834_edited.png"
 alt="4x4 megamorphix with center pieces out of place">
 <br>
 <i><small>
@@ -211,7 +211,7 @@ After that, your puzzle should be solved!
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2022/01/20220111_143141_edited.png"
+src="/assets/images/2022/01/20220111_143141_edited.png"
 alt="Megamorphix with first 3 layers solved, and with top layer edges and center solved. Corners still need to be permutated.">
 <br>
 <i><small>

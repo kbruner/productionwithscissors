@@ -30,12 +30,12 @@ _Still not sleeping_
 
 Previous insomniac nights:
 
-- [1001]({{ site.baseurl }}/2020/08/17/1001-insomniac-nights/)
-- [1001 + 1]({{ site.baseurl }}/2020/08/29/1001-1-insomniac-nights/)
-- [1001 + 2]({{ site.baseurl }}/2020/10/09/1001-2-insomniac-nights/)
-- [1001 + 3]({{ site.baseurl }}/2020/11/15/1001-3-insomniac-nights/)
+- [1001](/2020/08/17/1001-insomniac-nights/)
+- [1001 + 1](/2020/08/29/1001-1-insomniac-nights/)
+- [1001 + 2](/2020/10/09/1001-2-insomniac-nights/)
+- [1001 + 3](/2020/11/15/1001-3-insomniac-nights/)
 
-## [TWO YEARS (cont)]({{ site.baseurl }}/2020/11/15/1001-3-insomniac-nights/#two-years)
+## [TWO YEARS (cont)](/2020/11/15/1001-3-insomniac-nights/#two-years)
 
 ... sat down, combed through the `log4j` docs and examples, altered the logger class and made a test app that showed that, by using a different `log4j` method (or maybe it was a method option? I can't remember), the multi-line stack traces would appear in Sumo as single, discrete log entries.
 

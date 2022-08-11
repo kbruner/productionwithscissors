@@ -27,7 +27,7 @@ thumbnail: assets/images/2020/10/5680040477_3796979f90_o.jpg
 
 _Introduction to a series of experiments with FreeBSD and Kubernetes_
 
-[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
+[_See all posts in this series_](/freebsd-virtualization-series/)
 
 For various reasons, some of which are far too scary even for this blog, I haven't felt really excited or motivated to hack on tech in a long time.
 
@@ -35,7 +35,7 @@ I've worked a lot around Kubernetes recently, but, while Windows support is emer
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/10/5680040477_3796979f90_o.jpg"
+src="/assets/images/2020/10/5680040477_3796979f90_o.jpg"
 alt="Picture of a crocheted doll of the FreeBSD daemon, the operating system's mascot.">
 <br>
 <i><small>
@@ -68,5 +68,5 @@ I have one HDMI-compatible display: my TV. (I've decided to get an inexpensive H
 
 * * *
 
-In [Part 1]({{ site.baseurl }}/2020/10/25/adventures-in-freebernetes-installing-freebsd/), I'll write up step-by-step how I (eventually) successfully installed FreeBSD 13.0-CURRENT with ZFS-on-root.
+In [Part 1](/2020/10/25/adventures-in-freebernetes-installing-freebsd/), I'll write up step-by-step how I (eventually) successfully installed FreeBSD 13.0-CURRENT with ZFS-on-root.
 

@@ -27,9 +27,9 @@ _More sleepless stories_
 
 Previous insomniac nights:
 
-- [1001]({{ site.baseurl }}/2020/08/17/1001-insomniac-nights/)
-- [1001 + 1]({{ site.baseurl }}/2020/08/29/1001-1-insomniac-nights/)
-- [1001 + 2]({{ site.baseurl }}/2020/10/09/1001-2-insomniac-nights/)
+- [1001](/2020/08/17/1001-insomniac-nights/)
+- [1001 + 1](/2020/08/29/1001-1-insomniac-nights/)
+- [1001 + 2](/2020/10/09/1001-2-insomniac-nights/)
 
 ## Fire and Ice Alarms (cont.)
 
@@ -67,7 +67,7 @@ One of the customer success reps working on logistics asked us if we wanted any 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/14-1-01.jpeg"
+src="/assets/images/2020/11/14-1-01.jpeg"
 alt="cardboard box with a note attached: War Room Team Rules: 1. Enjoy! 2. Karen has first dibs on the Bailey's 3. No one who isn't/hasn't worked on Blizzcon gets any. This is exclusive booze -Ed">
 </div>
 <br>
@@ -86,6 +86,6 @@ People would come to me periodically to deal with the issue by blaming the SaaS.
 
 This went on for two years. TWO YEARS. Finally, I had had it. I...
 
-_[to be continued...]({{ site.baseurl }}/2021/03/10/1001-4-insomniac-nights/)_
+_[to be continued...](/2021/03/10/1001-4-insomniac-nights/)_
 
 

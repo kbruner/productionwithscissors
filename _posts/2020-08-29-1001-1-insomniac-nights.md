@@ -25,11 +25,11 @@ excerpt: More stories from the trenches
 
 _More stories from the trenches_
 
-[Previously]({{ site.baseurl }}/2020/08/17/1001-insomniac-nights/), I recounted the story of [Scheherazade](https://en.wikipedia.org/wiki/Scheherazade) and the Arabian Nights.
+[Previously](/2020/08/17/1001-insomniac-nights/), I recounted the story of [Scheherazade](https://en.wikipedia.org/wiki/Scheherazade) and the Arabian Nights.
 
 These are my stories.
 
-## [Down a Rabbit Hole]({{ site.baseurl }}/2020/08/17/1001-insomniac-nights/#down-a-rabbit-hole) (cont.)
+## [Down a Rabbit Hole](/2020/08/17/1001-insomniac-nights/#down-a-rabbit-hole) (cont.)
 
 Eventually, though, not only was Wacko operating efficiently enough to meet its regular throughput demands, it was exceeding them. When my co-worker returned after a month, I gave him his wedding present: an empty pending backup queue. Not only did Wacko no longer cause, directly or indirectly, multiple alerts per week, it had no problems for at least a year, except when the downstream tape backup system, owned by another team, malfunctioned.
 

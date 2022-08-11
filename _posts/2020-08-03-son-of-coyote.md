@@ -26,7 +26,7 @@ excerpt: More root cause analysis of failed road runner traps
 
 _More root cause analysis of failed road runner traps_
 
-Back in January, I recreated a write-up I had done long ago of the Coyote/Road Runner cartoons to determine [the root cause patterns of Coyote's inevitable failure to catch the Road Runner](https://nightmare-before-devops.xyz/2020/01/23/engineering-quality-of-the-anti-road-runner-traps-of-wile-e-coyote-esq/).
+Back in January, I recreated a write-up I had done long ago of the Coyote/Road Runner cartoons to determine [the root cause patterns of Coyote's inevitable failure to catch the Road Runner](/2020/01/23/engineering-quality-of-the-anti-road-runner-traps-of-wile-e-coyote-esq/).
 
 Lo and behold, Warner Bros. has put much of the Looney Toons oeuvre on HBO Max. While it does not currently offer [every existing episode](https://en.wikipedia.org/wiki/Wile_E._Coyote_and_the_Road_Runner#List_of_cartoons)[featuring](https://en.wikipedia.org/wiki/Wile_E._Coyote_and_the_Road_Runner#List_of_cartoons) Wile E. Coyote, it does host a large number of them, including the very first installment from 1949.
 

@@ -40,7 +40,7 @@ If I had to choose one term to describe my impression of Agile, at least as I've
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/09/2fd904f6-b980-4062-bd2b-71908c0a774b-01.jpeg"
+src="/assets/images/2020/09/2fd904f6-b980-4062-bd2b-71908c0a774b-01.jpeg"
 alt="Sphere highlighting implied particles shooting off in random directions">
 <br>
 <i><small>
@@ -65,12 +65,12 @@ Another example, one I see and hear about pretty frequently, takes the form of p
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/09/untitled-drawing-2.png"
+src="/assets/images/2020/09/untitled-drawing-2.png"
 alt="Cyclic graph of Dante's Circle of Sprints: Finish and merge open feature branches at the last minute -> Release -> Fighting fires and shooting troubles">
 </div>
 <br>
 
-"Finish" and merge open feature branches at the last minute -> Release -> Fighting fires and shooting troubles ->]({{ site.baseurl }}//assets/images/2020/09/untitled-drawing-2.png?w=597)
+"Finish" and merge open feature branches at the last minute -> Release -> Fighting fires and shooting troubles ->](//assets/images/2020/09/untitled-drawing-2.png?w=597)
 
 While that cycle's non-stop spiral of disaster can only continue to exist because of multiple factors, held together by a generous application of normalized deviance, to me it's just bat-shit nonsense. Yes, bugs will always happen, but this system seems to occupy a strange reality that ignores that inevitability while simultaneously actively maximizing insect reproduction. And what this pattern most definitely does not maximize is engineering velocity nor engineer satisfaction.
 
@@ -80,7 +80,7 @@ At any rate, the lack of alignment or the series of failed sprints, which either
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/09/sketch1600769376052.png"
+src="/assets/images/2020/09/sketch1600769376052.png"
 alt="Visualization of individual sprint sphere shooting off in all directions">
 <br>
 <i><small>
@@ -94,7 +94,7 @@ I'm not taking the stance that no organization can or actually does practice Agi
 
 Actually, come to think of it, maybe that near-motionless Bose-Einstein condensate is the right analogy after all.
 
-## [tl;dr]({{ site.baseurl }}/2020/09/23/agile-inferno#tldr)
+## tl;dr
 
 * Make sure your various ~~particles~~ developers have some alignment and enough of the greater context (other near-future pending changes or work in progress, etc.) not to step on each other's toes or put time into something that will just have to be redone almost immediately, unless a very good need exists to take the human time hit
 * If every sprint looks like "rush to get stories done, release, fix broken shit half of the following sprint" played over and over, you're probably doing a lot of somethings wrong

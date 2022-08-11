@@ -27,7 +27,7 @@ _(Hopefully) Practical advice for people who want to learn about Kubernetes_
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/09/sketch1599003118814-01.png"
+src="/assets/images/2020/09/sketch1599003118814-01.png"
 alt="Mediocre drawing of an elephant with labels for tree trunk (leg), rope (tail), fan (ear), snake (trunk), speak (tusk), and wall (side)">
 </div>
 <br>

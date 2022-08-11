@@ -28,7 +28,7 @@ thumbnail: /assets/images/2020/11/screenshot-2020-11-05-at-08.55.48-01.jpeg
 
 _Part 4 of experiments in FreeBSD and Kubernetes: UEFI Booting + Installing CBSD_
 
-[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
+[_See all posts in this series_](/freebsd-virtualization-series/)
 
 At the end of the previous post, I hit an issue while trying to create a Debian guest backed by a ZFS volume on the FreeBSD hypervisor. Installation from a virtual CD ISO onto the ZFS volume went fine, but when trying to boot from the ZFS virtual disk using `grub-bhyve`, the FreeBSD kernel panicked.
 
@@ -104,7 +104,7 @@ That did not require installing half the ports tree this time, so when I ran `cb
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-05-at-08.55.48-01.jpeg"
+src="/assets/images/2020/11/screenshot-2020-11-05-at-08.55.48-01.jpeg"
 alt="Screen shot of CBSD's text-based user interface showing menu options for creating a new bhyve virtual machine">
 <br>
 <i><small>
@@ -115,7 +115,7 @@ Yes, I need to find a better terminal type for these menus in my Chrome OS Linux
 
 * * *
 
-[The next post]({{ site.baseurl }}/2020/11/09/adventures-in-freebernetes-vm-management-with-cbsd/) will focus on experiments with CBSD.
+[The next post](/2020/11/09/adventures-in-freebernetes-vm-management-with-cbsd/) will focus on experiments with CBSD.
 
 ## Sources / References
 

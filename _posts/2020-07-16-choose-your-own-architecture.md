@@ -23,7 +23,7 @@ author:
   first_name: Karen
   last_name: Bruner
 permalink: "/2020/07/16/choose-your-own-architecture/"
-excerpt: 'Build smart from the start for maintainable, scalable services '
+excerpt: Build smart from the start for maintainable, scalable services
 ---
 
 _Build smart from the start for maintainable, scalable services_
@@ -63,7 +63,7 @@ Let's try this. You just founded a new company with a SaaS-based business model.
 <a id="option-2"></a>
 <a id="option-3"></a>
 ## _Some time passes..._
-Congratulations! Your engineers are now the ~~proud~~ burnt-out owners and maintainers of a [Winchester Mystery App](https://nightmare-before-devops.xyz/2017/09/11/winchester-mystery-app/)!
+Congratulations! Your engineers are now the ~~proud~~ burnt-out owners and maintainers of a [Winchester Mystery App](/2017/09/11/winchester-mystery-app/)!
 _It never ends..._
 
 [Read the post script](#post-script).

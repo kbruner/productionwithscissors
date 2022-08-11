@@ -27,13 +27,13 @@ _Your engineering team is a band, not a person_
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/sketch1605895113120-01.jpeg"
+src="/assets/images/2020/11/sketch1605895113120-01.jpeg"
 alt="Crappy stick figure drawing of an 80s rock star and his smashed computer">
 </div>
 <br>
 
 
-[Several months ago]({{ site.baseurl }}/2020/08/21/tell-me-im-working-on-pretty-things/), I wrote about how engineering leaders need to reward the behavior they seek by recognizing positive behaviors without creating incentives for ultimately counterproductive or less impactful work. After some thought and conversations in difference forums, I have a few points I want to add.
+[Several months ago](/2020/08/21/tell-me-im-working-on-pretty-things/), I wrote about how engineering leaders need to reward the behavior they seek by recognizing positive behaviors without creating incentives for ultimately counterproductive or less impactful work. After some thought and conversations in difference forums, I have a few points I want to add.
 
 **Engineering upper management:** We have proposed or we already have a forum or process for recognizing accomplishments, but some teams are pushing back.
 

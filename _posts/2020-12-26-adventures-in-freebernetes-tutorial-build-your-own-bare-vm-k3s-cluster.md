@@ -27,7 +27,7 @@ excerpt: Step-by-step tutorial for deploying a Kubernetes cluster with k3s on Fr
 
 _Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bhyve VMs_
 
-[See all posts in the FreeBSD Virtualization Series]({{ site.baseurl }}/freebsd-virtualization-series/)
+[See all posts in the FreeBSD Virtualization Series](/freebsd-virtualization-series/)
 
 1. [Overview](#overview)
 
@@ -47,7 +47,7 @@ _Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bh
 
 ## Overview
 
-In [the last tutorial]({{ site.baseurl }}/2020/12/08/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-kubernetes-cluster-the-hard-way/) in this series, we went through the steps of creating a Kubernetes cluster on FreeBSD `bhyve` VMs, adapting the completely manual process in Kelsey Hightower's [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way/tree/1.18.6). This tutorial will also build a Kubernetes cluster on `bhyve`, but it will install a lightweight `k3s` control plane using the [`k3sup`](https://kubernetes.io/docs/reference/setup-tools/kubeadm/) tool, which automates much of the process.
+In [the last tutorial](/2020/12/08/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-kubernetes-cluster-the-hard-way/) in this series, we went through the steps of creating a Kubernetes cluster on FreeBSD `bhyve` VMs, adapting the completely manual process in Kelsey Hightower's [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way/tree/1.18.6). This tutorial will also build a Kubernetes cluster on `bhyve`, but it will install a lightweight `k3s` control plane using the [`k3sup`](https://kubernetes.io/docs/reference/setup-tools/kubeadm/) tool, which automates much of the process.
 
 Topics covered:
 

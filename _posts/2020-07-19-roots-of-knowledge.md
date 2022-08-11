@@ -30,7 +30,7 @@ I have a small collection of [succulents](https://en.wikipedia.org/wiki/Succulen
 Like pretty much all plants, succulents can have one of two major root systems: a fibrous root system or a taproot. A [taproot](https://en.wikipedia.org/wiki/Taproot) has a single, usually thick root, usually with smaller roots growing from the taproot. When you eat a carrot, you eat that plant's taproot. Lithops, the "living stone" succulents, also have persistent taproots.
 
 <div align="center">
-<img src="{{ site.baseurl }}/assets/images/2020/07/img_20200718_142234-01.png" alt="Photo of small rock-looking plants potted in other rocks">
+<img src="/assets/images/2020/07/img_20200718_142234-01.png" alt="Photo of small rock-looking plants potted in other rocks">
 <br>
 <i><small>
 My juvenile lithops, one removed to show the taproot. The lithops on the left is currently shedding its old leaf pair, something healthy lithops do annually. ("Lithops" is both the singular and plural form of the plant's name.) This dude needs its summer watering.
@@ -57,10 +57,10 @@ Most common succulents have branching root systems, though, including [Haworthia
 
 <div class="picrow">
 <div class="piccol">
-<img src="{{ site.baseurl }}/assets/images/2020/07/img_20200715_171106-01.jpeg" alt="Photo of a pointy-leaved plant suspended in water">
+<img src="/assets/images/2020/07/img_20200715_171106-01.jpeg" alt="Photo of a pointy-leaved plant suspended in water">
 </div>                                                                          
 <div class="piccol">                                                            
-<img src="{{ site.baseurl }}/assets/images/2020/07/img_20200715_171323-01.jpeg" alt="Photo of a pointy-leaved plant suspended in water">
+<img src="/assets/images/2020/07/img_20200715_171323-01.jpeg" alt="Photo of a pointy-leaved plant suspended in water">
 </div>
 </div>
 <center>
@@ -73,7 +73,7 @@ Haworthia retusa pup in water therapy. The lighter colored roots are newer growt
 In fact, some of these plants can grow new roots even when it appears their entire root system had died, like my _[H. cymbiformis](https://en.wikipedia.org/wiki/Haworthia_cymbiformis)_. I thought it was a goner after a mealy bug infestation, because all the roots had dried up and broken off. After just a couple weeks of water therapy, though, and it has new roots.
 
 <div align="center">
-<img src="{{ site.baseurl }}/assets/images/2020/07/taproot-01.jpeg" alt="Photo of a pointed-leaved plant suspended in water">
+<img src="/assets/images/2020/07/taproot-01.jpeg" alt="Photo of a pointed-leaved plant suspended in water">
 <br>
 <i><small>
 Haworthia retusa (left) and H cymbiformis (right). The latter had lost all its roots after a mealy bug infestation but after a couple weeks of water therapy, it is growing new roots (white protrusions) and seems to be bouncing back.
@@ -96,7 +96,7 @@ Engineering teams in an organization can also take on characteristics of a tapro
 <div align="center">
 <img 
 alt="3 circles connected with a few tenuous lines"
-src="{{ site.baseurl }}/assets/images/2020/07/taproot-01.jpeg">
+src="/assets/images/2020/07/taproot-01.jpeg">
 <br>
 <i><small>
 Visualization of team knowledge with little overlap or connection
@@ -109,7 +109,7 @@ A more fibrous structure would ideally still have specialized concentrations of 
 <div align="center">
 <img 
 alt="3 circles blurred together"
-src="{{ site.baseurl }}/assets/images/2020/07/branch-01.jpeg">
+src="/assets/images/2020/07/branch-01.jpeg">
 <br>
 <i><small>
 Visualization of teams with large amounts of shared or interconnected knowledge.

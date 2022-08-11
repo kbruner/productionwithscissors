@@ -41,7 +41,7 @@ In SRE and devops roles, I've had more than one Cassandra moment. "Um, if you do
 One of the most personally memorable of these actually involved Cassandra, as in the NoSQL database. A Cassandra ring was becoming increasingly wobbly. The JVMs on the C\* nodes were spending an increasingly large amount of time performing garbage collection, but the cluster's transaction rates were not growing at a comparable rate and the size of the individual data rows stayed constant. Basically, the use case and schema design for the cluster did not even begin to map to Cassandra best practices.
 
 <div align="center">
-<img src="{{ site.baseurl }}/assets/images/2020/05/untitled-drawing-1.png" alt="A venn diagram showing two circles which aren't touching, one labeled 'Cassandra schema design best practices' and the other 'This Cassandra Cluster'">
+<img src="/assets/images/2020/05/untitled-drawing-1.png" alt="A venn diagram showing two circles which aren't touching, one labeled 'Cassandra schema design best practices' and the other 'This Cassandra Cluster'">
 <br>
 <i><small>Venn Diagram: Ideal Cassandra data model vs this cluster. "And never the twain shall meet."</small></i>
 </div>

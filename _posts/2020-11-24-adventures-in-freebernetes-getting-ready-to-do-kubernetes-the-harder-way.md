@@ -28,7 +28,7 @@ thumbnail: assets/images/2020/11/screenshot-2020-11-22-at-15.31.52-01.jpeg
 
 _Part 9 of experiments in FreeBSD and Kubernetes: Prep Work for Creating a VM Kubernetes Cluster_
 
-[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
+[_See all posts in this series_](/freebsd-virtualization-series/)
 
 #### Table of Contents
 
@@ -68,17 +68,17 @@ Networking is going to be the biggest difference from the tutorial, which relies
 * load balancing: I don't really want to run my own load balancer on the hypervisor. Fortunately, FreeBSD supports the Common Address Redundancy Protocol, which allows multiple hosts to share a virtual IP address for service load balancing and failover. I just need to load the `carp(4)` (yes, I keep typing "crap") kernel module and configure it.
 * Kubernetes CNI (Container Network Interface): I think the standard `kubenet` plugin will work in my little VLAN, but I'll have to see when I get to that point.
 
-Once again, I'll be using the FreeBSD `bridge(4)` (since [I'm practically an expert now]({{ site.baseurl }}/2020/11/13/adventures-in-freebernetes-a-bridge-not-far-enough/#rabbit-hole)) (not really) and a private `RFC1918` IPv4 block for all the cluster networks.
+Once again, I'll be using the FreeBSD `bridge(4)` (since [I'm practically an expert now](/2020/11/13/adventures-in-freebernetes-a-bridge-not-far-enough/#rabbit-hole)) (not really) and a private `RFC1918` IPv4 block for all the cluster networks.
 
 ## Great Image Bake-Off Season 2
 
-CBSD already has support for cloud-booting Ubuntu Server 20.04, but I decide to build my own disk image locally. I worked out the steps while creating the [CBSD cloud configuration for Alpine Linux]({{ site.baseurl }}/2020/11/19/adventures-in-freebernetes-cloudy-with-a-chance-of-rain/), which took a lot of trial and error to get working, so I may as well put that experience to use.
+CBSD already has support for cloud-booting Ubuntu Server 20.04, but I decide to build my own disk image locally. I worked out the steps while creating the [CBSD cloud configuration for Alpine Linux](/2020/11/19/adventures-in-freebernetes-cloudy-with-a-chance-of-rain/), which took a lot of trial and error to get working, so I may as well put that experience to use.
 
 As I did with Alpine, I start by creating a VM from the Ubuntu installation ISO image. CBSD has a VM profile for a manual install of Ubuntu Server 20.04, so that simplifies things. I run `cbsd bconstruct-tui` and configure my VM.
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-22-at-15.31.52-01.jpeg"
+src="/assets/images/2020/11/screenshot-2020-11-22-at-15.31.52-01.jpeg"
 alt="Screenshot of CBSD UI to create Ubuntu VM">
 </div>
 <br>
@@ -88,7 +88,7 @@ alt="Screenshot of CBSD UI to create Ubuntu VM">
 
 I use all the Ubuntu installer defaults, with the exception of disabling LLVM. The VM has a 10Gb virtual hard drive, and other than the EFI partition, it all goes to the root file system, with no swap space. I also enable `sshd`.
 
-After the installation finishes, I restart the VM via CBSD, which automatically unmounts the installation medium, and I check to make sure that `cloud-init` will actually run at boot. [Not going to fool me twice!]({{ site.baseurl }}/2020/11/19/adventures-in-freebernetes-cloudy-with-a-chance-of-rain/#cloud-seeding-round-2) (The Ubuntu installer had already installed it and configured it to run at boot.)
+After the installation finishes, I restart the VM via CBSD, which automatically unmounts the installation medium, and I check to make sure that `cloud-init` will actually run at boot. [Not going to fool me twice!](/2020/11/19/adventures-in-freebernetes-cloudy-with-a-chance-of-rain/#cloud-seeding-round-2) (The Ubuntu installer had already installed it and configured it to run at boot.)
 
 I stop the VM and `dd` the virtual hard drive image into `~cbsd/src/iso`.
 
@@ -147,7 +147,7 @@ Now my VMs can make connections to the Internet, which is useful for installing 
 
 * * *
 
-With that list of tasks done, I should be ready to start creating my Kubernetes cluster from the (virtual) machine up. My [next post]({{ site.baseurl }}/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/) will start from there.
+With that list of tasks done, I should be ready to start creating my Kubernetes cluster from the (virtual) machine up. My [next post](/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/) will start from there.
 
 ## Sources / References
 

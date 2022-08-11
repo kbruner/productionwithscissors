@@ -57,7 +57,7 @@ Hopefully we can all agree that this situation is just going to be a forever-sno
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/09/sketch1600048881806.png"
+src="/assets/images/2020/09/sketch1600048881806.png"
 alt="Original process to claim a ticket: one click. Process after change: lots of clicks, scrolling, typing and cursing">
 <br>
 <center>
@@ -78,7 +78,7 @@ There's a weird imbalance with changes that act as force multipliers, though. Th
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/09/sketch1600053072103.png"
+src="/assets/images/2020/09/sketch1600053072103.png"
 alt="Fake graph showing net engineer frustration level over time based on whether the 'assign to me' button had previously existed and been removed (big red spike in frustration which never completely settles back to normal) vs had been added as new (small decrease in net frustration level which quickly reverts back to normal)">
 <br>
 <i><small>

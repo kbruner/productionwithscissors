@@ -26,13 +26,13 @@ thumbnail: /assets/images/2020/10/pxl_20201023_210133887-01.jpeg
 
 _Part 1 of experiments in FreeBSD and Kubernetes_
 
-[_See all posts in this series_]({{ site.baseurl }}/freebsd-virtualization-series/)
+[_See all posts in this series_](/freebsd-virtualization-series/)
 
-[Read the introduction to this series]({{ site.baseurl }}/2020/10/24/adventures-in-freebernetes-introduction/) for background. This post documents getting a working, bootable installation of FreeBSD 13.0-CURRENT on an older NUC PC.
+[Read the introduction to this series](/2020/10/24/adventures-in-freebernetes-introduction/) for background. This post documents getting a working, bootable installation of FreeBSD 13.0-CURRENT on an older NUC PC.
 
 This post is roughly divided into two parts: the rather-chatty story version and then the actual step-by-step instructions for how I finally got a successful installation.
 
-[Skip straight to the step-by-step instructions for a custom, manual FreeBSD 13.0-CURRENT ZFS-on-root + EFI boot install]({{ site.baseurl }}/2020/10/25/adventures-in-freebernetes-installing-freebsd/#step-by-step)
+[Skip straight to the step-by-step instructions for a custom, manual FreeBSD 13.0-CURRENT ZFS-on-root + EFI boot install](/2020/10/25/adventures-in-freebernetes-installing-freebsd/#step-by-step)
 
 ## Day 1: The Adventure Begins
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ok, I got the FreeBSD 13.0-CURRENT memstick image, used my ancient Linux laptop to dd it onto the USB drive.<br><br>My only HDMI display is my TV, sooooo I&#39;m currently sitting on the floor in front of it (don&#39;t have an HDMI cable + USB elongator for the keyboard to reach the couch).</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1319742463527940097?ref_src=twsrc%5Etfw">October 23, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -43,7 +43,7 @@ CBSD strongly recommends using a [ZFS](https://www.freebsd.org/doc/handbook/zfs.
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/10/pxl_20201023_202719424.jpg"
+src="/assets/images/2020/10/pxl_20201023_202719424.jpg"
 alt="Picture of the FreeBSD installer's text-based UI with blue background, asking if you want to install, run a shell, or launch the Live CD">
 <br>
 <i><small>
@@ -56,7 +56,7 @@ The only option in the FreeBSD installer for a custom ZFS installation is via sh
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/10/pxl_20201023_210133887-01.jpeg"
+src="/assets/images/2020/10/pxl_20201023_210133887-01.jpeg"
 alt="Image of screen with an interactive shell running gpart commands to create and view disk partitions">
 <br>
 <i><small>
@@ -122,7 +122,7 @@ Let the system reboot. Remove the installer media or manually select the disk fo
 
 * * *
 
-[Part 2]({{ site.baseurl }}/2020/10/29/adventures-in-freebernetes-bhyve-my-guest/) covers creating my first FreeBSD bhyve guest.
+[Part 2](/2020/10/29/adventures-in-freebernetes-bhyve-my-guest/) covers creating my first FreeBSD bhyve guest.
 
 ## Sources / References
 

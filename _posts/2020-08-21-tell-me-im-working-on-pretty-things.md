@@ -57,7 +57,7 @@ A robust system of positive feedback requires another variable: the difference b
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/08/sketch1597996757340-01.jpeg"
+src="/assets/images/2020/08/sketch1597996757340-01.jpeg"
 alt="Table of good and bad contexts for recognizing example engineering achievements">
 <br>
 <i><small>

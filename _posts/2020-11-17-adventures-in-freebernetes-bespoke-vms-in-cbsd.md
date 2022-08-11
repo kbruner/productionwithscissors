@@ -28,7 +28,7 @@ thumbnail: assets/images/2020/11/screenshot-2020-11-15-at-13.36.07-01.jpeg
 
 _Part 7 of experiments in FreeBSD and Kubernetes: Custom Linux VM Installs in CBSD_
 
-[See all posts in this series]({{ site.baseurl }}/freebsd-virtualization-series/)
+[See all posts in this series](/freebsd-virtualization-series/)
 
 * * *
 
@@ -44,7 +44,7 @@ When I run `cbsd bconstruct-tui` and navigate to the OS profile menu, my new ent
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-15-at-13.36.19-01.jpeg"
+src="/assets/images/2020/11/screenshot-2020-11-15-at-13.36.19-01.jpeg"
 alt="Screenshot of CBSD Linux VM menu with new Alpine Linux entry at the top">
 </div>
 <br>
@@ -52,7 +52,7 @@ alt="Screenshot of CBSD Linux VM menu with new Alpine Linux entry at the top">
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-15-at-13.36.07-01.jpeg"
+src="/assets/images/2020/11/screenshot-2020-11-15-at-13.36.07-01.jpeg"
 alt="Screenshot of CBSD VM creation menu configured to create a VM from the new Alpine Linux configuration">
 </div>
 <br>
@@ -63,7 +63,7 @@ After exiting, I run `cbsd bstart alpine` and it boots up.
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-15-at-13.52.54.png"
+src="/assets/images/2020/11/screenshot-2020-11-15-at-13.52.54.png"
 alt="Screenshot of the VNC console of the newly booted alpine installer disk">
 </div>
 <br>
@@ -73,7 +73,7 @@ I've used the Alpine container image as a base in Dockerfiles, but I had never i
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-15-at-15.35.32.png"
+src="/assets/images/2020/11/screenshot-2020-11-15-at-15.35.32.png"
 alt="Screenshot of the alpine console showing the system installer">
 <br>
 <i><small>
@@ -84,7 +84,7 @@ Yes, I messed up on the root password the first time
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-15-at-16.24.05.png"
+src="/assets/images/2020/11/screenshot-2020-11-15-at-16.24.05.png"
 alt="Screenshot of the alpine console showing more installer steps">
 </div>
 <br>
@@ -92,7 +92,7 @@ alt="Screenshot of the alpine console showing more installer steps">
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/11/screenshot-2020-11-15-at-20.37.06.png"
+src="/assets/images/2020/11/screenshot-2020-11-15-at-20.37.06.png"
 alt="Screenshot of the final steps of the alpine installer">
 </div>
 <br>

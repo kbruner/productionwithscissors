@@ -28,7 +28,7 @@ excerpt: Stop gatekeeping tech jobs with superfluous CS degree requirements
 _Stop gatekeeping tech jobs with superfluous CS degree requirements_
 
 
-A couple weeks ago, I wrote about [the Sphinx]({{ site.baseurl }}/2020/07/31/riddle-me-this-job-listing/) guarding the gate of Thebes and devouring all would-be visitors who could not solve its riddle as a metaphor for decoding SRE job listings. (I still don't understand why the Thebans did not just build a second gate on the other side of the city, but whatever.)
+A couple weeks ago, I wrote about [the Sphinx](/2020/07/31/riddle-me-this-job-listing/) guarding the gate of Thebes and devouring all would-be visitors who could not solve its riddle as a metaphor for decoding SRE job listings. (I still don't understand why the Thebans did not just build a second gate on the other side of the city, but whatever.)
 
 
 There's another, more prevalent, form of gatekeeping common in many types of software engineering job listings and hiring requirements, however: CS degrees.

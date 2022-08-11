@@ -25,12 +25,12 @@ thumbnail: assets/images/2021/06/untitled-drawing-4.png
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2021/06/pxl_20210610_035053193.jpg"
+src="/assets/images/2021/06/pxl_20210610_035053193.jpg"
 alt="Photo of a gigamorphix puzzle solved with rotated centers">
 </div>
 <br>
 
-Previously I wrote about how I figured out [how to solve the 3x3 pyramorphix]({{ site.baseurl }}/2021/05/06/twisty-puzzles-3x3-pyramorphix-solution/).
+Previously I wrote about how I figured out [how to solve the 3x3 pyramorphix](/2021/05/06/twisty-puzzles-3x3-pyramorphix-solution/).
 
 I've since gotten a ShengShou gigamorphix, the 5x5 version of the puzzle. This puzzle is much more pillowed than my QiYi puzzle. The proportions of all the piece types are very different. I'm not sure how much of this is a style decision and how much is necessitated by the mechanics.
 
@@ -57,7 +57,7 @@ The diagrams below show the two commutator algorithms needed to solve the 3x3 ce
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2021/06/untitled-drawing-5.png"
+src="/assets/images/2021/06/untitled-drawing-5.png"
 alt="Diagram showing the starting position of puzzle pieces on the Up and Front faces, plus a legend showing how the slant of a piece is shown by a color gradient.">
 <br>
 <i><small>
@@ -69,7 +69,7 @@ Starting position of the 3x3 puzzle centers, showing the slant of pieces as ligh
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2021/06/untitled-drawing-4.png"
+src="/assets/images/2021/06/untitled-drawing-4.png"
 alt="A diagram for moving edge pieces between the Up face and Front face of the puzzle using a commutation algorithm">
 <br>
 <i><small>
@@ -80,7 +80,7 @@ Edge commutator and effects for 3x3 puzzle centers. Non-center edge and corner p
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2021/06/copy-of-untitled-drawing.png"
+src="/assets/images/2021/06/copy-of-untitled-drawing.png"
 alt="A diagram for moving corner pieces between the Up face and Front face using a commutation algorithm">
 <br>
 <i><small>

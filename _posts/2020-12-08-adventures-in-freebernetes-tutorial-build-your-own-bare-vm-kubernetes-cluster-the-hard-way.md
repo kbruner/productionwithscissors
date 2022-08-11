@@ -26,7 +26,7 @@ excerpt: Step-by-step tutorial for manually deploying a Kubernetes cluster on Fr
 
 _Step-by-step tutorial for manually deploying a Kubernetes cluster on FreeBSD bhyve VMs_
 
-[See all posts in the FreeBSD Virtualization Series]({{ site.baseurl }}/freebsd-virtualization-series/)
+[See all posts in the FreeBSD Virtualization Series](/freebsd-virtualization-series/)
 
 1. [Overview](#overview)
 
@@ -62,7 +62,7 @@ Topics covered:
 
 You can find custom files and examples in [my `freebernetes` repo](https://github.com/kbruner/freebernetes).
 
-This tutorial is based on a series of meandering posts I wrote about my original experiments working through the tutorial on top of FreeBSD. You can read them starting [here]({{ site.baseurl }}/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/).
+This tutorial is based on a series of meandering posts I wrote about my original experiments working through the tutorial on top of FreeBSD. You can read them starting [here](/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/).
 
 ### Caveats
 

@@ -26,7 +26,7 @@ thumbnail: /assets/images/2020/10/screenshot-2020-10-28-at-21.27.23-01.jpeg
 
 _Part 2 of experiments in FreeBSD and Kubernetes: Creating your first guest_
 
-[_See all posts in this series_]({{ site.baseurl }}//freebsd-virtualization-series/)
+[_See all posts in this series_](//freebsd-virtualization-series/)
 
 ## bhyve Background
 
@@ -50,7 +50,7 @@ At this point, it should boot the FreeBSD installer/LiveCD image. If you let it 
 
 <div align="center">
 <img
-src="{{ site.baseurl }}/assets/images/2020/10/screenshot-2020-10-28-at-21.27.23-01.jpeg"
+src="/assets/images/2020/10/screenshot-2020-10-28-at-21.27.23-01.jpeg"
 alt="Screen shot of FreeBSD installer progress meter">
 <br>
 </div>
@@ -109,7 +109,7 @@ The `-s #,...` options are my favorite. They create virtual PCI slots. (Be sure 
 
 * * *
 
-[The next post]({{ site.baseurl }}//2020/10/31/adventures-in-freebernetes-will-linux-bhyve/) in this series will cover creating your Linux guest manually with `bhyve`. By then, with luck, your `/usr/ports` tree should have finished compiling.
+[The next post](//2020/10/31/adventures-in-freebernetes-will-linux-bhyve/) in this series will cover creating your Linux guest manually with `bhyve`. By then, with luck, your `/usr/ports` tree should have finished compiling.
 
 ## Sources / References
 
