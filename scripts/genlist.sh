@@ -19,7 +19,7 @@ for f in *freebernetes*; do
 	excerpt="$(grep -m 1 -E '^excerpt: ' $f | sed -e 's/^excerpt: *//' -e "s/^'//; s/'\$//;")"
 
 	cat <<EOF >>../pages/freebsd.md
-### [$title]({{ site.baseurl }}$path)
+### [$title]($path)
 
 #### $excerpt
 
