@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "FreeBSD Virtualization Series"
-permalink: /freebsd-virtualization-series.html
+permalink: /freebsd-virtualization-series/
 excerpt: Articles in the FreeBSD/Kubernetes series
 ---
 
