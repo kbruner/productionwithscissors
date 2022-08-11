@@ -34,7 +34,8 @@ html, html[data-theme="light"] {
   --selection: #d4d4d4;
   --meta: #595959;
   --link: #0072B5;
-  --header-background: #24292e;
+  // --header-background: #24292e;
+  --header-background: #ffffff;
   --header-text: #ffffff;
   --header-link: #383838;
   --code-background: #E0E0E0;
@@ -56,7 +57,8 @@ html[data-theme="dark"] {
   --selection: #545d68; // selection
   --meta: #909dab; // meta
   --link: #00a8e0; // theme, link, link shadow header bg
-  --header-background: #2A3444; // Color before header image load
+  // --header-background: #2A3444; // Color before header image load
+  --header-background: #22272e; // brand, background
   --header-text: #e7f3f4; // header text, feature img text
   --header-link: #adbac7; // header link, search color
   --code-background: #2A3444;
