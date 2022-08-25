@@ -12,6 +12,7 @@ categories:
 tags:
 - freebsd
 - zfs
+- virtualization
 meta:
 author:
   login: nightmarebeforedevops

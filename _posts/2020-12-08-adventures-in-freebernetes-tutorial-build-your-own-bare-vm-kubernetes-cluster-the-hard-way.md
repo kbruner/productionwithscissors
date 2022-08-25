@@ -13,6 +13,8 @@ tags:
 - freebsd
 - kubernetes
 - tutorial
+- virtualization
+- linux
 meta:
 author:
   login: nightmarebeforedevops
