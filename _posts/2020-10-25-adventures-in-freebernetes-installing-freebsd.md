@@ -33,7 +33,7 @@ _Part 1 of experiments in FreeBSD and Kubernetes_
 
 This post is roughly divided into two parts: the rather-chatty story version and then the actual step-by-step instructions for how I finally got a successful installation.
 
-[Skip straight to the step-by-step instructions for a custom, manual FreeBSD 13.0-CURRENT ZFS-on-root + EFI boot install](/2020/10/25/adventures-in-freebernetes-installing-freebsd/#step-by-step)
+[Skip straight to the step-by-step instructions for a custom, manual FreeBSD 13.0-CURRENT ZFS-on-root + EFI boot install](#zfs-on-root)
 
 ## Day 1: The Adventure Begins
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ok, I got the FreeBSD 13.0-CURRENT memstick image, used my ancient Linux laptop to dd it onto the USB drive.<br><br>My only HDMI display is my TV, sooooo I&#39;m currently sitting on the floor in front of it (don&#39;t have an HDMI cable + USB elongator for the keyboard to reach the couch).</p>&mdash; Karen Bruner (@fuzzyKB) <a href="https://twitter.com/fuzzyKB/status/1319742463527940097?ref_src=twsrc%5Etfw">October 23, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -96,6 +96,7 @@ I still didn't figure out how to boot from ZFS-on-root from the boot loader (I t
 
 Anyway, my FreeBSD 13.0-CURRENT PC is all humming. Next I'll work on getting bhyve (probably via CBSD) up and running. I've never touched bhyve before, so I'm curious to see what that looks like.
 
+<a id="zfs-on-root"/>
 ## Step-by-Step Manual ZFS-on-root FreeBSD Install
 
 _USE AT YOUR OWN RISK_. Seriously, I have no idea what I'm doing.

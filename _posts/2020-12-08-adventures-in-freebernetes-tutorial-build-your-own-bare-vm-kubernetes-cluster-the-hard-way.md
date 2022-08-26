@@ -87,7 +87,7 @@ For this tutorial, you don't need to know anything about Kubernetes. You do need
   * RAM: at least 18Gb; 30Gb+ preferred
   * Free disk space: at least 100Gb
 * Operating system
-  * FreeBSD: 13.0-CURRENT. It may work with 12.0-RELEASE, but it haas not been tested
+  * FreeBSD: 13.0-CURRENT. It may work with 12.0-RELEASE, but it has not been tested
   * File system: ZFS. It could work with UFS with user modifications
 
 ### Test System
