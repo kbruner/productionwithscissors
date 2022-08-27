@@ -14,6 +14,8 @@ categories:
 tags:
 - engineering fails
 - root cause analysis
+- not-tech
+- entertainment
 meta:
 author:
   login: nightmarebeforedevops

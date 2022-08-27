@@ -11,13 +11,8 @@ categories:
 - Running With Scissors
 tags:
 - taste tests
+- not-tech
 meta:
-  _last_editor_used_jetpack: block-editor
-  _wpcom_is_markdown: '1'
-  _publicize_job_id: '74963926573'
-  timeline_notification: '1658426814'
-  _wp_old_slug: olipop-stack-rank
-  _wp_old_date: '2022-07-19'
 author:
   login: nightmarebeforedevops
   email: kbcontactxyz@gmail.com

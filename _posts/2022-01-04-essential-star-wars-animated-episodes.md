@@ -9,7 +9,9 @@ password: ''
 status: publish
 categories:
 - Star Wars
-tags: []
+tags:
+- not-tech
+- entertainment
 meta:
 author:
   login: nightmarebeforedevops
