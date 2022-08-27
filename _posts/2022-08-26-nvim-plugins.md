@@ -18,7 +18,7 @@ author:
   display_name: karenb
   first_name: Karen
   last_name: Bruner
-permalink: 
+permalink: /2022/08/26/nvim-plugins/
 excerpt: Very Very Basic Guide to Get Neovim Plug-ins to Work
 hide_title: false
 ---
