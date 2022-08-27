@@ -14,6 +14,8 @@ tags:
 - architecture
 - engineering culture
 - engineering fails
+- not-tech
+- entertainment
 meta:
 author:
   login: nightmarebeforedevops

@@ -11,6 +11,7 @@ categories:
 - Twisty Puzzles
 tags:
 - puzzles
+- not-tech
 meta:
 author:
   login: nightmarebeforedevops

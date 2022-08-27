@@ -12,6 +12,8 @@ categories:
 - Wile E
 tags:
 - engineering fails
+- root cause analysis
+- entertainment
 meta:
   timeline_notification: '1596432421'
 author:

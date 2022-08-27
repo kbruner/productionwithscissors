@@ -9,7 +9,9 @@ password: ''
 status: publish
 categories:
 - Twisty Puzzles
-tags: []
+tags:
+- not-tech
+- puzzles
 meta:
 author:
   login: nightmarebeforedevops
