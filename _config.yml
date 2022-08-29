@@ -1,6 +1,8 @@
 # SITE CONFIGURATION
 baseurl: "/"
-url: "http://localhost:4000"
+# url: "http://localhost:4000"
+url: "https://productionwithscissors.run"
+
 
 # THEME-SPECIFIC CONFIGURATION
 title: Running In Production With Scissors
