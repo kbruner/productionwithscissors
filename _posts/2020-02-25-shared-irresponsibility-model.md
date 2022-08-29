@@ -15,12 +15,7 @@ meta:
   _edit_last: '108235749'
   timeline_notification: '1582605218'
   _publicize_job_id: '41083009268'
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/02/25/shared-irresponsibility-model/"
 excerpt: Security is hard when cloud providers give you keys but no locks
 ---

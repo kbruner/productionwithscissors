@@ -16,12 +16,7 @@ tags:
 - entertainment
 meta:
   timeline_notification: '1596432421'
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/08/03/son-of-coyote/"
 excerpt: More root cause analysis of failed road runner traps
 ---

@@ -17,12 +17,7 @@ tags:
 - not-tech
 - entertainment
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/01/23/engineering-quality-of-the-anti-road-runner-traps-of-wile-e-coyote-esq/"
 excerpt: Beep Beep!
 ---

@@ -13,12 +13,7 @@ tags:
 - security
 - stories
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/08/29/1001-1-insomniac-nights/"
 excerpt: More stories from the trenches
 ---

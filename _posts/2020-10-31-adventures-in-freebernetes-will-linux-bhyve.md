@@ -15,12 +15,7 @@ tags:
 - virtualization
 - zfs
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/10/31/adventures-in-freebernetes-will-linux-bhyve/"
 excerpt: 'Part 3 of experiments in FreeBSD and Kubernetes: Linux guests'
 thumbnail: /assets/images/2020/10/screenshot-2020-10-30-at-21.59.40-01.jpeg

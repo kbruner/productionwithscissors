@@ -12,12 +12,7 @@ categories:
 tags:
 - stories
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/11/15/1001-3-insomniac-nights/"
 excerpt: More sleepless stories
 thumbnail: assets/images/2020/11/14-1-01.jpeg

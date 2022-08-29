@@ -14,12 +14,7 @@ tags:
 - hiring
 - job search
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/07/31/riddle-me-this-job-listing/"
 excerpt: So you want to hire an SRE?
 ---

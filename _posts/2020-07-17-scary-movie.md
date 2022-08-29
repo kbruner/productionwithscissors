@@ -16,12 +16,7 @@ meta:
   timeline_notification: '1594962157'
   _wp_old_slug: '414'
   _last_editor_used_jetpack: block-editor
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/07/17/scary-movie/"
 excerpt: Fix your organization's toxic culture
 ---

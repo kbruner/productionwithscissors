@@ -13,15 +13,10 @@ tags:
 - taste tests
 - not-tech
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2022/07/21/olipop-flavor-stack-ranking/"
 excerpt: Drinking Our Olipop Addiction
-thumbnail: /assets/images/2022/07/20220716_141622.jpg
+thumbnail: assets/images/2022/07/20220716_141622.jpg
 feature-img: assets/images/2022/07/20220716_161522.jpg
 ---
 

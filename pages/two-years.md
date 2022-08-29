@@ -11,12 +11,7 @@ categories: []
 tags: []
 hide: true
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/two-years/"
 ---
 

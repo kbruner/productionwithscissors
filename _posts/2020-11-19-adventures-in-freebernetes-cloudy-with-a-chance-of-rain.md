@@ -14,12 +14,7 @@ tags:
 - linux
 - virtualization
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/11/19/adventures-in-freebernetes-cloudy-with-a-chance-of-rain/"
 excerpt: 'Part 8 of experiments in FreeBSD and Kubernetes: Building a Custom Cloud Image in CBSD'
 thumbnail: assets/images/2020/11/img_20201118_133131.jpg

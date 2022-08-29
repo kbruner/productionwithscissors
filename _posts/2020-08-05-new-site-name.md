@@ -11,12 +11,7 @@ categories:
 - Running With Scissors
 tags: []
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/08/05/new-site-name/"
 excerpt: New name, same nightmares
 ---

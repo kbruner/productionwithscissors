@@ -10,12 +10,7 @@ status: publish
 categories: []
 tags: []
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/about/"
 excerpt: This is just a short excerpt for the about page.
 ---

@@ -14,12 +14,7 @@ tags:
 - zfs
 - virtualization
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/10/25/adventures-in-freebernetes-installing-freebsd/"
 excerpt: Part 1 of experiments in FreeBSD and Kubernetes
 thumbnail: /assets/images/2020/10/pxl_20201023_210133887-01.jpeg

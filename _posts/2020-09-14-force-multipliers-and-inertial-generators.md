@@ -13,12 +13,7 @@ tags:
 - engineering culture
 - force multipliers
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/09/14/force-multipliers-and-inertial-generators/"
 excerpt: A minute saved is a minute earned, while a minute wasted turns into wasted months full of headaches
 ---

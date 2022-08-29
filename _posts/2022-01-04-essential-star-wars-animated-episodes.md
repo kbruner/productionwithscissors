@@ -13,12 +13,7 @@ tags:
 - not-tech
 - entertainment
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2022/01/04/essential-star-wars-animated-episodes/"
 excerpt: It's all about Ahsoka
 ---

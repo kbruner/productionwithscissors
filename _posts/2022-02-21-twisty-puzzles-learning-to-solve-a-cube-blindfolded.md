@@ -13,12 +13,7 @@ tags:
 - not-tech
 - puzzles
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2022/02/21/twisty-puzzles-learning-to-solve-a-cube-blindfolded/"
 excerpt: Describes one method to learn to solve a puzzle cube blindfolded
 ---

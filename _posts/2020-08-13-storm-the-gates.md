@@ -15,12 +15,7 @@ tags:
 - hiring
 - job search
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/08/13/storm-the-gates/"
 excerpt: Stop gatekeeping tech jobs with superfluous CS degree requirements
 ---
