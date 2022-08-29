@@ -16,12 +16,7 @@ tags:
 - virtualization
 - linux
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/12/26/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-k3s-cluster/"
 excerpt: Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bhyve VMs
 ---

@@ -13,12 +13,7 @@ tags:
 - not-tech
 - puzzles
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2021/05/06/twisty-puzzles-3x3-pyramorphix-solution/"
 excerpt: Solving the 3x3 pyramorphix twisty puzzle
 thumbnail: assets/images/2021/05/pxl_20210503_182455250-01.jpeg

@@ -12,12 +12,7 @@ categories:
 tags:
 - devops
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 excerpt: Introduction to the Nightmare before DevOps
 permalink: "/2017/09/08/once-upon-a-time/"
 ---

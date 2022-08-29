@@ -96,7 +96,11 @@
 
     <!-- Twitter Cards -->
     <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+    {% if page.excerpt %}
+    <meta name="twitter:description" content="{{ page.excerpt }}">
+    {% else %}
     <meta name="twitter:description" content="{{ page.content | strip_html | strip_newlines | truncate: 160 | default: site.header_text}}">
+    {% endif %}
     {% if site.data.social.twitter %}
     <meta name="twitter:creator" content="@{{ site.data.social.twitter }}">
     <meta name="twitter:site" content="@{{ site.data.social.twitter }}">

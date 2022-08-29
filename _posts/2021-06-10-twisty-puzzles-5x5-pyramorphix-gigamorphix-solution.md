@@ -13,12 +13,7 @@ tags:
 - puzzles
 - not-tech
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2021/06/10/twisty-puzzles-5x5-pyramorphix-gigamorphix-solution/"
 excerpt: Solving the 5x5 gigamorphix twisty puzzle
 thumbnail: assets/images/2021/06/untitled-drawing-4.png

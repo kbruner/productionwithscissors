@@ -12,12 +12,7 @@ categories:
 tags:
 - engineering culture
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/10/21/oh-you-shouldnt-have/"
 excerpt: You don't need 5 routers for your 50-person office, but you do need to respect your engineers' time and expertise
 thumbnail: /assets/images/2020/10/sketch1603088565601-01.jpeg

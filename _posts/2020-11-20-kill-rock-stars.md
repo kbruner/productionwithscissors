@@ -12,12 +12,7 @@ categories:
 tags:
 - engineering culture
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/11/20/kill-rock-stars/"
 excerpt: Your engineering team is a band, not a person
 thumbnail: assets/images/2020/11/sketch1605895113120-01.jpeg

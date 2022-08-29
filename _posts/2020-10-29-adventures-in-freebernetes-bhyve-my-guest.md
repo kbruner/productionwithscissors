@@ -13,12 +13,7 @@ tags:
 - freebsd
 - virtualization
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/10/29/adventures-in-freebernetes-bhyve-my-guest/"
 excerpt: 'Part 2 of experiments in FreeBSD and Kubernetes: Creating your first guest'
 thumbnail: /assets/images/2020/10/screenshot-2020-10-28-at-21.27.23-01.jpeg

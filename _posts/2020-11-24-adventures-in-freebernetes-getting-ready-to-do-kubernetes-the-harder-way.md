@@ -15,12 +15,7 @@ tags:
 - linux
 - virtualization
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/11/24/adventures-in-freebernetes-getting-ready-to-do-kubernetes-the-harder-way/"
 excerpt: 'Part 9 of experiments in FreeBSD and Kubernetes: Prep Work for Creating a VM Kubernetes Cluster'
 thumbnail: assets/images/2020/11/screenshot-2020-11-22-at-15.31.52-01.jpeg

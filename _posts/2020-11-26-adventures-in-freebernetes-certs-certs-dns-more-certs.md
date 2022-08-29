@@ -17,12 +17,7 @@ tags:
 - linux
 - virtualization
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/11/26/adventures-in-freebernetes-certs-certs-dns-more-certs/"
 excerpt: 'Part 10 of experiments in FreeBSD and Kubernetes: More Net Work Plus Initial Cluster Creation Tasks'
 ---

@@ -14,12 +14,7 @@ tags:
 - kubernetes
 - virtualization
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/10/24/adventures-in-freebernetes-introduction/"
 excerpt: Introduction to a series of experiments with FreeBSD and Kubernetes
 thumbnail: assets/images/2020/10/5680040477_3796979f90_o.jpg

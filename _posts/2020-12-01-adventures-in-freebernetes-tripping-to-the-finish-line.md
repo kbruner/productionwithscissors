@@ -16,12 +16,7 @@ tags:
 - virtualization
 - zfs
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/12/01/adventures-in-freebernetes-tripping-to-the-finish-line/"
 excerpt: 'Part 12 of experiments in FreeBSD and Kubernetes: Completing and testing the Kubernetes Cluster'
 thumbnail: assets/images/2020/12/screenshot-2020-11-29-at-23.45.34-01.jpeg

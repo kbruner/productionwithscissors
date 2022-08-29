@@ -13,12 +13,7 @@ tags:
 - engineering culture
 - succulents
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/07/19/roots-of-knowledge/"
 excerpt: Make some cross-pollination of technical knowledge part of your team's culture. Also, grow succulents.
 ---

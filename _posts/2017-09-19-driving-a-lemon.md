@@ -15,12 +15,7 @@ meta:
   _rest_api_published: '1'
   _rest_api_client_id: "-1"
   _publicize_job_id: '9427759228'
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2017/09/19/driving-a-lemon/"
 excerpt: Services can be lemons, too
 ---

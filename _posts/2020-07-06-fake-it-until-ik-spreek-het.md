@@ -14,12 +14,7 @@ tags:
 - kubernetes
 - slides
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/07/06/fake-it-until-ik-spreek-het/"
 excerpt: If you ever need to write bilingual slides...
 ---

@@ -15,12 +15,7 @@ tags:
 - virtualization
 - zfs
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/11/09/adventures-in-freebernetes-vm-management-with-cbsd/"
 excerpt: 'Part 5 of experiments in FreeBSD and Kubernetes: Getting started with CBSD'
 thumbnail: /assets/images/2020/11/screenshot-2020-11-08-at-15.56.30.png

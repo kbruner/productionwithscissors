@@ -17,12 +17,7 @@ tags:
 - linux
 - virtualization
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/11/28/adventures-in-freebernetes-my-out-of-control-plane/"
 excerpt: 'Part 11 of experiments in FreeBSD and Kubernetes: Bootstrapping the Kubernetes Control Plane'
 thumbnail: assets/images/2020/11/screenshot-2020-11-27-at-03.54.07-01.jpeg

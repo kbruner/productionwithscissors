@@ -12,12 +12,7 @@ tags:
 - documentation
 - tech-tools
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: /2022/08/26/nvim-plugins/
 excerpt: Very Very Basic Guide to Get Neovim Plug-ins to Work
 hide_title: false

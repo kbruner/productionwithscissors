@@ -14,12 +14,7 @@ tags:
 - devops
 - stories
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/10/09/1001-2-insomniac-nights/"
 excerpt: Still more stories from the trenches
 ---

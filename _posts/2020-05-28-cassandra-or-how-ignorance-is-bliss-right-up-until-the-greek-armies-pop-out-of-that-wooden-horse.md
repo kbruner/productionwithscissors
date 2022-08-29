@@ -13,12 +13,7 @@ categories:
 tags:
 - site reliability
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/05/28/cassandra-or-how-ignorance-is-bliss-right-up-until-the-greek-armies-pop-out-of-that-wooden-horse/"
 excerpt: Trust me when I tell you I know what's going to happen here...
 ---

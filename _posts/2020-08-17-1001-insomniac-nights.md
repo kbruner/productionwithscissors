@@ -16,12 +16,7 @@ tags:
 - stories
 - worst practices
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/08/17/1001-insomniac-nights/"
 excerpt: Stories from the tech trenches
 ---

@@ -13,12 +13,7 @@ tags:
 - code smell
 - devops
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2019/06/17/night-on-balderdash-mountain/"
 excerpt: Focus on making your software usable by the actual users
 ---

@@ -12,12 +12,7 @@ categories:
 tags:
 - devops
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2019/09/05/the-old-lion-and-the-ford/"
 excerpt: On the normalization of deviance
 ---

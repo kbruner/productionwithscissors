@@ -15,12 +15,7 @@ tags:
 - virtualization
 - zfs
 meta:
-author:
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
+author: karen
 permalink: "/2020/11/05/adventures-in-freebernetes-more-linux-bhyve-iour-plus-cbsd/"
 excerpt: 'Part 4 of experiments in FreeBSD and Kubernetes: UEFI Booting + Installing CBSD'
 thumbnail: /assets/images/2020/11/screenshot-2020-11-05-at-08.55.48-01.jpeg
