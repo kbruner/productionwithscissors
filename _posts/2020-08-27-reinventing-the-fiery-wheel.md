@@ -16,7 +16,7 @@ meta:
 author: karen
 permalink: "/2020/08/27/reinventing-the-fiery-wheel/"
 excerpt: Code is lava. So is everything else.
-thumbnail: assets/images/2020/08/ixion.gif
+thumbnail: assets/images/2020/08/ixion-u.gif
 ---
 
 _Code is lava. So is everything else._
