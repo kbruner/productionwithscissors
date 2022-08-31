@@ -15,7 +15,6 @@ tags:
 - virtualization
 - zfs
 meta:
-author: karen
 permalink: "/2020/11/17/adventures-in-freebernetes-bespoke-vms-in-cbsd/"
 excerpt: 'Part 7 of experiments in FreeBSD and Kubernetes: Custom Linux VM Installs in CBSD'
 thumbnail: assets/images/2020/11/screenshot-2020-11-15-at-13.36.07-01.jpeg

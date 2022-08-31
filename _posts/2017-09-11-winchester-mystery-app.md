@@ -13,7 +13,6 @@ tags:
 - devops
 - worst practices
 meta:
-author: karen
 permalink: "/2017/09/11/winchester-mystery-app/"
 excerpt: You will never be able to escape the ghosts of an un-designed architecture
 ---

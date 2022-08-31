@@ -17,7 +17,6 @@ tags:
 - not-tech
 - entertainment
 meta:
-author: karen
 permalink: "/2022/01/10/star-wars-imperial-engineering-fails/"
 excerpt: While this series of engineering failures may have happened a long, long ago in a galaxy far, far away, it also happened last week in a tech company not too far from here.
 feature-img: assets/images/2022/01/6522942851_fc909d96ea_o.jpg

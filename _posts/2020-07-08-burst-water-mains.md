@@ -13,14 +13,6 @@ tags:
 - cloud
 - incidents
 meta:
-  _publicize_job_id: '46311383464'
-  timeline_notification: '1594167531'
-  _edit_last: '108235749'
-  login: nightmarebeforedevops
-  email: kbcontactxyz@gmail.com
-  display_name: karenb
-  first_name: Karen
-  last_name: Bruner
 permalink: "/2020/07/08/burst-water-mains/"
 excerpt: When root causes aren't
 ---

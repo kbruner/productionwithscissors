@@ -11,7 +11,6 @@ categories:
 - Running With Scissors
 tags: []
 meta:
-author: karen
 permalink: "/2020/08/05/new-site-name/"
 excerpt: New name, same nightmares
 ---

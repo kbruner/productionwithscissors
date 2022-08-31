@@ -15,7 +15,6 @@ tags:
 - linux
 - virtualization
 meta:
-author: karen
 permalink: "/2020/11/13/adventures-in-freebernetes-a-bridge-not-far-enough/"
 excerpt: 'Part 6 of experiments in FreeBSD and Kubernetes: Automated VM installation with CBSD and falling down the network rabbit hole'
 thumbnail: /assets/images/2020/11/screenshot-2020-11-11-at-22.01.30-01.jpeg

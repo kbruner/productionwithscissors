@@ -14,7 +14,6 @@ tags:
 - devops
 - stories
 meta:
-author: karen
 permalink: "/2020/10/09/1001-2-insomniac-nights/"
 excerpt: Still more stories from the trenches
 ---

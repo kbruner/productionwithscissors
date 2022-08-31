@@ -13,7 +13,6 @@ tags:
 - puzzles
 - not-tech
 meta:
-author: karen
 permalink: "/2022/01/12/twisty-puzzles-4x4-pyramorphix-megamorphix-center-parity/"
 excerpt: Solving the 4x4 megamorphix twisty puzzle's rotated center parity
 thumbnail: assets/images/2022/01/20220111_141936_edited.png

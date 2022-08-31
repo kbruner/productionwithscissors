@@ -17,7 +17,6 @@ tags:
 - not-tech
 - entertainment
 meta:
-author: karen
 permalink: "/2020/01/23/engineering-quality-of-the-anti-road-runner-traps-of-wile-e-coyote-esq/"
 excerpt: Beep Beep!
 ---

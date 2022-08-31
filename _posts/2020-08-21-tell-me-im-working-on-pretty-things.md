@@ -12,7 +12,6 @@ categories:
 tags:
 - engineering culture
 meta:
-author: karen
 permalink: "/2020/08/21/tell-me-im-working-on-pretty-things/"
 excerpt: Reward the behavior you seek
 thumbnail: assets/images/2020/08/sketch1597996757340-01.jpeg

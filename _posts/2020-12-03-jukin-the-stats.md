@@ -16,7 +16,6 @@ tags:
 - root cause analysis
 - site reliability
 meta:
-author: karen
 permalink: "/2020/12/03/jukin-the-stats/"
 excerpt: If you can't measure it, you can't manipulate it
 thumbnail: assets/images/2020/12/sketch1606992353868-01.jpeg

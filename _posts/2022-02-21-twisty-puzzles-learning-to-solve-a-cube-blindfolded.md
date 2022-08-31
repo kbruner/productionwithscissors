@@ -13,7 +13,6 @@ tags:
 - not-tech
 - puzzles
 meta:
-author: karen
 permalink: "/2022/02/21/twisty-puzzles-learning-to-solve-a-cube-blindfolded/"
 excerpt: Describes one method to learn to solve a puzzle cube blindfolded
 ---

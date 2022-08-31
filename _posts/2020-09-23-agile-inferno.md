@@ -13,7 +13,6 @@ tags:
 - agile
 - engineering culture
 meta:
-author: karen
 permalink: "/2020/09/23/agile-inferno/"
 excerpt: How Agile development in practice often seems more like loosely organized chaos rather than coordinated acceleration
 thumbnail: /assets/images/2020/09/sketch1600769376052.png

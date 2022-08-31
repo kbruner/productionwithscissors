@@ -12,11 +12,6 @@ categories:
 tags:
 - engineering culture
 meta:
-  _publicize_job_id: '46663491724'
-  timeline_notification: '1594962157'
-  _wp_old_slug: '414'
-  _last_editor_used_jetpack: block-editor
-author: karen
 permalink: "/2020/07/17/scary-movie/"
 excerpt: Fix your organization's toxic culture
 ---
