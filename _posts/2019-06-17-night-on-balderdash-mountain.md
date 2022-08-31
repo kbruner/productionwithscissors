@@ -13,7 +13,6 @@ tags:
 - code smell
 - devops
 meta:
-author: karen
 permalink: "/2019/06/17/night-on-balderdash-mountain/"
 excerpt: Focus on making your software usable by the actual users
 ---

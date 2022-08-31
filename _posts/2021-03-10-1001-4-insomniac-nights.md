@@ -13,10 +13,6 @@ tags:
 - cloud
 - stories
 meta:
-  _last_editor_used_jetpack: block-editor
-  timeline_notification: '1615357849'
-  _publicize_job_id: '55758719986'
-author: karen
 permalink: "/2021/03/10/1001-4-insomniac-nights/"
 excerpt: Still not sleeping
 ---

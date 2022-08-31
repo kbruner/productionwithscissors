@@ -12,7 +12,6 @@ categories:
 tags:
 - devops
 meta:
-author: karen
 excerpt: Introduction to the Nightmare before DevOps
 permalink: "/2017/09/08/once-upon-a-time/"
 ---

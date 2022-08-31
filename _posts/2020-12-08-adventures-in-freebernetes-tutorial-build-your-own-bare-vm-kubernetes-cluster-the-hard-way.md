@@ -16,7 +16,6 @@ tags:
 - virtualization
 - linux
 meta:
-author: karen
 permalink: "/2020/12/08/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-kubernetes-cluster-the-hard-way/"
 excerpt: Step-by-step tutorial for manually deploying a Kubernetes cluster on FreeBSD bhyve VMs
 ---

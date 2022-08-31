@@ -12,7 +12,6 @@ categories:
 tags:
 - kubernetes
 meta:
-author: karen
 permalink: "/2020/09/01/so-you-want-to-be-a-kubernetes-star/"
 excerpt: "(Hopefully) Practical advice for people who want to learn about Kubernetes"
 thumbnail: assets/images/2020/09/sketch1599003118814-01.png

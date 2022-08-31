@@ -13,7 +13,6 @@ tags:
 - not-tech
 - entertainment
 meta:
-author: karen
 permalink: "/2022/01/04/essential-star-wars-animated-episodes/"
 excerpt: It's all about Ahsoka
 ---

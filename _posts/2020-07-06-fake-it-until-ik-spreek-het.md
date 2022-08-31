@@ -14,7 +14,6 @@ tags:
 - kubernetes
 - slides
 meta:
-author: karen
 permalink: "/2020/07/06/fake-it-until-ik-spreek-het/"
 excerpt: If you ever need to write bilingual slides...
 ---

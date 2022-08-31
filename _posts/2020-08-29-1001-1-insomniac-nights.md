@@ -13,7 +13,6 @@ tags:
 - security
 - stories
 meta:
-author: karen
 permalink: "/2020/08/29/1001-1-insomniac-nights/"
 excerpt: More stories from the trenches
 ---

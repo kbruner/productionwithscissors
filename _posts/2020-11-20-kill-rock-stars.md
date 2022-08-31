@@ -12,7 +12,6 @@ categories:
 tags:
 - engineering culture
 meta:
-author: karen
 permalink: "/2020/11/20/kill-rock-stars/"
 excerpt: Your engineering team is a band, not a person
 thumbnail: assets/images/2020/11/sketch1605895113120-01.jpeg

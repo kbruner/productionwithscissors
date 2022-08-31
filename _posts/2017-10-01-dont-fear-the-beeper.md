@@ -13,7 +13,6 @@ tags:
 - devops
 - on-call
 meta:
-author: karen
 permalink: "/2017/10/01/dont-fear-the-beeper/"
 excerpt: You shouldn't have to be afraid of being on-call
 ---

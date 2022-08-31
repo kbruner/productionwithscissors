@@ -13,10 +13,6 @@ tags:
 - architecture
 - databases
 meta:
-  _publicize_job_id: '46622038623'
-  timeline_notification: '1594870033'
-  _last_editor_used_jetpack: block-editor
-author: karen
 permalink: "/2020/07/16/choose-your-own-architecture/"
 excerpt: Build smart from the start for maintainable, scalable services
 ---

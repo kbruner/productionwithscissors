@@ -14,7 +14,6 @@ tags:
 - engineering culture
 - site reliability
 meta:
-author: karen
 permalink: "/2020/09/30/agile-is-lava/"
 excerpt: Stop torturing SREs with Agile process that don't fit
 thumbnail: assets/images/2020/09/sketch1601445033757-01.jpeg
