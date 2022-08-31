@@ -99,3 +99,48 @@ gitGraph
    commit id: "Here we are"
 ```
 
+<br>
+
+To embed in an `.md` file, you can wrap it like this:
+<script src="https://gist.github.com/kbruner/51023f98a7fdaffbe9d7882271ca9c97.js"></script>
+
+
+## Rendering to a file
+
+You can use the [cli](https://github.com/mermaid-js/mermaid-cli). You can
+install it as an `npm` package locally, but I got dependency errors and I'm
+not a node person, so forget that.
+
+Fortunately, they distribute a docker container. If you already have `docker`
+installed, you just need to pull the image, and you're good to go.
+
+The cli supports `svg`, `png`, `md`, and `pdf` output formats. I want an image
+file, so first I tried `png` but the file wasn't loadable in one image viewer
+I tried. Instead I output to `svg` and then used `gimp` to convert it to
+`png`. (Plenty of other tools exist for that image conversaion.)
+
+```
+k@slaapmatje:~$ mkdir mermaid
+k@slaapmatje:~$ mv my-brain.mmd mermaid
+k@slaapmatje:~$ cd mermaid
+k@slaapmatje:~/mermaid$ chmod 777 .
+k@slaapmatje:~/mermaid$ sudo docker pull minlag/mermaid-cli
+Using default tag: latest
+latest: Pulling from minlag/mermaid-cli
+Digest: sha256:bf130e7ce53fa2269d4d7784c4d7d3edea63185f2fb72d337148224ffd22f1ec
+Status: Image is up to date for minlag/mermaid-cli:latest
+docker.io/minlag/mermaid-cli:latest
+k@slaapmatje:~/mermaid$ sudo docker run -it -v `pwd`:/data minlag/mermaid-cli -i /data/my-brain.mmd -o /data/my-brain.svg
+Generating single mermaid chart
+k@slaapmatje:~/mermaid$ ls
+my-brain.mmd  my-brain.svg
+k@slaapmatje:~/mermaid$
+```
+
+(We give the `mermaid` directory global write permissions so the `docker` user
+can write to it.)
+
+---
+
+Mermaid supports a number of graph and diagram formats, and it's fun
+to write!
