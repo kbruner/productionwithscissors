@@ -284,14 +284,30 @@ support, meta.property-name, support.constant, support.variable,
 .pl-token.active, .pl-token:hover { background: hsl(207,82%,66%) !important; color: hsl(0, 0%, 8%) !important; }
 
 /* Applause */
-// applause-button
 
 applause-button {
-  width: 80px;
-  height: 80px;
+  color: '#0072B5';
+  width: 45px;
+  height: 45px;
   margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 
   .count-container {
-    color: inherit;
+    position: relative;
+    font-size: 25px;
+    color: '#0072B5';
+    height: 100%;
+    top: 0%;
+    .count {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+      color: '#0072B5';
+      height: 100%;
+      top: 100%;
+    }
   }
 }
