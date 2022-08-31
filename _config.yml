@@ -65,8 +65,11 @@ twitter:
   username: fuzzykb
   card: summary-large-image
 
+applause_button: true
+
 defaults:
   - scope:
       path: ""
     values:
       image: /assets/img/header/scissors-crop-t.png
+      comments: true
