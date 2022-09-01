@@ -289,25 +289,31 @@ applause-button {
   color: '#0072B5';
   width: 45px;
   height: 45px;
-  margin: 0 auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  margin: auto;
+  margin-left: 0px;
 
   .count-container {
-    position: relative;
-    font-size: 25px;
     color: '#0072B5';
-    height: 100%;
-    top: 0%;
     .count {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-      color: '#0072B5';
-      height: 100%;
-      top: 100%;
     }
   }
+}
+
+.applause-text {
+  height: auto;
+  color: var(--meta);                                                         
+  letter-spacing: 0.1em;                                                      
+  margin: auto;                                                                  
+  text-transform: uppercase;
+  margin-right: 0px;
+}
+
+.applause {
+    width: auto;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }

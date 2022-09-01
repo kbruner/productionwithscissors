@@ -25,10 +25,15 @@ layout: default
 
   <!-- Applause button -->
   {% if site.applause_button %}
-    <applause-button
-      color={{ site.page_color | default:'#0072B5' }}
-      url={{ site.url }}{{ page.url }} >
-    </applause-button>
+  <div class="applause">
+    <div class="applause-text">clap</div>
+    <div class="applause-button">
+      <applause-button
+        color={{ site.page_color | default:'#0072B5' }}
+        url={{ site.url }}{{ page.url }} >
+      </applause-button>
+    </div>
+  </div>
   {% endif %}
 
   <!-- Social media shares -->
