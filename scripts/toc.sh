@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# from https://medium.com/@acrodriguez/one-liner-to-generate-a-markdown-toc-f5292112fd14
+
+# It will read the input and:
+#
+# 1. Extract only the headers via grep (using $1 and $2 as first and last heading level)
+# 2. Extract the header text via sed and created ':' separated records of the form '###:Full Text:Full Text'
+# 3. Compose each TOC line via awk by replacing '#' with '  ' and stripping spaces and caps of reference
+
+grep -E "^#{${1:-1},${2:-3}} " | \
+sed -E 's/(#+) (.+)/\1:\2:\2/g' | \
+awk -F ":" '{ gsub(/#/,"  ",$1); gsub(/[ ]/,"-",$3); print $1 "- [" $2 "](#" tolower($3) ")" }'

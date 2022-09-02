@@ -110,3 +110,10 @@ excerpt: Articles in the FreeBSD/Kubernetes series
 ##### December 26, 2020
 
 * * *
+### [Fun with FreeBSD: Your First Linux Guest](/2022/09/02/fun-with-freebsd-first-linux-guest/)
+
+#### Getting up and running with CBSD on FreeBSD
+
+##### September 2, 2022
+
+* * *
