@@ -66,7 +66,7 @@ The last two posts and change have demonstrated some of the permutations of poss
 
 The [CBSD](https://cbsd.io/) project exists to help manage that complexity. While it also supports FreeBSD jails and Xen VMs, I'm going to focus on bhyve. I'm building it from the `sysutil/cbsd` port, so now, among other packages, I now have `sudo` installed.
 
-After the port finishes compiling, it reminds the user to finish installation by running `env workdir="/usr/cbsd" /usr/local/cbsd/sudoexec/initenv` and interactively fed it the following values:
+After the port finishes compiling, it reminds the user to finish installation by running `env workdir="/usr/cbsd" /usr/local/cbsd/sudoexec/initenv` and interactively feed it the following values:
 
 <script src="https://gist.github.com/kbruner/2e469cf22bfdacf0e318eae103be5258.js"></script>
 
