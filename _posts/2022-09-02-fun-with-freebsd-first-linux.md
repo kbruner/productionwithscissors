@@ -435,7 +435,6 @@ Twitter](https://www.twitter.com/fuzzyKB).
 * [https://docs.freebsd.org/en/books/handbook/ports/#ports-using](https://docs.freebsd.org/en/books/handbook/ports/#ports-using)
 * [https://docs.freebsd.org/en/books/handbook/security/#security-sudo](https://docs.freebsd.org/en/books/handbook/security/#security-sudo)
 * [https://docs.freebsd.org/en/books/handbook/zfs/](https://docs.freebsd.org/en/books/handbook/zfs/)
-* [https://docs.freebsd.org/en/books/handbook/zfs/](https://docs.freebsd.org/en/books/handbook/zfs/)
 * [https://tigervnc.org/](https://tigervnc.org/)
 * [https://www.freebsd.org/](https://www.freebsd.org/)
 * [https://www.freebsd.org/doc/handbook/virtualization-host-bhyve.html](https://www.freebsd.org/doc/handbook/virtualization-host-bhyve.html)
