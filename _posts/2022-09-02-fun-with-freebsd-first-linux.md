@@ -78,7 +78,7 @@ faster.
 
 ### Text-based User Interfaces
 
-FreeBSD uses a very distinctive style of interactive menus. If you compiled
+FreeBSD uses a very distinctive style of interactive menus. If you compile
 from `ports`, you will see it a lot. CBSD also uses it.
 
 <div align="center">
@@ -139,7 +139,8 @@ sudo](https://docs.freebsd.org/en/books/handbook/security/#security-sudo)
 ### VNC Client
 
 To connect to the console of the new VM during the installation phase, you
-will need a VNC client on a graphics-based host (for example, Windows or a
+will need a VNC (Virtual Network Computing) client on a graphics-based host
+(for example, Windows or a
 Linux desktop). When connecting from a Linux host, I like
 the [TigerVNC](https://tigervnc.org/) client, which is available as a
 pre-built package for many Linux distros.
@@ -204,7 +205,7 @@ cp /usr/local/examples//pf.conf /etc/pf.conf
 # Enable the NAT gateway
 echo 'gateway_enable="YES"' >> /etc/rc.conf
 # Start
-service  start
+service start
 ```
 
 ### Load kernel modules
@@ -235,7 +236,7 @@ releases with no CBSD support in a later post.
 
 ## Configure the VM
 
-`cbsd bconstruct-tui`
+Run `cbsd bconstruct-tui` to start the VM configuration.
 
 <div align="center">
 <img
@@ -353,6 +354,8 @@ bstart done in 4 minutes and 16 seconds
 ```
 
 We can check the status of our vm:
+
+`cbsd bls mylinuxvm`
 ```
 [root@nucklehead ~]# cbsd bls mylinuxvm
 JNAME      JID    VM_RAM  VM_CURMEM  VM_CPUS  PCPU  VM_OS_TYPE  IP4_ADDR  STATUS  VNC
@@ -386,7 +389,7 @@ src="/assets/images/2022/09/vnc2.png"
 alt="Screenshot of Ubuntu text installer completing the installation process">
 <br>
 <i><small>
-And ready!
+And installing!
 </small></i>
 </div>
 <br>
