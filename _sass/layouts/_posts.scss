@@ -291,6 +291,7 @@ applause-button {
   height: 45px;
   margin: auto;
   margin-left: 0px;
+  padding-bottom: 0px;
 
   .count-container {
     color: '#0072B5';
@@ -301,9 +302,9 @@ applause-button {
 
 .applause-text {
   height: auto;
-  color: var(--meta);                                                         
-  letter-spacing: 0.1em;                                                      
-  margin: auto;                                                                  
+  color: var(--meta);
+  letter-spacing: 0.1em;
+  margin: auto;
   text-transform: uppercase;
   margin-right: 0px;
 }
