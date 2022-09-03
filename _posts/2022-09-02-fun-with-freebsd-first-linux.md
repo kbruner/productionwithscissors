@@ -172,8 +172,9 @@ initialize its configuration. You can find the defaults in
 
 **Important: all `CBSD` commands need to be run as `root`**
 
-CBSD has an `initenv` command to configure it. Unfortunately, the
-configuration only has an interactive options and is also a little janky.
+CBSD has an `initenv` command to configure it. This example shows "the long
+way" but I show a quicker way
+[here.](/2020/12/26/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-k3s-cluster/#3-2)
 
 `env workdir=/usr/cbsd /usr/local/cbsd/sudoexec/initenv`
 
