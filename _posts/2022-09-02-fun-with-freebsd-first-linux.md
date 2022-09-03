@@ -78,7 +78,7 @@ faster.
 
 ### Text-based User Interfaces
 
-FreeBSD uses a very distinctive style of interactive menus. If you compiled
+FreeBSD uses a very distinctive style of interactive menus. If you compile
 from `ports`, you will see it a lot. CBSD also uses it.
 
 <div align="center">
