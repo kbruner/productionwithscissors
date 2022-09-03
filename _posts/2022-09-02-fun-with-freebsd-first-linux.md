@@ -205,7 +205,7 @@ cp /usr/local/examples//pf.conf /etc/pf.conf
 # Enable the NAT gateway
 echo 'gateway_enable="YES"' >> /etc/rc.conf
 # Start
-service  start
+service start
 ```
 
 ### Load kernel modules
@@ -354,6 +354,8 @@ bstart done in 4 minutes and 16 seconds
 ```
 
 We can check the status of our vm:
+
+`cbsd bls mylinuxvm`
 ```
 [root@nucklehead ~]# cbsd bls mylinuxvm
 JNAME      JID    VM_RAM  VM_CURMEM  VM_CPUS  PCPU  VM_OS_TYPE  IP4_ADDR  STATUS  VNC
@@ -387,7 +389,7 @@ src="/assets/images/2022/09/vnc2.png"
 alt="Screenshot of Ubuntu text installer completing the installation process">
 <br>
 <i><small>
-And ready!
+And installing!
 </small></i>
 </div>
 <br>
