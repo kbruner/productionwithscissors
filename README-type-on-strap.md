@@ -362,7 +362,7 @@ The html is stripped out of the excerpt, so it only displays text.
 To easily add align images side by side in your article using the `aligner.html` include:
 
 ```ruby
-{% include aligner.html images="path/to/img1.png,path/to/img2.png,path/to/img3.png" column=3 %}
+#{% include aligner.html images="path/to/img1.png,path/to/img2.png,path/to/img3.png" column=3 %}
 ```
 
 Use it in any markdown file. There are two fields in the _include_ you need to look into:
@@ -436,7 +436,7 @@ layout: page
 title : Portfolio 
 ---
 
-{% include default/portfolio.html %}
+#{% include default/portfolio.html %}
 ```
 
 #### Portfolio posts
@@ -485,7 +485,7 @@ title: Gallery
 gallery: "assets/img/pexels"
 ---
 
-{% include default/gallery.html gallery_path=page.gallery %}
+#{% include default/gallery.html gallery_path=page.gallery %}
 ```
 
 ### Feature: Search 🔍
