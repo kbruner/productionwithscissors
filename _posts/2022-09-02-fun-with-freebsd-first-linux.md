@@ -139,7 +139,8 @@ sudo](https://docs.freebsd.org/en/books/handbook/security/#security-sudo)
 ### VNC Client
 
 To connect to the console of the new VM during the installation phase, you
-will need a VNC client on a graphics-based host (for example, Windows or a
+will need a VNC (Virtual Network Computing) client on a graphics-based host
+(for example, Windows or a
 Linux desktop). When connecting from a Linux host, I like
 the [TigerVNC](https://tigervnc.org/) client, which is available as a
 pre-built package for many Linux distros.
@@ -235,7 +236,7 @@ releases with no CBSD support in a later post.
 
 ## Configure the VM
 
-`cbsd bconstruct-tui`
+Run `cbsd bconstruct-tui` to start the VM configuration.
 
 <div align="center">
 <img
