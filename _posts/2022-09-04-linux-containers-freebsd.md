@@ -60,7 +60,7 @@ Linux containers via `containerd`.
 
 This compatibility is all pretty early-stage and is not guaranteed to work for
 all `containerd` use cases (yet!), but all of this work is a huge step
-toward using FreeBSD natively as [Kubernetes
+toward using FreeBSD hosts natively as [Kubernetes
 nodes]((https://kubernetes.io/docs/concepts/architecture/nodes/)
 
 # Prerequisitites
@@ -168,7 +168,7 @@ FreeBSD nucklehead 13.1-RELEASE FreeBSD 13.1-RELEASE releng/13.1-n250148-fc952ac
 
 ## The command line
 
-Breakind down the command `ctr run --rm --tty --runtime wtf.sbk.runj.v1 --snapshotter zfs
+Breaking down the command `ctr run --rm --tty --runtime wtf.sbk.runj.v1 --snapshotter zfs
 --platform linux docker.io/library/alpine:latest mylinuxcontainer uname -a`
 * `ctr run` -- `containerd` and its subcommand to run a container
 * `--rm` -- remove the container upon completion
