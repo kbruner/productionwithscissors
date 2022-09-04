@@ -70,7 +70,7 @@ nodes]((https://kubernetes.io/docs/concepts/architecture/nodes/)
 This post assumes a basic working knowing of Linux containers, compiling
 source code, and basic FreeBSD system administration skills. (You can find a
 [cheat sheet
-here](https://productionwithscissors.run/2022/09/02/fun-with-freebsd-first-linux-guest/#freebsd-tips-for-linux-people)
+here](https://productionwithscissors.run/2022/09/02/fun-with-freebsd-first-linux-guest/#freebsd-tips-for-linux-people))
 
 ## Platform
 
