@@ -83,6 +83,8 @@ pool.](https://docs.freebsd.org/en/books/handbook/zfs/)
 
 ## Setup
 
+All these commands need to be run as `root`.
+
 ### Packages/ports
 
 Install the following packages or ports:
