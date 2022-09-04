@@ -172,12 +172,12 @@ FreeBSD nucklehead 13.1-RELEASE FreeBSD 13.1-RELEASE releng/13.1-n250148-fc952ac
 
 Breaking down the command `ctr run --rm --tty --runtime wtf.sbk.runj.v1 --snapshotter zfs
 --platform linux docker.io/library/alpine:latest mylinuxcontainer uname -a`
-* `ctr run` -- `containerd` and its subcommand to run a container
+* `ctr run` -- `containerd` client and its subcommand to run a container
 * `--rm` -- remove the container upon completion
 * `--tty` -- attach terminal for STDIN/STDOUT to your terminal
 * `--runtime wtf.sbk.runj.v1` -- use the `runj` runtime for FreeBSD
 * `--snapshotter zfs` -- use ZFS as the storage backend
-* `--platform` -- use a container image built for Linux
+* `--platform linux` -- use a container image built for Linux
 * `docker.io/library/alpine:latest` -- the container image name, in this case
   the one we pulled earlier
 * `mylinuxcontainer` -- the name I gave my container. You can use any string
