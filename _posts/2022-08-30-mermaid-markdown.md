@@ -117,7 +117,7 @@ installed, you just need to pull the image, and you're good to go.
 The cli supports `svg`, `png`, `md`, and `pdf` output formats. I want an image
 file, so first I tried `png` but the file wasn't loadable in one image viewer
 I tried. Instead I output to `svg` and then used `gimp` to convert it to
-`png`. (Plenty of other tools exist for that image conversaion.)
+`png`. (Plenty of other tools exist for that image conversion.)
 
 ```
 k@slaapmatje:~$ mkdir mermaid
