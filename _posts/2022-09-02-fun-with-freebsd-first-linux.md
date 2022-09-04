@@ -136,6 +136,9 @@ root password to authenticate. If this is an important or shared host, you
 can [configure
 sudo](https://docs.freebsd.org/en/books/handbook/security/#security-sudo)
 
+The `root` user also defaults to `csh` as its login shell. You probably want
+to install `bash` and use that instead.
+
 # Setup and configuration
 
 ## Host (FreeBSD Hypervisor) Requirements
