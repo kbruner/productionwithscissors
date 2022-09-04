@@ -61,7 +61,7 @@ Linux containers via `containerd`.
 This compatibility is all pretty early-stage and is not guaranteed to work for
 all `containerd` use cases (yet!), but all of this work is a huge step
 toward using FreeBSD hosts natively as [Kubernetes
-nodes]((https://kubernetes.io/docs/concepts/architecture/nodes/)
+nodes](https://kubernetes.io/docs/concepts/architecture/nodes/)
 
 # Prerequisitites
 
