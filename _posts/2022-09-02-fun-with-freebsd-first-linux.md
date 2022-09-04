@@ -166,33 +166,93 @@ the `port`. The `port` group is in parentheses.
 
 ### Initialize CBSD
 
-After you install CBSD and before we run it the first time, we want to
-initialize its configuration. You can find the defaults in
+Before we run CBSD the first time, we need to
+initialize its configuration. You can find the default values in 
 `/usr/local/cbsd/share/initenv.conf` but we're going to change a few of those.
-
-**Important: all `CBSD` commands need to be run as `root`**
-
-CBSD has an `initenv` command to configure it. This example shows "the long
-way" but I show a quicker way
-[here.](/2020/12/26/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-k3s-cluster/#3-2)
-
-`env workdir=/usr/cbsd /usr/local/cbsd/sudoexec/initenv`
-
-* My host has the hostname `nucklehead` and the IP address
-  192.168.1.76. You should use your own host's values for those options.
-* For the RSYNC and RACCT questions, because this is a non-production system,
-  you probably want to answer disable them to save resources
-* `initenv` may offer different configuration questions depending on answers
-  to previous questions
-
-#### initenv Run-through
-
-<script src="https://gist.github.com/kbruner/d76c7823d519a1af46f1c52dedf00057.js"></script>
 
 In addition to populating `/usr/cbsd` (the "workdir") and writing
 configuration files, the `initenv` subcommand given the
 above values will also append boot-time CBSD options to `/etc/rc.conf` and
 `/boot/loader.conf`.
+
+You can run the `initenv` subcommand one of two ways:
+1. Interactively. This is long and rather confusing if you don't know what
+   you're doing.
+2. Using a seed file with the values pre-set.
+
+**Important: all `CBSD` commands need to be run as `root`**
+
+**Notes:**
+* My host has the hostname `nucklehead` and the IP address
+  192.168.1.76. You should use your own host's values for those options.
+* For the RSYNC and RACCT questions, because this is a non-production system,
+  you probably want to answer disable them to save resources
+* CBSD version 13.1.13 seems to ignore the `racct=0` option (don't enable
+  accounting). After initialization is done, you can remove the line
+  `kern.racct.enable=1` from `/boot/loader.conf`
+* `initenv` may offer different configuration questions depending on answers
+  to previous questions
+
+#### Initialize CBSD the Quick Way
+
+<details markdown="1">
+  <summary><b>Configure CBSD from the command line</b></summary>
+
+1. Save the following to a file called `initenv.conf`
+```shell
+# cbsd initenv preseed file for nucklehead host
+# refer to the /usr/local/cbsd/share/initenv.conf
+# for description.
+#
+nodeip="192.168.1.76"
+nodename="nucklehead"
+jnameserver="10.0.0.1"
+nodeippool="10.0.0.0/16"
+nat_enable="pf"
+fbsdrepo="1"
+zfsfeat="1"
+parallel="0"
+stable="0"
+sqlreplica="0"
+statsd_bhyve_enable="0"
+statsd_jail_enable="0"
+statsd_hoster_enable="0"
+ipfw_enable="0"
+racct="0"
+natip="10.0.0.1"
+initenv_modify_sudoers=""
+initenv_modify_rcconf_hostname=""
+initenv_modify_rcconf_cbsd_workdir="1"
+initenv_modify_rcconf_cbsd_enable="1"
+initenv_modify_rcconf_rcshutdown_timeout="1"
+initenv_modify_syctl_rcshutdown_timeout=""
+initenv_modify_rcconf_cbsdrsyncd_enable=""
+initenv_modify_rcconf_cbsdrsyncd_flags=""
+initenv_modify_cbsd_homedir="1"
+workdir="/usr/cbsd"
+```
+2. Edit `nodeip` to you FreeBSD's IP address and `nodename` to the hostname
+3. Run
+```shell
+env workdir=/usr/cbsd /usr/local/cbsd/sudoexec/initenv inter=0 `pwd`/initenv.conf
+```
+
+</details>
+
+#### Initialize CBSD the Long Way
+
+<details markdown="1">
+  <summary><b>Configure CBSD interactively</b></summary>
+
+This example shows a run-through of an interactive configuration, using the
+command
+
+`env workdir=/usr/cbsd /usr/local/cbsd/sudoexec/initenv`
+
+<script src="https://gist.github.com/kbruner/d76c7823d519a1af46f1c52dedf00057.js"></script>
+
+</details>
+
 
 ### Enable `pf` Networking
 
@@ -202,7 +262,7 @@ needs some additional setup.
 
 ```shell
 # Create the configuration file
-cp /usr/local/examples//pf.conf /etc/pf.conf
+cp /usr/local/examples/pf.conf /etc/pf.conf
 # Enable the NAT gateway
 echo 'gateway_enable="YES"' >> /etc/rc.conf
 # Start
@@ -231,9 +291,10 @@ releases with no CBSD support in a later post.
 
 ## Notes
 
-* In this example, we are going to use Ubuntu Server 22.04
+* In this example, we are going to use Ubuntu Server 22.04.
 * Your menu options may differ if you're using a different version of CBSD.
-
+* We will configure the VM manually through the UI. A later post will show how
+  to configure from a template file instead.
 
 ## Configure the VM
 
@@ -419,6 +480,22 @@ resources.
 cbsd bstop jname=mylinuxvm
 # Delete the VM configuration and ZFS volume
 cbsd bdestroy jname=mylinuxvm
+```
+
+* CBSD added some configuration options to the files to `/etc/rc.conf`
+and `/boot/loader.conf` that you will want to remove.
+
+You can reboot your system to clear the following two changes, or manually
+revert them. Leaving them in place until the next reboot is probably
+harmless, though.
+* Unload the kernel modules you added via `kldload` above
+* Remove the VM's network interfaces, probably named `bridge1`
+  and `tap1`, depending how many VMs you created. You can remove these with
+  the command for each interface. (**DO NOT** try to destroy any other
+  interfaces! Leave `lo0` and `em0` alone!)
+```shell
+ifconfig tap1 down
+ifconfig tap1 destroy
 ```
 
 ---

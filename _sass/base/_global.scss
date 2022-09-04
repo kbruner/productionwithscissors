@@ -367,3 +367,24 @@ body .gist .pl-ii {
     color: #fff;
     background: #900;
 }
+
+details {
+    summary {
+        &::before {
+            font-size: 1.2em;
+            content: "\25BA";
+            float: left;
+            margin-right: 0.0em;
+        }
+        &::-webkit-details-marker {
+            display: none;
+        }
+        margin-bottom: 0.8em;
+    }
+    &.open, &[open] {
+        summary::before {
+            content: "\25BC";
+        }
+    }
+    color: grey;
+}
