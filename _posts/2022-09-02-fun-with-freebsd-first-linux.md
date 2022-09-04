@@ -27,17 +27,16 @@ feature-img: assets/images/2022/09/bconstruct-tui.png
     - [Audience](#audience)
     - [FreeBSD Tips for Linux People](#freebsd-tips-for-linux-people)
   - [Setup and configuration](#setup-and-configuration)
-    - [Host (FreeBSD Hypervisor) Requirements](#host-freebsd-hypervisor-requirements)
-    - [Install and Configure Tools ](#install-and-configure-tools)
+    - [Host (FreeBSD Hypervisor) Requirements](#host-(freebsd-hypervisor)-requirements)
+    - [Install and Configure Tools](#install-and-configure-tools)
   - [Create our Linux Virtual Machine](#create-our-linux-virtual-machine)
     - [Notes](#notes)
     - [Configure the VM](#configure-the-vm)
     - [Start the VM](#start-the-vm)
     - [Install Ubuntu](#install-ubuntu)
     - [Clean up](#clean-up)
-  - [Stop the VM](#stop-the-vm)
-  - [Delete the VM configuration and ZFS volume](#delete-the-vm-configuration-and-zfs-volume)
   - [References](#references)
+
 
 # Intro
 
