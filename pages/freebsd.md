@@ -4,6 +4,29 @@ title: "FreeBSD Virtualization Series"
 permalink: /freebsd-virtualization-series/
 excerpt: Articles in the FreeBSD/Kubernetes series
 ---
+<details markdown="1">
+  <summary>Second series: Fun with FreeBSD</summary>
+
+### [Fun with FreeBSD: Your First Linux Guest](/2022/09/02/fun-with-freebsd-first-linux-guest/)
+
+#### Getting up and running with CBSD on FreeBSD
+
+##### September 2, 2022
+
+* * *
+
+### [Fun with FreeBSD: Run Linux Containers on FreeBSD](/2022/09/04/containerd-linux-on-freebsd/)
+
+#### How to run an actual Linux container directly on FreeBSD. No virtual machines!
+
+##### September 4, 2022
+
+* * *
+
+</details>
+
+<details markdown="1">
+  <summary>First series: Adventures in Freebernetes</summary>
 
 ### [Adventures in Freebernetes: Introduction](/2020/10/24/adventures-in-freebernetes-introduction/)
 
@@ -110,10 +133,5 @@ excerpt: Articles in the FreeBSD/Kubernetes series
 ##### December 26, 2020
 
 * * *
-### [Fun with FreeBSD: Your First Linux Guest](/2022/09/02/fun-with-freebsd-first-linux-guest/)
-
-#### Getting up and running with CBSD on FreeBSD
-
-##### September 2, 2022
-
-* * *
+ 
+</details>
