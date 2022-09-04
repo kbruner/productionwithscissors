@@ -107,9 +107,9 @@ To embed in an `.md` file, you can wrap it like this:
 
 ## Rendering to a file
 
-You can use the [cli](https://github.com/mermaid-js/mermaid-cli). You can
-install it as an `npm` package locally, but I got dependency errors and I'm
-not a node person, so forget that.
+You can use the [cli](https://github.com/mermaid-js/mermaid-cli) to write
+directly to a file. You can install the cli as an `npm` package locally, but
+I got dependency errors and I'm not a node person, so forget that.
 
 Fortunately, they distribute a docker container. If you already have `docker`
 installed, you just need to pull the image, and you're good to go.
