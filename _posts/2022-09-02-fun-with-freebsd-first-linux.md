@@ -23,20 +23,36 @@ feature-img: assets/images/2022/09/bconstruct-tui.png
 
 [_See all posts in this series_](/freebsd-virtualization-series/)
 
-  - [Intro](#intro)
-    - [Audience](#audience)
-    - [FreeBSD Tips for Linux People](#freebsd-tips-for-linux-people)
-  - [Setup and configuration](#setup-and-configuration)
-    - [Host (FreeBSD Hypervisor) Requirements](#host-(freebsd-hypervisor)-requirements)
-    - [Install and Configure Tools](#install-and-configure-tools)
-  - [Create our Linux Virtual Machine](#create-our-linux-virtual-machine)
-    - [Notes](#notes)
-    - [Configure the VM](#configure-the-vm)
-    - [Start the VM](#start-the-vm)
-    - [Install Ubuntu](#install-ubuntu)
-    - [Clean up](#clean-up)
-  - [References](#references)
+<details markdown="1">
+  <summary><i>Table of Contents</i></summary>
 
+- [Intro](#intro)
+  - [Audience](#audience)
+  - [FreeBSD Tips for Linux People](#freebsd-tips-for-linux-people)
+    - [Software installation](#software-installation)
+    - [Text-based User Interfaces](#text-based-user-interfaces)
+    - [Tools](#tools)
+    - [Root access](#root-access)
+- [Setup and configuration](#setup-and-configuration)
+  - [Host (FreeBSD Hypervisor) Requirements](#host-freebsd-hypervisor-requirements)
+    - [VNC Client](#vnc-client)
+    - [ZFS Storage](#zfs-storage)
+  - [Install and Configure Tools](#install-and-configure-tools)
+    - [Tools](#tools)
+    - [Initialize CBSD](#initialize-cbsd)
+      - [Initialize CBSD the Quick Way](#initialize-cbsd-the-quick-way)
+      - [Initialize CBSD the Long Way](#initialize-cbsd-the-long-way)
+    - [Enable `pf` Networking](#enable-pf-networking)
+    - [Load kernel modules](#load-kernel-modules)
+- [Create our Linux Virtual Machine](#create-our-linux-virtual-machine)
+  - [Notes](#notes)
+  - [Configure the VM](#configure-the-vm)
+  - [Start the VM](#start-the-vm)
+  - [Install Ubuntu](#install-ubuntu)
+  - [Clean up](#clean-up)
+- [References](#references)
+
+</details>
 
 # Intro
 
