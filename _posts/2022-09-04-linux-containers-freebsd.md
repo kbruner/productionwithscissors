@@ -63,6 +63,8 @@ all `containerd` use cases (yet!), but all of this work is a huge step
 toward using FreeBSD hosts natively as [Kubernetes
 nodes](https://kubernetes.io/docs/concepts/architecture/nodes/)
 
+Please note that currently networking doesn't seem to be implemented!
+
 # Prerequisitites
 
 ## Audience
