@@ -118,7 +118,7 @@ navigate the options below the menu. Select `<Ok>` to confirm and hit enter.
 
 ### Tools
 
-   * Your favorite Linux command-line tools like `grep`, `sed`, `awk, and
+   * Your favorite Linux command-line tools like `grep`, `sed`, `awk`, and
      `find` are all here but they sometimes behave a little differently than
      on GNU/Linux.
    * If you absolutely need the GNU versions, you can usually install them via
