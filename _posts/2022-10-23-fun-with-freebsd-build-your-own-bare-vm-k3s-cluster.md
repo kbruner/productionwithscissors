@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Fun with FreeBSD: Build Your Own Bare-VM k3s Cluster'
-date: 
 type: post
+date: 2022-10-24 00:00:00.000000000 -08:00
 parent_id: '0'
 published: true
 password: ''
@@ -16,13 +16,13 @@ tags:
 - virtualization
 - linux
 meta:
-permalink: ""
+permalink: /2022/10/24/fun-with-freebsd-k3s-cluster-tutorial/
 excerpt: Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bhyve VMs
 ---
 
 _Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bhyve VMs_
 
-*Note* this is an updated version of [this original k3s tutorial](http://productionwithscissors.run/2020/12/26/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-k3s-cluster/)
+*Note*: this post is an updated version of [this original k3s tutorial](http://productionwithscissors.run/2020/12/26/adventures-in-freebernetes-tutorial-build-your-own-bare-vm-k3s-cluster/)
 
 [See all posts in the FreeBSD Virtualization Series](/freebsd-virtualization-series/)
 
@@ -35,12 +35,13 @@ _Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bh
    * [My Test System](#my-test-system)
 * [Part 1: Required Tools](#part-1)
 * [Part 2: Building k3sup](#part-2)
-* [Part 3: Creating VMs](#part-3)
-* [Part 4: Configure Networking](#part-4)
+* [Part 3: Configure Networking](#part-3)
+* [Part 3: Creating VMs](#part-4)
 * [Part 5: Create the Cluster](#part-5)
 * [Part 6: Test the Cluster](#part-6)
 * [Part 7: Clean Up](#part-7)
 * [Sources / References](#sources-references)
+
 
 ## Overview
 
@@ -59,6 +60,11 @@ Topics covered:
 While this tutorial builds a cluster with a redundant control plane, all the VMs are on a single hypervisor, making it suitable for testing and experimentation, but it is not production grade.
 
 This tutorial only covers creating a cluster. For Kubernetes basics and terminology, you should start with the [official Kubernetes documentation](https://kubernetes.io/).
+
+**Important**: only run this tutorial on a non-production host. It will make
+some changes to your network. Most of these are temporary, unless you want to
+make them persistent, but they may overwrite existing configurations.
+
 
 ### Intended Audience
 
@@ -172,6 +178,7 @@ services. You can use another block, but you will have to adjust commands
 throughout the tutorial.
 
 * 10.0.0.1/32 - VLAN gateway on bridge interface
+* 10.0.0.2/32 - VIP (round-robin virtual IP) for the Kubernetes API endpoint
 * 10.0.10.0/24 - VM block
   * 10.0.10.1[1-3] - K3s servers
   * 10.0.10.2[1-3] - K3s agents (nodes)
@@ -186,13 +193,18 @@ You cannot connect to the new VMs yet. CBSD creates a `bridge` interface the fir
 <a id="3.2"/>
 #### 3.2 Load kernel modules
 
-We need to load the virtualization and networking kernel modules. The `sysrc`
-command adds the entries to `/etc/rc.conf` so the modules will get loaded at
-boot time.
+We need to load the virtualization and networking kernel modules.
+
+
+```shell
+kldload vmm if_tuntap if_bridge nmdm
+```
+
+
+For persistence across reboots:
 
 ```shell
 sysrc kld_list+="vmm if_tuntap if_bridge nmdm"
-service kld restart
 ```
 
 <a id="3.3"/>
@@ -202,9 +214,11 @@ CBSD creates and uses the `bridge1` network interface for connecting to the
 VM network. We will pre-create it and configure it to route our selected
 subnets.
 
+You'll also need to change `wlan0` to your network interface
+
 
 ```shell
-ifconfig bridge1
+ifconfig bridge1 create addm wlan0 up
 ifconfig bridge1 alias 10.0.0.1/32
 ifconfig bridge1 alias 10.0.10.1/24
 ifconfig bridge1 alias 10.1.0.1/16
@@ -225,10 +239,10 @@ sysrc ifconfig_bridge1_alias3="inet 10.2.0.1/16"
 <a id="3-4"/>
 ### 3.4 Configure NAT Gateway
 
-We can reach our VMs just fine from the host, but the VMs can't talk to the
+With `bridge1` configured, we can connect to the VMs, but the VMs can't talk to the
 Internet because only the FreeBSD host can route to this `10.0.0.0/8` block.
 We will use [`ipfw`](https://docs.freebsd.org/en/books/handbook/firewalls/#firewalls-ipfw) as a NAT (Network Address Translation) gateway service. These
-steps will enable `pf` with open firewall rules and then configure the NAT.
+steps will enable `ipfw` with open firewall rules and then configure the NAT.
 These changes will take effect immediately.
 
 
@@ -255,18 +269,27 @@ ipfw add 210 nat 1 ip from any to any in via "$net_if"
 
 For persistence:
 
+Download [this `ipfw` rules
+script](https://github.com/kbruner/freebernetes/k3s/etc/ipfw.bridge.rules) and
+place it in `/etc`. Note: this file also contains rules we will add below,
+which is why we won't load it now.
+
+Then run the following:
+
 ```shell
 echo net.inet.ip.fw.default_to_accept=1 >> /boot/loader.conf
-echo net.inet.tcp.tso="0" >> /etc/sysctl.conf
+echo net.inet.tcp.tso=0 >> /etc/sysctl.conf
 echo net.inet.ip.fw.enable=1 >> /etc/sysctl.conf
 echo net.inet.ip.forwarding=1 >> /etc/sysctl.conf
 echo net.inet6.ip6.forwarding=1 >> /etc/sysctl.conf
+echo net.inet.tcp.tso=0 >> /etc/sysctl.conf
+sysrc kld_list+="ipfw_nat ipdivert"
 sysrc firewall_enable="YES"
 sysrc firewall_nat_enable="YES"
 sysrc gateway_enable="YES"
-sysrc kld_list+="ipfw_nat ipdivert"
-echo net.inet.tcp.tso="0" >> /etc/sysctl.conf
+sysrc firewall_script="/etc/ipfw.bridge.rules"
 ```
+
 
 <a id="3-5"/>
 ### 3.5 Configure Local DNS
@@ -281,11 +304,17 @@ You will also want to update the FreeBSD host's `/etc/resolv.conf` to add your l
 
 ```shell
 wget https://raw.githubusercontent.com/kbruner/freebernetes/main/k3s/dns/unbound/unbound.conf -O /etc/unbound/unbound.conf
-sysrc local_unbound_enable="YES"
 service local_unbound onestart
 ```
 
-`/etc/resolve.conf`:
+For persistence:
+
+```shell
+sysrc local_unbound_enable="YES"
+```
+
+
+`/etc/resolv.conf`:
 
 ```
 search k3s.local
@@ -331,6 +360,10 @@ service cbsdrsyncd stop
 sysrc -x cbsdrsyncd_enable
 sysrc -x cbsdrsyncd_flags
 ```
+
+Download [this Ubuntu VM configuration
+file](https://github.com/kbruner/freebernetes/blob/main/k3s/cbsd/usr.cbsd.etc.defaults/vm-linux-cloud-ubuntuserver-k3s-amd64-22.04.conf)
+and copy it to `/usr/cbsd/etc/defaults`
 
 
 #### 4.2 Create VMs
@@ -458,13 +491,14 @@ Generally, if you want to expose a Kubernetes application endpoint on an IP addr
 
 For `Services` of type `NodePort`, we can route directly to the `Service`'s virtual IP, which will be in our `10.2.0.0/16` service network block. Each service VIP is routeable by every node, so if we set up round-robin forwarding rules on the hypervisor's firewall, we should be able to reach `NodePort` endpoints.
 
-```script
+```shell
 ipfw add 350 prob 0.333 fwd 10.0.10.20 ip from any to 10.2.0.0/16 keep-state
 ipfw add 351 prob 0.5 fwd 10.0.10.21 ip from any to 10.2.0.0/16 keep-state
 ipfw add 352 fwd 10.0.10.22 ip from any to 10.2.0.0/16 keep-state
 ```
 
-#### 5.3.1 K3s Service Load Balancer
+
+#### 5.3.2 K3s Service Load Balancer
 
 K3s has its own option for load balancer services. You can read [the documentation](https://rancher.com/docs/k3s/latest/en/networking/#service-load-balancer) for details. The service IP address will share the IP address of a node in the cluster. We will see a demonstration in the next section, when we test our cluster.
 
@@ -490,25 +524,38 @@ We'll run the following tests:
 # Create deployment
 kubectl create deployment nginx --image=nginx
 kubectl get pods 
+```
+
+```shell
 # Port-forward to pod
 POD=$(kubectl get pods -l app=nginx -ojsonpath="{.items[0].metadata.name}")
 PID="$(kubectl port-forward $POD 8080:80 >/dev/null 2>&1 & echo $!)"
+```
+
+```shell
 curl http://localhost:8080/
 kill "$PID"
-# Check pod logs
-kubectl logs $POD
+```
+
+```shell
 # Create NodePort service
 kubectl expose deployment nginx --port 80 --type NodePort
 kubectl get svc 
 CLUSTERIP="$(kubectl get svc nginx -ojsonpath='{.spec.clusterIP}')"
 curl -I http://${CLUSTERIP}/
 kubectl delete svc nginx
+```
+
+```shell
 # Create LoadBalancer Service
 kubectl expose deployment nginx --port 8080 --target-port 80 --type LoadBalancer
 kubectl get svc
 LBIP="$(kubectl get svc nginx -ojsonpath='{.status.loadBalancer.ingress[0].ip}')"
 curl -I http://${LBIP}:8080/
 kubectl delete svc nginx
+```
+
+```shell
 # Test pod-to-pod connectivity
 PODIP="$(kubectl get pod "$POD" -ojsonpath='{.status.podIP}')"
 kubectl run -it busybox --image busybox --rm=true --restart=Never -- wget -q -S -O /dev/null "http://${PODIP}"

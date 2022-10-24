@@ -20,6 +20,11 @@ permalink: "/2020/12/26/adventures-in-freebernetes-tutorial-build-your-own-bare-
 excerpt: Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bhyve VMs
 ---
 
+**Note**: there is [an updated version of this
+post](/2022/10/24/fun-with-freebsd-k3s-cluster-tutorial/) which you should use
+instead. This version is outdated.
+
+
 _Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bhyve VMs_
 
 [See all posts in the FreeBSD Virtualization Series](/freebsd-virtualization-series/)

@@ -23,6 +23,15 @@ excerpt: Articles in the FreeBSD/Kubernetes series
 
 * * *
 
+### [Fun with FreeBSD: Build Your Own Bare-VM k3s Cluster](/2022/10/24/fun-with-freebsd-k3s-cluster-tutorial/)
+
+#### Step-by-step tutorial for deploying a Kubernetes cluster with k3s on FreeBSD bhyve VMs
+
+##### October 24, 2022
+
+* * *
+
+
 </details>
 
 <details markdown="1">
