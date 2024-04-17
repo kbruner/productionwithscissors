@@ -21,18 +21,19 @@ Links to sites with some of my blog posts, talks, slides, or other content.
   * [https://thenewstack.io/author/karen-bruner/](https://thenewstack.io/author/karen-bruner/)
   * [https://www.cncf.io/blog/2020/01/30/kubernetes-networking-demystified-a-brief-guide/](https://www.cncf.io/blog/2020/01/30/kubernetes-networking-demystified-a-brief-guide/)
   * Posts originally on stackrox.com:
+    * [https://www.google.com/search?q=site%3Astackrox.io+karen&oq=site%3Astackrox.io+karen](https://www.google.com/search?q=site%3Astackrox.io+karen&oq=site%3Astackrox.io+karen)
     * [https://cloud.redhat.com/blog/better-kubernetes-security-with-open-policy-agent-opa-part-1](https://cloud.redhat.com/blog/better-kubernetes-security-with-open-policy-agent-opa-part-1)
     * [https://cloud.redhat.com/blog/how-to-make-istio-work-with-your-apps](https://cloud.redhat.com/blog/how-to-make-istio-work-with-your-apps)
     * [https://www.stackrox.io/blog/amazon-eks-security-best-practices/](https://www.stackrox.io/blog/amazon-eks-security-best-practices/)
     * <https://medium.com/stackrox-engineering/tagged/istio>
-    * EKS series (original by-line removed):
+    * EKS series:
       * [https://www.stackrox.io/blog/guide-to-eks-cluster-design-for-better-security/](https://www.stackrox.io/blog/guide-to-eks-cluster-design-for-better-security/)
       * [https://www.stackrox.io/blog/securing-eks-cluster-add-ons-dashboard-fargate-ec2-components-and-more/](https://www.stackrox.io/blog/securing-eks-cluster-add-ons-dashboard-fargate-ec2-components-and-more/)
       * [https://www.stackrox.io/blog/eks-networking-best-practices/](https://www.stackrox.io/blog/eks-networking-best-practices/)
       * [https://www.stackrox.io/blog/eks-runtime-security-best-practices-for-aws-workloads/](https://www.stackrox.io/blog/eks-runtime-security-best-practices-for-aws-workloads/)
       * [https://www.stackrox.io/blog/aws-eks-monitoring-best-practices-for-stability-and-security/](https://www.stackrox.io/blog/aws-eks-monitoring-best-practices-for-stability-and-security/)
 
-  * Old/obsolete: [https://web.archive.org/web/20200201180316/http://community.ooyala.com/t5/Engineering-Blogs/Mixing-up-Vagrant-in-Test-Kitchen/ba-p/9311](https://web.archive.org/web/20200201180316/http://community.ooyala.com/t5/Engineering-Blogs/Mixing-up-Vagrant-in-Test-Kitchen/ba-p/9311)
+  * Very, very old: [https://web.archive.org/web/20200201180316/http://community.ooyala.com/t5/Engineering-Blogs/Mixing-up-Vagrant-in-Test-Kitchen/ba-p/9311](https://web.archive.org/web/20200201180316/http://community.ooyala.com/t5/Engineering-Blogs/Mixing-up-Vagrant-in-Test-Kitchen/ba-p/9311)
     * [Associated code](https://github.com/ooyala/kitchen-vagrant-disks/)
 * Talks
   * [https://youtu.be/d18gPhca7rk](https://youtu.be/d18gPhca7rk) - Cloud Native Rejekts NA'19 - Making Istio Work With Your Apps
